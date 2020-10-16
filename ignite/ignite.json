@@ -1,0 +1,9 @@
+{
+  "navigation": "react-navigation",
+  "generators": {
+    "boilderplate": "ignite-hydrogen"
+  },
+  "createdWith": "3.5.3",
+  "boilerplate": "ignite-hydrogen",
+  "boilerplateVersion": "0.1.0"
+}
