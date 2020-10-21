@@ -17,8 +17,7 @@ export default createScreen('Welcome', (props) => {
     [],
   )
   const nextScreen = async () => {
-    await loadUser()
-    navigation.navigate('demo')
+    navigation.navigate('initiativeScreen')
   }
 
   return (
