@@ -21,9 +21,9 @@ import { WelcomeScreen, DemoScreen, InitiativeScreen } from '../screens'
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type PrimaryParamList = {
+  initiativeScreen: undefined
   welcome: undefined
   demo: undefined
-  initiativeScreen: undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/

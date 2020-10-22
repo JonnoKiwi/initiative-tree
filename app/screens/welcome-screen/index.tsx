@@ -48,7 +48,7 @@ export default createScreen('Welcome', (props) => {
       <SafeAreaView style={styles.FOOTER}>
         <View style={styles.FOOTER_CONTENT}>
           <Button primary full onPress={nextScreen}>
-            <Text tx="welcomeScreen.continue" />
+            <Text tx="welcomeScreen.goToInitiative" />
           </Button>
         </View>
       </SafeAreaView>
