@@ -17,7 +17,7 @@ export default createScreen('Welcome', (props) => {
     [],
   )
   const nextScreen = async () => {
-    navigation.navigate('initiativeScreen')
+    navigation.navigate('initiative')
   }
 
   return (
