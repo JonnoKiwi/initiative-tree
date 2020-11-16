@@ -1,5 +1,5 @@
-import Initiative from './Initiative'
+import InitiativeScreen from './initiative-screen'
 import WelcomeScreen from './welcome-screen'
 import DemoScreen from './demo-screen'
 
-export { Initiative, DemoScreen, WelcomeScreen }
+export { InitiativeScreen, DemoScreen, WelcomeScreen }
