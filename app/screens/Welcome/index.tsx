@@ -10,15 +10,8 @@ const bowserLogo = require('./bowser.png')
 
 export default createScreen('Welcome', (props) => {
   const navigation = useNavigation()
-  const loadUser = React.useMemo(
-    () => async () => {
-      await props.getUsers({ query: { results: 10 } })
-    },
-    [],
-  )
   const nextScreen = async () => {
-    await loadUser()
-    navigation.navigate('demo')
+    navigation.navigate('dashboard')
   }
 
   return (
