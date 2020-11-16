@@ -1,6 +1,9 @@
 import { ViewStyle, TextStyle } from 'react-native'
 import { IconTypes } from '../icon/icons'
 
+/**
+ * TODO use `title` `subTitle` with support for the raw mode either explicitly (e.g. `titleRaw`) or through a not-found in the lookup approach.
+ */
 export interface HeaderProps {
   /**
    * Main header, e.g. POWERED BY BOWSER

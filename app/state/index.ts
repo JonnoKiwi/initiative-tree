@@ -1,7 +1,6 @@
 import setupRootStoreCore from './setupRootStore'
 import { rootReducer } from './setupRootStore'
 import _connectState from './connect'
-
 export const connectState = _connectState
 
 export { Provider as RootStoreProvider } from 'react-redux'

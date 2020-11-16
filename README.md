@@ -1,7 +1,5 @@
 # InitiativeTree
 
-[![CircleCI](https://circleci.com/gh/infinitered/ignite-bowser.svg?style=svg)](https://circleci.com/gh/infinitered/ignite-bowser)
-
 ## The latest and greatest boilerplate for Infinite Red opinions
 
 This is the boilerplate that [Infinite Red](https://infinite.red) uses as a way to test bleeding-edge changes to our React Native stack.

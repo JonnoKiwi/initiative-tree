@@ -10,7 +10,7 @@
   "welcomeScreen": {
     "poweredBy": "POWERED BY BOWSER",
     "readyForLaunch": "Ready for launch.",
-    "goToInitiative": "Go To my Initiative Tree"
+    "continue": "Go To my Initiative Tree"
   },
   "demoScreen": {
     "howTo": "HOW TO",
