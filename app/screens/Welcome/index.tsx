@@ -10,14 +10,8 @@ const bowserLogo = require('./bowser.png')
 
 export default createScreen('Welcome', (props) => {
   const navigation = useNavigation()
-  const loadUser = React.useMemo(
-    () => async () => {
-      await props.getUsers({ query: { results: 10 } })
-    },
-    [],
-  )
   const nextScreen = async () => {
-    navigation.navigate('initiative')
+    navigation.navigate('dashboard')
   }
 
   return (
@@ -48,7 +42,7 @@ export default createScreen('Welcome', (props) => {
       <SafeAreaView style={styles.FOOTER}>
         <View style={styles.FOOTER_CONTENT}>
           <Button primary full onPress={nextScreen}>
-            <Text tx="welcomeScreen.goToInitiative" />
+            <Text tx="welcomeScreen.continue" />
           </Button>
         </View>
       </SafeAreaView>

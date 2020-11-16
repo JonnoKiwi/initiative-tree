@@ -62,7 +62,6 @@ export class Api implements SagaSauceAPI, HydrogenAPI {
   /* ----- Existing SagaSauce API Structure. There is much to improve though so make it your own. Very much a work in-progress ---- */
   getData = async (data) => {
     const response: ApiResponse<any> = await this.apisauce.get(`/`, data && { ...data.query })
-    console.tron.log('API users->getData', response)
 
     // the typical ways to die when calling an api
     if (!response.ok) {
