@@ -41,7 +41,7 @@ const ALMOST: TextStyle = {
   fontSize: 26,
   fontStyle: 'italic',
 }
-const BOWSER: ImageStyle = {
+const TREE: ImageStyle = {
   alignSelf: 'center',
   marginVertical: spacing[5],
   maxWidth: '100%',
@@ -81,7 +81,7 @@ export default {
   HEADER,
   HEADER_TITLE,
   BOLD,
-  BOWSER,
+  TREE,
   TEXT,
   TITLE,
   TITLE_WRAPPER,

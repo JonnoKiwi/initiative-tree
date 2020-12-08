@@ -8,17 +8,18 @@
     "invalidEmail": "Invalid email address."
   },
   "welcomeScreen": {
-    "poweredBy": "POWERED BY BOWSER",
+    "poweredBy": "POWERED BY HYDROGEN",
     "readyForLaunch": "Ready for launch.",
-    "continue": "Go To my Initiative Tree"
+    "continue": "CONTINUE"
   },
-  "demoScreen": {
+  "dashboardScreen": {
     "howTo": "HOW TO",
     "title": "What’s In This Stack?",
     "tagLine": "Congratulations, you’ve got a very advanced React Native app template here.  Take advantage of this boilerplate!",
-    "reactotron": "Demo Reactotron",
+    "reactotron": "Send Reactotron",
     "androidReactotronHint": "If this doesn't work, ensure the Reactotron desktop app is running, run adb reverse tcp:9090 tcp:9090 from your terminal, and reload the app.",
-    "iosReactotronHint": "If this doesn't work, ensure the Reactotron desktop app is running and reload app."
+    "iosReactotronHint": "If this doesn't work, ensure the Reactotron desktop app is running and reload app.",
+    "openDrawer": "Open Menu"
   },
   "storybook": {
     "placeholder": "Placeholder",

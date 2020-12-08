@@ -26,6 +26,7 @@
   "dependencies": {
     "@delvefore/sagasauce": "^1.1.0",
     "@react-native-community/masked-view": "0.1.10",
+    "@react-navigation/drawer": "^5.11.4",
     "@react-navigation/native": "^5.1.5",
     "@react-navigation/stack": "^5.2.10",
     "@redux-saga/is": "^1.1.2",
@@ -43,6 +44,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
     "react-native-gesture-handler": "~1.7.0",
     "react-native-keychain": "^6.2.0",
+    "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "3.1.4",
     "react-native-safe-area-view": "^1.1.1",
     "react-native-screens": "~2.10.1",
