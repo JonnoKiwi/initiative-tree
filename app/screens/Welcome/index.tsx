@@ -6,12 +6,19 @@ import { Header, Screen, Text, Wallpaper } from '../../components'
 import createScreen from '../createScreen'
 import { color } from '../../theme'
 import styles from './styles'
-const bowserLogo = require('./bowser.png')
+const logo = require('./tree.png')
 
 export default createScreen('Welcome', (props) => {
   const navigation = useNavigation()
+  const loadUser = React.useMemo(
+    () => async () => {
+      await props.getUsers({ query: { results: 10 } })
+    },
+    [],
+  )
   const nextScreen = async () => {
-    navigation.navigate('dashboard')
+    await loadUser()
+    navigation.navigate('Dashboard')
   }
 
   return (
@@ -24,19 +31,13 @@ export default createScreen('Welcome', (props) => {
           titleStyle={styles.HEADER_TITLE}
         />
         <Text style={styles.TITLE_WRAPPER}>
-          <Text style={styles.TITLE} text="Your new app, " />
-          <Text style={styles.ALMOST} text="almost" />
-          <Text style={styles.TITLE} text="!" />
+          <Text style={styles.TITLE} text="Prepare for combat and roll for initiative!" />
         </Text>
-        <Text style={styles.TITLE} preset="header" tx="welcomeScreen.readyForLaunch" />
-        <Image source={bowserLogo} style={styles.BOWSER} />
+        <Image source={logo} style={styles.TREE} />
         <Text style={styles.CONTENT}>
-          This probably isn't what your app is going to look like. Unless your designer handed you
-          this screen and, in that case, congrats! You're ready to ship.
-        </Text>
-        <Text style={styles.CONTENT}>
-          For everyone else, this is where you'll see a live preview of your fully functioning app
-          using Ignite.
+          In the adventures of Dungeon and Dragons, you can get distracted from the story when combat begins,
+          and you have to calculate your players initiative order. With the Initiative Tree, the Dungeon Master
+          can organize his players faster and jump straight into the action!
         </Text>
       </Screen>
       <SafeAreaView style={styles.FOOTER}>
