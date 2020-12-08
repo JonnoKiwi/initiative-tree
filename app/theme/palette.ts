@@ -3,6 +3,7 @@ export const palette = {
   white: '#ffffff',
   offWhite: '#e6e6e6',
   green: '#225222',
+  greenDark: '#193d19',
   lightGrey: '#939AA4',
   lighterGrey: '#CDD4DA',
   angry: '#dd3333',
