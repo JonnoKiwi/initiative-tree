@@ -1,5 +1,6 @@
 // @flow
 
+import themeColor from '../color'
 import color from 'color'
 import { Platform, Dimensions, PixelRatio } from 'react-native'
 
@@ -128,7 +129,7 @@ export default {
   checkboxTextShadowRadius: 0,
 
   // Color
-  brandPrimary: platform === PLATFORM.IOS ? '#007aff' : '#3F51B5',
+  brandPrimary: platform === PLATFORM.IOS ? themeColor.primary : themeColor.primaryDark,
   brandInfo: '#62B1F6',
   brandSuccess: '#5cb85c',
   brandDanger: '#d9534f',
