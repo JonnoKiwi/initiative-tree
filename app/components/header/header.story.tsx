@@ -5,7 +5,7 @@ import { StoryScreen, Story, UseCase } from '../../../storybook/views'
 import { Header } from './header'
 import { color } from '../../theme'
 
-declare var module
+declare let module
 
 const VIEWSTYLE = {
   flex: 1,
@@ -18,13 +18,13 @@ storiesOf('Header', module)
     <Story>
       <UseCase noPad text="default" usage="The default usage">
         <View style={VIEWSTYLE}>
-          <Header headerTx="demoScreen.howTo" />
+          <Header headerTx="dashboardScreen.howTo" />
         </View>
       </UseCase>
       <UseCase noPad text="leftIcon" usage="A left nav icon">
         <View style={VIEWSTYLE}>
           <Header
-            headerTx="demoScreen.howTo"
+            headerTx="dashboardScreen.howTo"
             leftIcon="back"
             onLeftPress={() => Alert.alert('left nav')}
           />
@@ -33,7 +33,7 @@ storiesOf('Header', module)
       <UseCase noPad text="rightIcon" usage="A right nav icon">
         <View style={VIEWSTYLE}>
           <Header
-            headerTx="demoScreen.howTo"
+            headerTx="dashboardScreen.howTo"
             rightIcon="bullet"
             onRightPress={() => Alert.alert('right nav')}
           />

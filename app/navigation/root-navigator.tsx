@@ -7,7 +7,8 @@
 import React from 'react'
 import { NavigationContainer, NavigationContainerRef } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { PrimaryNavigator } from './primary-navigator'
+import { PrimaryNavigator } from './Primary'
+import DrawerStack from './Drawer'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -20,26 +21,20 @@ import { PrimaryNavigator } from './primary-navigator'
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type RootParamList = {
-  primaryStack: undefined
+  DrawerStack: undefined
 }
 
 const Stack = createStackNavigator<RootParamList>()
 
+const rootStackScreenOptions = {
+  headerShown: false,
+  gestureEnabled: true,
+}
+
 const RootStack = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-        gestureEnabled: true,
-      }}
-    >
-      <Stack.Screen
-        name="primaryStack"
-        component={PrimaryNavigator}
-        options={{
-          headerShown: false,
-        }}
-      />
+    <Stack.Navigator screenOptions={rootStackScreenOptions}>
+      <Stack.Screen name="DrawerStack" component={DrawerStack} />
     </Stack.Navigator>
   )
 }

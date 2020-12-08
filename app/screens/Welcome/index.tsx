@@ -6,12 +6,19 @@ import { Header, Screen, Text, Wallpaper } from '../../components'
 import createScreen from '../createScreen'
 import { color } from '../../theme'
 import styles from './styles'
-const treeLogo = require('./tree.png')
+const logo = require('./tree.png')
 
 export default createScreen('Welcome', (props) => {
   const navigation = useNavigation()
+  const loadUser = React.useMemo(
+    () => async () => {
+      await props.getUsers({ query: { results: 10 } })
+    },
+    [],
+  )
   const nextScreen = async () => {
-    navigation.navigate('dashboard')
+    await loadUser()
+    navigation.navigate('Dashboard')
   }
 
   return (
@@ -26,7 +33,7 @@ export default createScreen('Welcome', (props) => {
         <Text style={styles.TITLE_WRAPPER}>
           <Text style={styles.TITLE} text="Prepare for combat and roll for initiative!" />
         </Text>
-        <Image source={treeLogo} style={styles.TREE} />
+        <Image source={logo} style={styles.TREE} />
         <Text style={styles.CONTENT}>
           In the adventures of Dungeon and Dragons, you can get distracted from the story when combat begins,
           and you have to calculate your players initiative order. With the Initiative Tree, the Dungeon Master
