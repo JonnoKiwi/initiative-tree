@@ -1,8 +1,8 @@
 import React from 'react'
-import { View, Image, SafeAreaView } from 'react-native'
 import { Button } from 'native-base'
+import { View, Image, SafeAreaView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { Header, Screen, Text, Wallpaper } from '../../components'
+import { Header, Screen, Text, Wallpaper, Button as ButtonHydrogen } from '../../components'
 import createScreen from '../createScreen'
 import { color } from '../../theme'
 import styles from './styles'
@@ -45,6 +45,7 @@ export default createScreen('Welcome', (props) => {
           <Button primary full onPress={nextScreen}>
             <Text tx="welcomeScreen.continue" />
           </Button>
+          <ButtonHydrogen tx="welcomeScreen.continue" onPress={nextScreen} />
         </View>
       </SafeAreaView>
     </View>

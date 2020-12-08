@@ -27,11 +27,11 @@ export const color = {
   /**
    * The main tinting color.
    */
-  primary: palette.orange,
+  primary: palette.green,
   /**
-   * The main tinting color, but darker.
+   * The main tinting color.
    */
-  primaryDarker: palette.orangeDarker,
+  primaryDark: palette.greenDark,
   /**
    * A subtle color used for borders and lines.
    */
@@ -62,3 +62,5 @@ export const color = {
    */
   storybookTextColor: palette.black,
 }
+
+export default color
