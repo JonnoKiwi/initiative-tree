@@ -2,7 +2,7 @@ import React from 'react'
 import { View, SafeAreaView, Image } from 'react-native'
 import { Button } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
-import { Header, Screen, Text, Wallpaper } from '../../components'
+import { Header, Screen, Text } from '../../components'
 import createScreen from '../createScreen'
 import { colors } from '../../theme'
 import styles from './styles'
@@ -23,8 +23,7 @@ export default createScreen('Welcome', (props) => {
 
   return (
     <View style={styles.FULL}>
-      <Wallpaper />
-      <Screen style={styles.CONTAINER} preset="scroll" backgroundColor={colors.transparent}>
+      <Screen style={styles.CONTAINER} preset="scroll" backgroundColor={colors.background}>
         <Header
           headerTx="welcomeScreen.poweredBy"
           style={styles.HEADER}

@@ -1,11 +1,11 @@
 import { colors } from '../../theme'
-import { DefaultTheme } from 'react-native-paper'
+import { DarkTheme } from 'react-native-paper'
 
 export default {
-  ...DefaultTheme,
-  dark: false,
+  ...DarkTheme,
+  dark: true,
   colors: {
-    ...DefaultTheme.colors,
+    ...DarkTheme.colors,
     primary: colors.primary,
     accent: '#03dac4', // TODO Add color to `colors` for `accent` and `secondary`
     background: colors.background,

@@ -23,15 +23,15 @@ export const colors = {
   /**
    * The screen background.
    */
-  background: palette.black,
+  background: palette.green,
   /**
    * The main tinting color.
    */
-  primary: palette.orange,
+  primary: palette.lightGreen,
   /**
    * The main tinting color, but darker.
    */
-  primaryDarker: palette.orangeDarker,
+  primaryDarker: palette.greenDark,
   /**
    * A subtle color used for borders and lines.
    */
