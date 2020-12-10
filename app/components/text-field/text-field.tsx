@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, TextInput, TextStyle, ViewStyle } from 'react-native'
-import { color, spacing, typography } from '../../theme'
+import { colors, spacing, typography } from '../../theme'
 import { translate } from '../../i18n'
 import { Text } from '../text/text'
 import { TextFieldProps } from './text-field.props'
@@ -14,10 +14,10 @@ const CONTAINER: ViewStyle = {
 // the base styling for the TextInput
 const INPUT: TextStyle = {
   fontFamily: typography.primary,
-  color: color.text,
+  color: colors.text,
   minHeight: 44,
   fontSize: 18,
-  backgroundColor: color.palette.white,
+  backgroundColor: colors.palette.white,
 }
 
 // currently we have no presets, but that changes quickly when you build your app.
@@ -56,8 +56,8 @@ export function TextField(props: TextFieldProps) {
       <Text preset="fieldLabel" tx={labelTx} text={label} />
       <TextInput
         placeholder={actualPlaceholder}
-        placeholderTextColor={color.palette.lighterGrey}
-        underlineColorAndroid={color.transparent}
+        placeholderTextColor={colors.palette.lighterGrey}
+        underlineColorAndroid={colors.transparent}
         {...rest}
         style={inputStyle}
         ref={forwardedRef}

@@ -1,9 +1,9 @@
-import { color, spacing } from '../../theme'
+import { colors, spacing } from '../../theme'
 import { ImageStyle, TextStyle, ViewStyle } from 'react-native'
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
-  backgroundColor: color.transparent,
+  backgroundColor: colors.transparent,
   paddingHorizontal: spacing[4],
 }
 const BOLD: TextStyle = { fontWeight: 'bold' }

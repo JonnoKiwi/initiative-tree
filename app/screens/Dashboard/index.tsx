@@ -3,8 +3,9 @@ import { Image, Platform, View } from 'react-native'
 import { useNavigation, DrawerActions } from '@react-navigation/native'
 import { BulletItem, Text, Header, Screen, Wallpaper } from '../../components'
 import createScreen from '../createScreen'
-import { Button, List, ListItem, Text as TextNB, Thumbnail, Right, Left, Body } from 'native-base'
-import { color } from '../../theme'
+import { Button, List } from 'react-native-paper'
+import UserListItem from './UserListItem'
+import { colors } from '../../theme'
 // TODO Support MST (https://mobx-react.js.org/)
 import { useSelector } from 'react-redux'
 import styles from './styles'
@@ -12,28 +13,7 @@ export const logoIgnite = require('./logo-ignite.png')
 export const heart = require('./heart.png')
 
 const renderUser = (item, index) => {
-  // TODO Use Text from NativeBase once the theme is completely working out of the box
-  const TextAlternating = index % 2 ? Text : TextNB
-  return (
-    <ListItem thumbnail>
-      <Left>
-        <Thumbnail square source={{ uri: item.picture.thumbnail }} />
-      </Left>
-      <Body>
-        <TextAlternating>
-          {item.name.first} {item.name.last}
-        </TextAlternating>
-        <TextAlternating note numberOfLines={1}>
-          {item.gender}
-        </TextAlternating>
-      </Body>
-      <Right>
-        <Button transparent>
-          <TextAlternating>View</TextAlternating>
-        </Button>
-      </Right>
-    </ListItem>
-  )
+  return <UserListItem item={item} key={index} />
 }
 
 export default createScreen('Dashboard', () => {
@@ -48,7 +28,7 @@ export default createScreen('Dashboard', () => {
   return (
     <View style={styles.FULL}>
       <Wallpaper />
-      <Screen style={styles.CONTAINER} preset="scroll" backgroundColor={color.transparent}>
+      <Screen style={styles.CONTAINER} preset="scroll" backgroundColor={colors.transparent}>
         <Header
           headerTx="dashboardScreen.howTo"
           leftIcon="back"
@@ -61,17 +41,17 @@ export default createScreen('Dashboard', () => {
         <BulletItem text="Load up Reactotron!  You can inspect your app, view the events, interact, and so much more!" />
         <BulletItem text="Integrated here, Navigation with State, TypeScript, Storybook, Solidarity, and i18n." />
         <View>
-          <Button primary full>
+          <Button mode="contained">
             <Text tx="dashboardScreen.reactotron" />
           </Button>
           <Text style={styles.HINT} tx={`dashboardScreen.${Platform.OS}ReactotronHint`} />
         </View>
         <View>
-          <Button full onPress={openDrawer}>
+          <Button mode="contained" onPress={openDrawer}>
             <Text tx="dashboardScreen.openDrawer" />
           </Button>
         </View>
-        <List>{users.map(renderUser)}</List>
+        <List.Section>{users.map(renderUser)}</List.Section>
         <Image source={logoIgnite} style={styles.IGNITE} />
       </Screen>
     </View>
