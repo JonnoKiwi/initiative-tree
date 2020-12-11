@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, Platform, View } from 'react-native'
 import { useNavigation, DrawerActions } from '@react-navigation/native'
-import { BulletItem, Text, Header, Screen, Wallpaper } from '../../components'
+import { BulletItem, Text, Header, Screen } from '../../components'
 import createScreen from '../createScreen'
 import { Button, List } from 'react-native-paper'
 import UserListItem from './UserListItem'
@@ -27,8 +27,7 @@ export default createScreen('Dashboard', () => {
 
   return (
     <View style={styles.FULL}>
-      <Wallpaper />
-      <Screen style={styles.CONTAINER} preset="scroll" backgroundColor={colors.transparent}>
+      <Screen style={styles.CONTAINER} preset="scroll" backgroundColor={colors.background}>
         <Header
           headerTx="dashboardScreen.howTo"
           leftIcon="back"

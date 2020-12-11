@@ -27,7 +27,6 @@ const TITLE: TextStyle = {
   marginBottom: spacing[5],
 }
 const TAGLINE: TextStyle = {
-  color: '#BAB6C8',
   fontSize: 15,
   lineHeight: 22,
   marginBottom: spacing[4] + spacing[1],
@@ -53,7 +52,6 @@ const HEART: ImageStyle = {
   resizeMode: 'contain',
 }
 const HINT: TextStyle = {
-  color: '#BAB6C8',
   fontSize: 12,
   lineHeight: 15,
   marginVertical: spacing[2],

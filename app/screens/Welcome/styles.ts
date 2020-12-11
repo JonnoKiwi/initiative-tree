@@ -48,7 +48,6 @@ const TREE: ImageStyle = {
 }
 const CONTENT: TextStyle = {
   ...TEXT,
-  color: '#BAB6C8',
   fontSize: 15,
   lineHeight: 22,
   marginBottom: spacing[5],
