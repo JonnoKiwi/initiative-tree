@@ -4,11 +4,13 @@ import { DarkTheme } from 'react-native-paper'
 export default {
   ...DarkTheme,
   dark: true,
+  mode: 'adaptive',
   colors: {
     ...DarkTheme.colors,
     primary: colors.primary,
-    accent: '#03dac4', // TODO Add color to `colors` for `accent` and `secondary`
+    accent: colors.accent,
     background: colors.background,
+    surface: colors.surface,
     text: colors.text,
   },
 }
