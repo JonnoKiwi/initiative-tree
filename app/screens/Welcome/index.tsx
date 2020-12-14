@@ -4,7 +4,6 @@ import { Button } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
 import { Header, Screen, Text } from '../../components'
 import createScreen from '../createScreen'
-import { colors } from '../../theme'
 import styles from './styles'
 const logo = require('./tree.png')
 
@@ -23,7 +22,7 @@ export default createScreen('Welcome', (props) => {
 
   return (
     <View style={styles.FULL}>
-      <Screen style={styles.CONTAINER} preset="scroll" backgroundColor={colors.background}>
+      <Screen style={styles.CONTAINER} preset="scroll" >
         <Header
           headerTx="welcomeScreen.poweredBy"
           style={styles.HEADER}

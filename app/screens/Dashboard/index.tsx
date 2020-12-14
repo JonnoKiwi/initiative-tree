@@ -5,7 +5,6 @@ import { BulletItem, Text, Header, Screen } from '../../components'
 import createScreen from '../createScreen'
 import { Button, List } from 'react-native-paper'
 import UserListItem from './UserListItem'
-import { colors } from '../../theme'
 // TODO Support MST (https://mobx-react.js.org/)
 import { useSelector } from 'react-redux'
 import styles from './styles'
@@ -27,7 +26,7 @@ export default createScreen('Dashboard', () => {
 
   return (
     <View style={styles.FULL}>
-      <Screen style={styles.CONTAINER} preset="scroll" backgroundColor={colors.background}>
+      <Screen style={styles.CONTAINER} preset="scroll" >
         <Header
           headerTx="dashboardScreen.howTo"
           leftIcon="back"
