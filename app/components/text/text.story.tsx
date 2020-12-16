@@ -5,14 +5,14 @@ import * as React from 'react'
 import { View, ViewStyle } from 'react-native'
 import { storiesOf } from '@storybook/react-native'
 import { StoryScreen, Story, UseCase } from '../../../storybook/views'
-import { color } from '../../theme'
+import { colors } from '../../theme'
 import { Text } from './text'
 
-declare var module
+declare let module
 
 const VIEWSTYLE = {
   flex: 1,
-  backgroundColor: color.storybookDarkBg,
+  backgroundColor: colors.storybookDarkBg,
 }
 const viewStyleArray: ViewStyle[] = [VIEWSTYLE, { backgroundColor: '#7fff00' }]
 

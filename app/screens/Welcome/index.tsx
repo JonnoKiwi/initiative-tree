@@ -1,10 +1,9 @@
 import React from 'react'
-import { Button } from 'native-base'
-import { View, Image, SafeAreaView } from 'react-native'
+import { View, SafeAreaView, Image } from 'react-native'
+import { Button } from 'react-native-paper'
 import { useNavigation } from '@react-navigation/native'
-import { Header, Screen, Text, Wallpaper, Button as ButtonHydrogen } from '../../components'
+import { Header, Screen, Text } from '../../components'
 import createScreen from '../createScreen'
-import { color } from '../../theme'
 import styles from './styles'
 const logo = require('./tree.png')
 
@@ -23,8 +22,7 @@ export default createScreen('Welcome', (props) => {
 
   return (
     <View style={styles.FULL}>
-      <Wallpaper />
-      <Screen style={styles.CONTAINER} preset="scroll" backgroundColor={color.transparent}>
+      <Screen style={styles.CONTAINER} preset="scroll" >
         <Header
           headerTx="welcomeScreen.poweredBy"
           style={styles.HEADER}
@@ -42,10 +40,9 @@ export default createScreen('Welcome', (props) => {
       </Screen>
       <SafeAreaView style={styles.FOOTER}>
         <View style={styles.FOOTER_CONTENT}>
-          <Button primary full onPress={nextScreen}>
+          <Button mode="contained" onPress={nextScreen}>
             <Text tx="welcomeScreen.continue" />
           </Button>
-          <ButtonHydrogen tx="welcomeScreen.continue" onPress={nextScreen} />
         </View>
       </SafeAreaView>
     </View>

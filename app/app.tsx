@@ -11,7 +11,7 @@
  */
 import './i18n'
 import './utils/ignore-warnings'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { NavigationContainerRef } from '@react-navigation/native'
 import { SafeAreaProvider, initialWindowSafeAreaInsets } from 'react-native-safe-area-context'
 import { initFonts } from './theme/fonts'
@@ -23,9 +23,8 @@ import {
   setRootNavigation,
   useNavigationPersistence,
 } from './navigation'
-import { RootStore, RootStoreProvider, setupRootStore } from './state'
-
-import withTheme from './theming/withTheme'
+import { withRootState } from './state'
+import { addThemeContext } from './theming'
 
 // This puts screens in a native ViewController or Activity. If you want fully native
 // stack navigation, use `createNativeStackNavigator` in place of `createStackNavigator`:
@@ -41,7 +40,6 @@ export const NAVIGATION_PERSISTENCE_KEY = 'NAVIGATION_STATE'
  */
 function App() {
   const navigationRef = useRef<NavigationContainerRef>()
-  const [rootStore, setRootStore] = useState<RootStore | undefined>(undefined)
 
   setRootNavigation(navigationRef)
   useBackButtonHandler(navigationRef, canExit)
@@ -54,30 +52,19 @@ function App() {
   useEffect(() => {
     ;(async () => {
       await initFonts()
-      const store = await setupRootStore()
-      setRootStore(store)
     })()
   }, [])
 
-  // Before we show the app, we have to wait for our state to be ready.
-  // In the meantime, don't render anything. This will be the background
-  // color set in native by rootView's background color. You can replace
-  // with your own loading component if you wish.
-  // TODO Make a Loading Screen view that works for both Expo and React Native
-  if (!rootStore) return null
-
   // otherwise, we're ready to render the app
   return (
-    <RootStoreProvider store={rootStore}>
-      <SafeAreaProvider initialSafeAreaInsets={initialWindowSafeAreaInsets}>
-        <RootNavigator
-          ref={navigationRef}
-          initialState={initialNavigationState}
-          onStateChange={onNavigationStateChange}
-        />
-      </SafeAreaProvider>
-    </RootStoreProvider>
+    <SafeAreaProvider initialSafeAreaInsets={initialWindowSafeAreaInsets}>
+      <RootNavigator
+        ref={navigationRef}
+        initialState={initialNavigationState}
+        onStateChange={onNavigationStateChange}
+      />
+    </SafeAreaProvider>
   )
 }
 
-export default withTheme(App)
+export default withRootState(addThemeContext(App))

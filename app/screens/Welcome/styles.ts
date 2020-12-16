@@ -1,13 +1,13 @@
 import { ViewStyle, TextStyle, ImageStyle } from 'react-native'
-import { color, spacing, typography } from '../../theme'
+import { colors, spacing, typography } from '../../theme'
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
-  backgroundColor: color.transparent,
+  backgroundColor: colors.transparent,
   paddingHorizontal: spacing[4],
 }
 const TEXT: TextStyle = {
-  color: color.palette.white,
+  color: colors.palette.white,
   fontFamily: typography.primary,
 }
 const BOLD: TextStyle = { fontWeight: 'bold' }
@@ -48,7 +48,6 @@ const TREE: ImageStyle = {
 }
 const CONTENT: TextStyle = {
   ...TEXT,
-  color: '#BAB6C8',
   fontSize: 15,
   lineHeight: 22,
   marginBottom: spacing[5],
@@ -64,7 +63,7 @@ const CONTINUE_TEXT: TextStyle = {
   fontSize: 13,
   letterSpacing: 2,
 }
-const FOOTER: ViewStyle = { backgroundColor: '#20162D' }
+const FOOTER: ViewStyle = { backgroundColor: colors.surface }
 const FOOTER_CONTENT: ViewStyle = {
   paddingVertical: spacing[4],
   paddingHorizontal: spacing[4],
