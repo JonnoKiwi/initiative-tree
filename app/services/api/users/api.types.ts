@@ -6,6 +6,8 @@ import { GeneralApiProblem } from '../api-problem'
 export interface User {
   id: number
   name: string
+  initiative: number
+  avatar: any
 }
 
 export type GetListResult = { kind: 'ok'; data: User[] } | GeneralApiProblem

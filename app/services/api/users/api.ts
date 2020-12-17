@@ -12,7 +12,9 @@ const DATA_KEY = 'results'
  */
 export const _mutateUser = (value) => {
   return {
-    ...value,
+    name: value.name.first,
+    initiative: value.initiative || 20,
+    avatar: value.picture,
     id: value.id.value || '123434-234235453-ert342',
   }
 }
