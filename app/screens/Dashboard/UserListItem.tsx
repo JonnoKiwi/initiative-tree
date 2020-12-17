@@ -4,7 +4,7 @@ import { ViewStyle } from 'react-native'
 const avatarStyle: ViewStyle = {
   marginRight: 24,
 }
-export default function UserListItem({ name, initiative, avatar }) {
+export default function UserListItem({ id, name, initiative, avatar, onPress }) {
   const { colors } = useTheme()
   return (
     <List.Item
@@ -16,10 +16,10 @@ export default function UserListItem({ name, initiative, avatar }) {
       )}
       right={() => (
         <IconButton
-          icon="menu"
+          icon="dots-vertical"
           color={colors.primary}
           size={20}
-          onPress={() => console.log('Pressed')}
+          onPress={() => onPress({ name, initiative, avatar, id })}
         />
       )}
     />
