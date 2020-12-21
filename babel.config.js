@@ -26,9 +26,11 @@ module.exports = function (api) {
     ['@babel/plugin-proposal-optional-catch-binding'],
   ]
   return {
-    presets: ['module:metro-react-native-babel-preset'],
+    presets: ['babel-preset-expo'],
     env: {
-      production: {},
+      production: {
+        plugins: ['react-native-paper/babel']
+      },
     },
     plugins,
   }
