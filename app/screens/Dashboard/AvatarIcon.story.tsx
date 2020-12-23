@@ -17,7 +17,7 @@ storiesOf('AvatarIcon', module)
   .add('With a defined avatar', () => (
     <Story>
       <UseCase text="All Properties" usage="The primary button.">
-        <AvatarIcon icon={{ thumbnail: "https://randomuser.me/api/portraits/thumb/men/7.jpg" }} />
+        <AvatarIcon avatar={{ thumbnail: "https://randomuser.me/api/portraits/thumb/men/7.jpg" }} />
       </UseCase>
     </Story>
   ))

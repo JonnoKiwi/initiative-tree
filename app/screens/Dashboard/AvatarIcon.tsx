@@ -6,8 +6,8 @@ const defaultImage = require('./default-avatar.png')
 const avatarStyle: ViewStyle = {
   marginRight: 24,
 }
-export default function AvatarIcon({ icon }) {
-  const image = (icon === undefined) ? defaultImage : { uri: icon.thumbnail }
+export default function AvatarIcon({ avatar }) {
+  const image = (avatar === undefined) ? defaultImage : { uri: avatar.thumbnail }
 
   return (
     <Avatar.Image theme={ theme } source={ image } size={48} style={avatarStyle} />
