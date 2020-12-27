@@ -23,9 +23,9 @@ export default createScreen('Welcome', (props) => {
   )
   const nextScreen = async () => {
     await loadUsers()
+    await loadCharacters()
     navigation.navigate('Dashboard')
   }
-  loadCharacters()
   return (
     <View style={styles.FULL}>
       <Screen style={styles.CONTAINER} preset="scroll" >

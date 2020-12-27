@@ -22,6 +22,7 @@ export default createScreen('Dashboard', (props) => {
   const navigation = useNavigation()
   const [isMessageVisible, setIsMessageVisible] = React.useState(false)
   const [message, setMessage] = React.useState('')
+  const [isFABOpen, setIsFABOpen] = React.useState(false)
   const goBack = () => navigation.goBack()
   const openCharacter = (item: Character) => {
     setMessage(`${item.name} will soon have a separate screen`)
@@ -37,8 +38,9 @@ export default createScreen('Dashboard', (props) => {
   }
 
   const characters = useSelector((state) => state.characters.data)
-  const createCombat = () => {
-    setMessage(`coming soon and will reset the rolls and initiatives`)
+  const createCombat = async () => {
+    await props.resetRolls()
+    setMessage(`New Combat started. Rolls and initiative reset.`)
     setIsMessageVisible(true)
   }
 
@@ -56,11 +58,28 @@ export default createScreen('Dashboard', (props) => {
         <Text style={styles.TAGLINE} tx="dashboardScreen.tagLine" />
         <CharactersRolls onEditCharacter={openCharacter} data={characters} onChange={onRollChange} />
       </Screen>
-      <FAB
-        style={FABStyles.fab}
-        icon="plus"
-        onPress={createCombat}
-      />
+      <Portal>
+        <FAB.Group
+          open={isFABOpen}
+          icon={isFABOpen ? 'minus' : 'plus'}
+          onStateChange={({ open }) => setIsFABOpen(open)}
+          actions={[
+            {
+              icon: 'fencing',
+              label: 'Combat',
+              onPress: createCombat
+            },
+            {
+              icon: 'account-plus',
+              label: 'Character',
+              onPress: () => {
+                setMessage('Ability to create Characters is coming soon')
+                setIsMessageVisible(true)
+              }
+            }
+          ]}
+        />
+      </Portal>
       <Portal>
         <Snackbar
           visible={isMessageVisible}

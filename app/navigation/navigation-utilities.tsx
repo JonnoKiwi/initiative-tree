@@ -98,7 +98,7 @@ export function useNavigationPersistence(storage: any, persistenceKey: string) {
     const previousRouteName = routeNameRef.current
     const currentRouteName = getActiveRouteName(state)
 
-    if (previousRouteName !== currentRouteName) {
+    if (previousRouteName !== currentRouteName && console.tron) {
       // track screens.
       __DEV__ && console.tron.log(currentRouteName)
     }

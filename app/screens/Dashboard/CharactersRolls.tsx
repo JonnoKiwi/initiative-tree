@@ -22,6 +22,7 @@ export const CharacterRoll = (props) => {
       )}
       right={() => (
         <TextInput
+          value={'' + character.roll}
           onChangeText={(value) => {
             value = value.replace(/[^\d-]/g, '')
             onRollChange({ newRoll: value, character })

@@ -62,11 +62,62 @@ const DEFAULT_DATA: Types.Character[] = [
 ].map((entity) => ({ ...entity, initiative: calculateInitiative(entity) }))
 
 /**
+ * Warning this is not performant. We should use an alternative in-memory database.
+ */
+class Server {
+  storage: Types.Character[]
+
+  constructor() {
+    this.reset()
+  }
+
+  getItems () {
+    return {
+      data: sortByName(this.storage)
+    }
+  }
+
+  updateItem(data) {
+    // Ensure roll is a number
+    data.roll = R.is(String, data.roll) ? parseInt(data.roll) : (R.is(Number, data.roll) ? data.roll : 0)
+    const changedItem = this.storage.find(entity => data.id === entity.id)
+    const mergedItem = {
+      ...changedItem,
+      ...data
+    }
+    this.storage = [
+      // Replace existing
+      ...this.storage.filter(entity => changedItem.id !== entity.id) || [],
+      ...[{
+        ...mergedItem,
+        initiative: calculateInitiative(mergedItem)
+      }]
+    ]
+    return {
+      data: this.storage.find(entity => data.id === entity.id)
+    }
+  }
+
+  updateItems(data) {
+    data.forEach((item) => {
+      this.updateItem(item)
+    })
+    return {
+      data: sortByName(this.storage)
+    }
+  }
+
+  reset() {
+    this.storage = DEFAULT_DATA
+  }
+}
+
+/**
  * Manages all requests to the API.
  * TODO Generator for APIs. We may need to connect to different APIs
  */
 export class ApiFake implements SagaSauceAPI, HydrogenAPI {
-  storage: Types.Character[]
+  server: Server
   /**
    * The underlying apisauce instance which performs the requests.
    */
@@ -94,13 +145,13 @@ export class ApiFake implements SagaSauceAPI, HydrogenAPI {
    * Be as quick as possible in here.
    */
   setup() {
-    this.storage = DEFAULT_DATA
+    this.server = new Server()
   }
 
   /* ----- Existing SagaSauce API Structure. There is much to improve though so make it your own. Very much a work in-progress ---- */
   getData = async (data) => {
     try {
-      return { ok: true, kind: 'ok', data: { data: sortByName(this.storage) } }
+      return { ok: true, kind: 'ok', data: this.server.getItems() }
     } catch {
       return { ok: false, kind: 'bad-data' }
     }
@@ -110,24 +161,14 @@ export class ApiFake implements SagaSauceAPI, HydrogenAPI {
     throw new Error('Not implemented')
   }
 
-  updateData = async (data) => {
-    data.roll = R.is(String, data.roll) ? parseInt(data.roll) : (R.is(Number, data.roll) ? data.roll : 0)
-    const changedItem = this.storage.find(entity => data.id === entity.id)
-    const mergedItem = {
-      ...changedItem,
-      ...data
-    }
-    this.storage = sortByName([
-      ...this.storage.filter(entity => changedItem.id !== entity.id) || [],
-      ...[{
-        ...mergedItem,
-        initiative: calculateInitiative(mergedItem)
-      }]
-    ])
-    return { ok: true, kind: 'ok', data: { data: this.storage } }
-  }
-
   deleteData = async (data) => {
     throw new Error('Not implemented')
+  }
+
+  updateData = async (data) => {
+    if (!R.is(Array, data)) {
+      data = [data]
+    }
+    return { ok: true, kind: 'ok', data: this.server.updateItems(data) }
   }
 }
