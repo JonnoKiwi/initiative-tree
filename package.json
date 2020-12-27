@@ -21,7 +21,8 @@
     "prepare": "npm-run-all patch hack:*",
     "storybook": "start-storybook -p 9001 -c ./storybook",
     "test": "jest",
-    "adb": "adb reverse tcp:9090 tcp:9090 && adb reverse tcp:3000 tcp:3000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:8081 tcp:8081"
+    "adb": "adb reverse tcp:9090 tcp:9090 && adb reverse tcp:3000 tcp:3000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:8081 tcp:8081",
+    "cache:clear": "rm -rf node_modules/.cache/babel-loader/* && rm -rf node_modules/.cache/storybook/* && rm -rf .expo/web/cache"
   },
   "dependencies": {
     "@delvefore/sagasauce": "^1.1.0",
@@ -42,7 +43,9 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.0.tar.gz",
+    "react-native-dotenv": "^2.4.3",
     "react-native-gesture-handler": "~1.8.0",
+    "react-native-get-random-values": "^1.5.0",
     "react-native-keychain": "^6.2.0",
     "react-native-paper": "^4.4.1",
     "react-native-reanimated": "~1.13.0",
