@@ -7,12 +7,14 @@ import { ApiConfig, HydrogenAPI, SagaSauceAPI } from '../IHydrogenAPI'
 const DATA_KEY = 'results'
 
 /**
- * TODO Return using User type
  * @param value
  */
-export const _mutateEntity = (value): Types.User => {
+export const _mutateEntity = (value): Types.Character => {
   return {
+    roll: 0,
+    user: null,
     name: value.name.first,
+    initiative: value.initiative || 0,
     avatar: value.picture,
     id: value.id.value
   }
@@ -73,7 +75,7 @@ export class Api implements SagaSauceAPI, HydrogenAPI {
     // transform the data into the format we are expecting
     try {
       const rawList = response.data[DATA_KEY]
-      const result: Types.User[] = rawList.map(_mutateEntity)
+      const result: Types.Character[] = rawList.map(_mutateEntity)
       return { ok: true, kind: 'ok', data: { data: result } }
     } catch {
       return { ok: false, kind: 'bad-data' }
