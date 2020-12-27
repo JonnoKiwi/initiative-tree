@@ -3,43 +3,44 @@ import { View, StyleSheet } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Text, Header, Screen } from '../../components'
 import createScreen from '../createScreen'
-import { Dialog, List, Portal, FAB } from 'react-native-paper'
-import UserListItem from './UserListItem'
+import { Portal, FAB, Snackbar } from 'react-native-paper'
 import { useSelector } from 'react-redux'
 import styles from './styles'
-import { User } from '../../services/api/users'
 import CharactersRolls from './CharactersRolls'
-
-const renderUser = (item: User, index, onPress) => {
-  return <UserListItem
-    id={item.id}
-    key={index}
-    name={item.name}
-    initiative={item.initiative}
-    avatar={item.avatar}
-    onPress={onPress}
-  />
-}
+import { Character } from '../../state/Models'
 
 const FABStyles = StyleSheet.create({
   fab: {
-    position: 'absolute',
-    margin: 16,
-    right: 0,
     bottom: 0,
+    margin: 16,
+    position: 'absolute',
+    right: 0,
   },
 })
 
-export default createScreen('Dashboard', () => {
+export default createScreen('Dashboard', (props) => {
   const navigation = useNavigation()
+  const [isMessageVisible, setIsMessageVisible] = React.useState(false)
+  const [message, setMessage] = React.useState('')
   const goBack = () => navigation.goBack()
-  const openCharacter = (item: User) => {
-    console.log(item.name)
+  const openCharacter = (item: Character) => {
+    setMessage(`${item.name} will soon have a separate screen`)
+    setIsMessageVisible(true)
   }
-  const [isDialogVisible, setIsDialogVisible] = React.useState(false)
-  const renderUserAdapter = (item, index) => renderUser(item, index, openCharacter)
+  const onRollChange = ({ newRoll, character }) => {
+    setMessage(`${character.name} roll changed to ${newRoll}`)
+    setIsMessageVisible(true)
+    props.updateCharacters({
+      ...character,
+      roll: newRoll
+    })
+  }
 
-  const users = useSelector((state) => state.users.data)
+  const characters = useSelector((state) => state.characters.data)
+  const createCombat = () => {
+    setMessage(`coming soon and will reset the rolls and initiatives`)
+    setIsMessageVisible(true)
+  }
 
   return (
     <View style={styles.FULL}>
@@ -53,22 +54,21 @@ export default createScreen('Dashboard', () => {
         />
         <Text style={styles.TITLE} preset="header" tx="dashboardScreen.title" />
         <Text style={styles.TAGLINE} tx="dashboardScreen.tagLine" />
-        <Portal>
-          <FAB
-            style={FABStyles.fab}
-            icon="plus"
-            onPress={() => setIsDialogVisible(true)}
-          />
-        </Portal>
-        <List.Section>{users.map(renderUserAdapter)}</List.Section>
-        <Portal>
-          <Dialog visible={isDialogVisible} onDismiss={() => setIsDialogVisible(false)}>
-            <Dialog.Content>
-              <CharactersRolls users={users} />
-            </Dialog.Content>
-          </Dialog>
-        </Portal>
+        <CharactersRolls onEditCharacter={openCharacter} data={characters} onChange={onRollChange} />
       </Screen>
+      <FAB
+        style={FABStyles.fab}
+        icon="plus"
+        onPress={createCombat}
+      />
+      <Portal>
+        <Snackbar
+          visible={isMessageVisible}
+          onDismiss={() => setIsMessageVisible(false)}
+        >
+          {message}
+        </Snackbar>
+      </Portal>
     </View>
   )
 })

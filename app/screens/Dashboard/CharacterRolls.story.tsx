@@ -2,25 +2,42 @@ import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 import { StoryScreen, Story, UseCase } from '../../../storybook/views'
 import CharactersRolls, { CharacterRoll } from './CharactersRolls'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import { State, Store } from "@sambego/storybook-state"
+import { action } from '@storybook/addon-actions'
+import { Character } from '../../state/Models'
 
-declare var module
-const store = new Store({
+declare let module
+type InitialState = {
+  roll: string
+  characters: Character[]
+}
+const initialState: InitialState = {
   roll: '',
-  users: [
+  characters: [
     {
-      name: "Dirgy",
-      roll: "18",
-      avatar: { thumbnail: "https://randomuser.me/api/portraits/thumb/men/7.jpg" }
+      id: '1',
+      name: 'Dirgy',
+      roll: 18,
+      dexterity: 14,
+      modifiers: 2,
+      initiative: 0,
+      avatar: { thumbnail: "https://randomuser.me/api/portraits/thumb/men/7.jpg" },
+      user: null
     },
     {
-      name: "Intel",
-      roll: "15",
-      avatar: { thumbnail: "https://randomuser.me/api/portraits/thumb/men/8.jpg" }
+      id: '2',
+      name: 'Intel',
+      roll: 18,
+      dexterity: 14,
+      modifiers: 2,
+      initiative: 0,
+      avatar: { thumbnail: "https://randomuser.me/api/portraits/thumb/men/8.jpg" },
+      user: null
     }
   ]
-})
+}
+const store = new Store(initialState)
 
 storiesOf('CharacterRoll', module)
   .addDecorator((fn) => <StoryScreen>{fn()}</StoryScreen>)
@@ -31,10 +48,9 @@ storiesOf('CharacterRoll', module)
           {(state) => (
             <View>
               <CharacterRoll
-                name="Dirgy"
+                character={state.characters[0]}
                 roll={state.roll}
-                onRollChange={(roll) => store.set({roll})}
-                avatar={{ thumbnail: "https://randomuser.me/api/portraits/thumb/men/7.jpg" }}
+                onRollChange={(roll) => store.set({ roll })}
               />
             </View>
           )}
@@ -52,11 +68,10 @@ storiesOf('CharactersRolls', module)
           {(state) => (
             <View>
               <CharactersRolls
-                users={state.users}
+                data={state.characters}
+                onChange={action('Roll Changed')}
+                onEditCharacter={action('Character Edit click')}
               />
-              <Text>
-                Roll {state.roll}
-              </Text>
             </View>
           )}
         </State>
