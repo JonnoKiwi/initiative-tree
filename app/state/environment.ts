@@ -1,4 +1,4 @@
-import { useReactotron } from '../config/env'
+import { useReactotron } from '@env'
 import { Api } from '../services/api'
 
 let ReactotronDev
