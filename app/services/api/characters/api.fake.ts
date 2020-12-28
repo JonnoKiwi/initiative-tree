@@ -5,7 +5,7 @@ import { ApiConfig, HydrogenAPI, SagaSauceAPI } from '../IHydrogenAPI'
 import R from 'ramda'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-const sortBy = R.sortBy(R.prop('name'))
+const sortBy = R.sortBy(R.prop('initiative'))
 
 export const ensureNumber = (value: any): number => {
   if (R.is(String, value)) {
@@ -73,9 +73,14 @@ class Server {
   }
 
   async updateItem(data) {
+    // BUSINESS RULES
+    // Validation
+    data.roll = ensureNumber(data.roll)
+    // initiative is calculated on server and the clients cannot set it manually
+    data = R.omit(['initiative'], data)
+
+    // DATA UPDATES
     const list = await this._getItemsFromStorage()
-    // Ensure roll is a number
-    data.roll = R.is(String, data.roll) ? parseInt(data.roll) : (R.is(Number, data.roll) || !Number.isNaN(data.roll) ? data.roll : 0)
     const changedItem = list.find(entity => data.id === entity.id)
     const mergedItem = {
       ...changedItem,
@@ -86,7 +91,7 @@ class Server {
       ...list.filter(entity => changedItem.id !== entity.id) || [],
       ...[{
         ...mergedItem,
-        initiative: calculateInitiative(mergedItem)
+        initiative: calculateInitiative(mergedItem) // business rule
       }]
     ]
     await AsyncStorage.setItem(this.getStorageKey(), JSON.stringify(newList))

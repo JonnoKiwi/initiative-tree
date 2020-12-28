@@ -1,4 +1,5 @@
-import { ensureNumber } from './api.fake'
+import { calculateInitiative, ensureNumber } from './api.fake'
+import { Character } from './api.types'
 
 describe('Characters API > Fake', () => {
   describe('Methods', () => {
@@ -19,6 +20,23 @@ describe('Characters API > Fake', () => {
         expect(ensureNumber(undefined)).toEqual(0)
         expect(ensureNumber(NaN)).toEqual(0)
         expect(ensureNumber(null)).toEqual(0)
+      })
+    })
+    describe('calculateInitiative()', () => {
+      it('returns expected total for modifiers + roll + dexterity and does not change the property value', () => {
+        const character: Character = {
+          id: '11111-111111-11111-11111',
+          initiative: 15,
+          roll: 5,
+          dexterity: 12,
+          modifiers: 18,
+          name: 'Dirby',
+          avatar: {
+            thumbnail: 'https://randomuser.me/api/portraits/thumb/men/1.jpg'
+          }
+        }
+        expect(calculateInitiative(character)).toEqual(35)
+        expect(character.initiative).toEqual(15)
       })
     })
   })
