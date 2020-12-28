@@ -3,32 +3,38 @@ import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Text, Header, Screen } from '../../components'
 import createScreen from '../createScreen'
-import { List } from 'react-native-paper'
-import UserListItem from './UserListItem'
+import { Portal, FAB, Snackbar } from 'react-native-paper'
 import { useSelector } from 'react-redux'
 import styles from './styles'
-import { User } from "../../services/api/users"
+import CharactersRolls from './CharactersRolls'
+import { Character } from '../../state/Models'
 
-const renderUser = (item: User, index, onPress) => {
-  return <UserListItem
-    id={item.id}
-    key={index}
-    name={item.name}
-    initiative={item.initiative}
-    avatar={item.avatar}
-    onPress={onPress}
-  />
-}
-
-export default createScreen('Dashboard', () => {
+export default createScreen('Dashboard', (props) => {
   const navigation = useNavigation()
-  const goBack = () => navigation.goBack()
-  const openCharacter = (item: User) => {
-    console.log(item.name)
+  const [isMessageVisible, setIsMessageVisible] = React.useState(false)
+  const [message, setMessage] = React.useState('')
+  const [isFABOpen, setIsFABOpen] = React.useState(false)
+  const showMessage = (message) => {
+    setMessage(message)
+    setIsMessageVisible(true)
   }
-  const renderUserAdapter = (item, index) => renderUser(item, index, openCharacter)
+  const goBack = () => navigation.goBack()
+  const openCharacter = (item: Character) => {
+    showMessage(`${item.name} will soon have a separate screen`)
+  }
+  const onRollChange = ({ newRoll, character }) => {
+    showMessage(`${character.name} roll changed to ${newRoll}`)
+    props.updateCharacters({
+      ...character,
+      roll: newRoll
+    })
+  }
 
-  const users = useSelector((state) => state.users.data)
+  const characters = useSelector((state) => state.characters.data)
+  const createCombat = async () => {
+    await props.resetRolls()
+    showMessage(`New Combat started. Rolls and initiative reset.`)
+  }
 
   return (
     <View style={styles.FULL}>
@@ -42,8 +48,40 @@ export default createScreen('Dashboard', () => {
         />
         <Text style={styles.TITLE} preset="header" tx="dashboardScreen.title" />
         <Text style={styles.TAGLINE} tx="dashboardScreen.tagLine" />
-        <List.Section>{users.map(renderUserAdapter)}</List.Section>
+        <CharactersRolls onEditCharacter={openCharacter} data={characters} onChange={onRollChange} />
       </Screen>
+      <FAB.Group
+        open={isFABOpen}
+        icon={isFABOpen ? 'minus' : 'plus'}
+        onStateChange={({ open }) => setIsFABOpen(open)}
+        actions={[
+          {
+            icon: 'fencing',
+            label: 'Combat',
+            onPress: createCombat
+          },
+          {
+            icon: 'account-plus',
+            label: 'Character',
+            onPress: () => {
+              setMessage('Ability to create Characters is coming soon')
+              setIsMessageVisible(true)
+            }
+          }
+        ]}
+      />
+      <Portal>
+        <Snackbar
+          visible={isMessageVisible}
+          onDismiss={() => setIsMessageVisible(false)}
+          action={{
+            label: 'OK',
+            onPress: () => setIsMessageVisible(false)
+          }}
+        >
+          {message}
+        </Snackbar>
+      </Portal>
     </View>
   )
 })

@@ -2,7 +2,6 @@
  * TODO Test Boilerplate code
  */
 import { Environment } from './environment'
-jest.mock('../config/env', () => ({}))
 describe('Environment', () => {
   describe('setup()', () => {
     test('api is setup', async () => {
