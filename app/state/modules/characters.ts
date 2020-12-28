@@ -53,7 +53,6 @@ const SagaGenerators = {
     )
     if (response.ok) {
       const data = R.path(['data', 'data'], response)
-      console.log(data)
       yield put(Creators.updateDataSuccess(data))
     } else {
       yield put(

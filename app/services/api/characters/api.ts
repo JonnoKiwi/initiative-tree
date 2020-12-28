@@ -11,8 +11,9 @@ const DATA_KEY = 'results'
  */
 export const _mutateEntity = (value): Types.Character => {
   return {
+    dexterity: 0,
+    modifiers: 0,
     roll: 0,
-    user: null,
     name: value.name.first,
     initiative: value.initiative || 0,
     avatar: value.picture,

@@ -58,32 +58,34 @@ export default createScreen('Dashboard', (props) => {
         <Text style={styles.TAGLINE} tx="dashboardScreen.tagLine" />
         <CharactersRolls onEditCharacter={openCharacter} data={characters} onChange={onRollChange} />
       </Screen>
-      <Portal>
-        <FAB.Group
-          open={isFABOpen}
-          icon={isFABOpen ? 'minus' : 'plus'}
-          onStateChange={({ open }) => setIsFABOpen(open)}
-          actions={[
-            {
-              icon: 'fencing',
-              label: 'Combat',
-              onPress: createCombat
-            },
-            {
-              icon: 'account-plus',
-              label: 'Character',
-              onPress: () => {
-                setMessage('Ability to create Characters is coming soon')
-                setIsMessageVisible(true)
-              }
+      <FAB.Group
+        open={isFABOpen}
+        icon={isFABOpen ? 'minus' : 'plus'}
+        onStateChange={({ open }) => setIsFABOpen(open)}
+        actions={[
+          {
+            icon: 'fencing',
+            label: 'Combat',
+            onPress: createCombat
+          },
+          {
+            icon: 'account-plus',
+            label: 'Character',
+            onPress: () => {
+              setMessage('Ability to create Characters is coming soon')
+              setIsMessageVisible(true)
             }
-          ]}
-        />
-      </Portal>
+          }
+        ]}
+      />
       <Portal>
         <Snackbar
           visible={isMessageVisible}
           onDismiss={() => setIsMessageVisible(false)}
+          action={{
+            label: 'OK',
+            onPress: () => setIsMessageVisible(false)
+          }}
         >
           {message}
         </Snackbar>

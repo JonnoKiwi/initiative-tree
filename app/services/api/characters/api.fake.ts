@@ -2,10 +2,10 @@ import { ApisauceInstance } from 'apisauce'
 import { DEFAULT_API_CONFIG } from './api-config'
 import * as Types from './api.types'
 import { ApiConfig, HydrogenAPI, SagaSauceAPI } from '../IHydrogenAPI'
-import { User } from '../../../state/Models'
 import R from 'ramda'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
-const sortByName = R.sortBy(R.prop('name'))
+const sortBy = R.sortBy(R.prop('name'))
 
 export const ensureNumber = (value: any): number => {
   if (R.is(String, value)) {
@@ -17,23 +17,6 @@ export const calculateInitiative = (entity: Types.Character): number => {
   return ensureNumber(entity.roll) + ensureNumber(entity.modifiers) + ensureNumber(entity.dexterity)
 }
 
-const USERS: User[] = [
-  {
-    id: '435-dfgs-323425',
-    name: 'Jonno Arcus',
-    avatar: {
-      thumbnail: 'https://randomuser.me/api/portraits/thumb/men/2.jpg'
-    }
-  },
-  {
-    id: '435-35643-323425',
-    name: 'John Bailey',
-    avatar: {
-      thumbnail: 'https://randomuser.me/api/portraits/thumb/men/7.jpg'
-    }
-  }
-]
-
 const DEFAULT_DATA: Types.Character[] = [
   {
     id: '11111-111111-11111-11111',
@@ -42,7 +25,6 @@ const DEFAULT_DATA: Types.Character[] = [
     dexterity: 12,
     modifiers: 18,
     name: 'Dirby',
-    user: USERS[0],
     avatar: {
       thumbnail: 'https://randomuser.me/api/portraits/thumb/men/1.jpg'
     }
@@ -54,7 +36,6 @@ const DEFAULT_DATA: Types.Character[] = [
     dexterity: 6,
     modifiers: 2,
     name: 'Yamanu',
-    user: USERS[1],
     avatar: {
       thumbnail: 'https://randomuser.me/api/portraits/thumb/women/80.jpg'
     }
@@ -66,49 +47,69 @@ const DEFAULT_DATA: Types.Character[] = [
  */
 class Server {
   storage: Types.Character[]
+  storageNamespace: string
+  storageKey: string
 
   constructor() {
-    this.reset()
+    this.storageNamespace = '@initiative-tree'
+    this.storageKey = 'characters'
+    this.warm()
   }
 
-  getItems () {
+  getStorageKey (): string {
+    return `${this.storageNamespace}:${this.storageKey}`
+  }
+
+  async _getItemsFromStorage(): Promise<Types.Character[]> {
+    const jsonValue = await AsyncStorage.getItem(this.getStorageKey())
+    return jsonValue != null ? JSON.parse(jsonValue) : []
+  }
+
+  async getItems () {
+    const list = await this._getItemsFromStorage()
     return {
-      data: sortByName(this.storage)
+      data: sortBy(list)
     }
   }
 
-  updateItem(data) {
+  async updateItem(data) {
+    const list = await this._getItemsFromStorage()
     // Ensure roll is a number
-    data.roll = R.is(String, data.roll) ? parseInt(data.roll) : (R.is(Number, data.roll) ? data.roll : 0)
-    const changedItem = this.storage.find(entity => data.id === entity.id)
+    data.roll = R.is(String, data.roll) ? parseInt(data.roll) : (R.is(Number, data.roll) || !Number.isNaN(data.roll) ? data.roll : 0)
+    const changedItem = list.find(entity => data.id === entity.id)
     const mergedItem = {
       ...changedItem,
       ...data
     }
-    this.storage = [
+    const newList = [
       // Replace existing
-      ...this.storage.filter(entity => changedItem.id !== entity.id) || [],
+      ...list.filter(entity => changedItem.id !== entity.id) || [],
       ...[{
         ...mergedItem,
         initiative: calculateInitiative(mergedItem)
       }]
     ]
+    await AsyncStorage.setItem(this.getStorageKey(), JSON.stringify(newList))
     return {
-      data: this.storage.find(entity => data.id === entity.id)
+      data: newList.find(entity => data.id === entity.id)
     }
   }
 
-  updateItems(data) {
-    data.forEach((item) => {
-      this.updateItem(item)
-    })
+  async updateItems(data) {
+    for (const item of data) {
+      await this.updateItem(item)
+    }
+    const list = await this._getItemsFromStorage()
     return {
-      data: sortByName(this.storage)
+      data: sortBy(list)
     }
   }
 
-  reset() {
-    this.storage = DEFAULT_DATA
+  async warm() {
+    const list = await this._getItemsFromStorage()
+    if (!list.length) {
+      await AsyncStorage.setItem(this.getStorageKey(), JSON.stringify(DEFAULT_DATA))
+    }
   }
 }
 
@@ -150,8 +151,9 @@ export class ApiFake implements SagaSauceAPI, HydrogenAPI {
 
   /* ----- Existing SagaSauce API Structure. There is much to improve though so make it your own. Very much a work in-progress ---- */
   getData = async (data) => {
+    const items = await this.server.getItems()
     try {
-      return { ok: true, kind: 'ok', data: this.server.getItems() }
+      return { ok: true, kind: 'ok', data: items }
     } catch {
       return { ok: false, kind: 'bad-data' }
     }
@@ -169,6 +171,7 @@ export class ApiFake implements SagaSauceAPI, HydrogenAPI {
     if (!R.is(Array, data)) {
       data = [data]
     }
-    return { ok: true, kind: 'ok', data: this.server.updateItems(data) }
+    const list = await this.server.updateItems(data)
+    return { ok: true, kind: 'ok', data: list }
   }
 }

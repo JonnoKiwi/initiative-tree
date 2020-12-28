@@ -21,7 +21,6 @@ export type Character = {
   modifiers: number
   dexterity: number
   avatar: Avatar
-  user: _User
 }
 
 export type User = _User

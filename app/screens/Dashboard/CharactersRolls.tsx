@@ -1,5 +1,5 @@
-import React from 'react'
-import { TextInput, List, Avatar } from 'react-native-paper'
+import React, { useState, useCallback, useEffect } from 'react'
+import { TextInput, List, Avatar, Text } from 'react-native-paper'
 import { ViewStyle } from 'react-native'
 import { Character } from '../../state/Models'
 
@@ -10,6 +10,18 @@ const avatarStyle: ViewStyle = {
 export const CharacterRoll = (props) => {
   const onRollChange = props.onRollChange
   const character: Character = props.character
+  const [value, setLocal] = useState(String(character.roll))
+  useEffect(
+    () => {
+      setLocal(String(character.roll))
+    },
+    [character.roll],
+  )
+  const onChange = useCallback((value) => {
+    const onlyNumbers = Number(value.replace(/[^\d-]/g, ''))
+    setLocal(String(onlyNumbers))
+    onRollChange({ newRoll: onlyNumbers, character })
+  }, [character.roll])
   return (
     <List.Item
       key={character.id}
@@ -22,11 +34,10 @@ export const CharacterRoll = (props) => {
       )}
       right={() => (
         <TextInput
-          value={'' + character.roll}
-          onChangeText={(value) => {
-            value = value.replace(/[^\d-]/g, '')
-            onRollChange({ newRoll: value, character })
-          }}
+          clearTextOnFocus
+          keyboardType='numeric'
+          value={value}
+          onChangeText={onChange}
         />
       )}
     />
@@ -39,10 +50,11 @@ export default function CharactersRolls (props) {
     onChange,
     onEditCharacter
   } = props
+  const list = data || []
   return (
-    <List.Section>
-      { data.map(
-        (item, index) => (
+    list.length ? <List.Section>
+      { list.map(
+        (item) => (
           <CharacterRoll
             key={item.id}
             onPress={onEditCharacter}
@@ -52,5 +64,6 @@ export default function CharactersRolls (props) {
         )
       )}
     </List.Section>
+      : <Text>No Characters</Text>
   )
 }
