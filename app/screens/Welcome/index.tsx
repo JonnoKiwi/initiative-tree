@@ -9,17 +9,23 @@ const logo = require('./tree.png')
 
 export default createScreen('Welcome', (props) => {
   const navigation = useNavigation()
-  const loadUser = React.useMemo(
+  const loadCharacters = React.useMemo(
+    () => async () => {
+      await props.getCharacters({ query: { results: 5 } })
+    },
+    [],
+  )
+  const loadUsers = React.useMemo(
     () => async () => {
       await props.getUsers({ query: { results: 5 } })
     },
     [],
   )
   const nextScreen = async () => {
-    await loadUser()
+    await loadUsers()
+    await loadCharacters()
     navigation.navigate('Dashboard')
   }
-
   return (
     <View style={styles.FULL}>
       <Screen style={styles.CONTAINER} preset="scroll" >

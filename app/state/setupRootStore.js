@@ -1,7 +1,7 @@
 import configureStore from './configureStore'
 import reducers from './reducers'
 import creatRootSagas from './sagas'
-import { useReactotron } from '../config/env'
+import { useReactotron } from '@env'
 import { combineReducers } from 'redux'
 import { createEnvironment } from './environment'
 
