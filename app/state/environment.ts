@@ -2,7 +2,7 @@ import { useReactotron } from '@env'
 import { Api } from '../services/api'
 
 let ReactotronDev
-if (useReactotron) {
+if (useReactotron === 'true') {
   const { Reactotron } = require('../services/reactotron')
   ReactotronDev = Reactotron
 }
