@@ -1,15 +1,15 @@
 import React from 'react'
-import { Avatar } from 'react-native-paper'
+import { Avatar as AvatarPaper } from 'react-native-paper'
 import { ViewStyle } from 'react-native'
 import theme from '../../theming/paper/theme'
 const defaultImage = require('./default-avatar.png')
 const avatarStyle: ViewStyle = {
   marginRight: 24,
 }
-export default function AvatarIcon({ avatar }) {
+export default function Avatar({ avatar }) {
   const image = (avatar === undefined) ? defaultImage : { uri: avatar.thumbnail }
 
   return (
-    <Avatar.Image theme={ theme } source={ image } size={48} style={avatarStyle} />
+    <AvatarPaper.Image theme={ theme } source={ image } size={48} style={avatarStyle} />
   )
 }

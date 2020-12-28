@@ -1,6 +1,6 @@
 import React from 'react'
 import { List, IconButton, useTheme } from 'react-native-paper'
-import AvatarIcon from './AvatarIcon'
+import Avatar from './Avatar'
 
 export default function UserListItem({ id, name, initiative, avatar, onPress }) {
   const { colors } = useTheme()
@@ -10,7 +10,7 @@ export default function UserListItem({ id, name, initiative, avatar, onPress }) 
       description={initiative}
       descriptionNumberOfLines={1}
       left={() => (
-        <AvatarIcon avatar={avatar} />
+        <Avatar avatar={avatar} />
       )}
       right={() => (
         <IconButton
