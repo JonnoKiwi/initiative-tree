@@ -632,7 +632,9 @@ exports[`Storyshots CharacterRoll Main 1`] = `
                     >
                       <TextInput
                         allowFontScaling={true}
+                        clearTextOnFocus={true}
                         editable={true}
+                        keyboardType="numeric"
                         multiline={false}
                         onBlur={[Function]}
                         onChangeText={[Function]}
@@ -672,6 +674,7 @@ exports[`Storyshots CharacterRoll Main 1`] = `
                           ]
                         }
                         underlineColorAndroid="transparent"
+                        value="18"
                       />
                     </View>
                   </View>
@@ -999,7 +1002,9 @@ exports[`Storyshots CharactersRolls Main 1`] = `
                       >
                         <TextInput
                           allowFontScaling={true}
+                          clearTextOnFocus={true}
                           editable={true}
+                          keyboardType="numeric"
                           multiline={false}
                           onBlur={[Function]}
                           onChangeText={[Function]}
@@ -1039,6 +1044,7 @@ exports[`Storyshots CharactersRolls Main 1`] = `
                             ]
                           }
                           underlineColorAndroid="transparent"
+                          value="18"
                         />
                       </View>
                     </View>
@@ -1208,7 +1214,9 @@ exports[`Storyshots CharactersRolls Main 1`] = `
                       >
                         <TextInput
                           allowFontScaling={true}
+                          clearTextOnFocus={true}
                           editable={true}
+                          keyboardType="numeric"
                           multiline={false}
                           onBlur={[Function]}
                           onChangeText={[Function]}
@@ -1248,6 +1256,7 @@ exports[`Storyshots CharactersRolls Main 1`] = `
                             ]
                           }
                           underlineColorAndroid="transparent"
+                          value="18"
                         />
                       </View>
                     </View>
