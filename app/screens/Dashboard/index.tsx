@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { Text, Header, Screen } from '../../components'
 import createScreen from '../createScreen'
@@ -9,28 +9,21 @@ import styles from './styles'
 import CharactersRolls from './CharactersRolls'
 import { Character } from '../../state/Models'
 
-const FABStyles = StyleSheet.create({
-  fab: {
-    bottom: 0,
-    margin: 16,
-    position: 'absolute',
-    right: 0,
-  },
-})
-
 export default createScreen('Dashboard', (props) => {
   const navigation = useNavigation()
   const [isMessageVisible, setIsMessageVisible] = React.useState(false)
   const [message, setMessage] = React.useState('')
   const [isFABOpen, setIsFABOpen] = React.useState(false)
-  const goBack = () => navigation.goBack()
-  const openCharacter = (item: Character) => {
-    setMessage(`${item.name} will soon have a separate screen`)
+  const showMessage = (message) => {
+    setMessage(message)
     setIsMessageVisible(true)
   }
+  const goBack = () => navigation.goBack()
+  const openCharacter = (item: Character) => {
+    showMessage(`${item.name} will soon have a separate screen`)
+  }
   const onRollChange = ({ newRoll, character }) => {
-    setMessage(`${character.name} roll changed to ${newRoll}`)
-    setIsMessageVisible(true)
+    showMessage(`${character.name} roll changed to ${newRoll}`)
     props.updateCharacters({
       ...character,
       roll: newRoll
@@ -40,8 +33,7 @@ export default createScreen('Dashboard', (props) => {
   const characters = useSelector((state) => state.characters.data)
   const createCombat = async () => {
     await props.resetRolls()
-    setMessage(`New Combat started. Rolls and initiative reset.`)
-    setIsMessageVisible(true)
+    showMessage(`New Combat started. Rolls and initiative reset.`)
   }
 
   return (
