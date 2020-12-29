@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar as AvatarPaper } from 'react-native-paper'
 import { ViewStyle } from 'react-native'
-import theme from '../../theming/paper/theme'
+import theme from '../../theme/paper/theme'
 import R from 'ramda'
 const defaultImage = require('./default-avatar.png')
 const avatarStyle: ViewStyle = {
