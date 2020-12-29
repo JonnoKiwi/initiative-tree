@@ -19,9 +19,7 @@ export default createScreen('Dashboard', (props) => {
     setIsMessageVisible(true)
   }
   const goBack = () => navigation.goBack()
-  const openCharacter = (item: Character) => {
-    showMessage(`${item.name} will soon have a separate screen`)
-  }
+  const openCharacter = () => navigation.navigate('Character')
   const onRollChange = ({ newRoll, character }) => {
     showMessage(`${character.name} roll changed to ${newRoll}`)
     props.updateCharacters({

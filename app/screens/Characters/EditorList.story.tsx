@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 import { StoryScreen, Story, UseCase } from '../../../storybook/views'
-import CharactersRolls, { CharacterRoll } from './CharactersRolls'
+import EditorList , { Editor } from './EditorList'
 import { View } from 'react-native'
 import { State, Store } from "@sambego/storybook-state"
 import { action } from '@storybook/addon-actions'
@@ -47,7 +47,7 @@ storiesOf('CharacterRoll', module)
         <State store={store}>
           {(state) => (
             <View>
-              <CharacterRoll
+              <Editor
                 character={state.characters[0]}
                 roll={state.roll}
                 onRollChange={(roll) => store.set({ roll })}
@@ -67,7 +67,7 @@ storiesOf('CharactersRolls', module)
         <State store={store}>
           {(state) => (
             <View>
-              <CharactersRolls
+              <EditorList
                 data={state.characters}
                 onChange={action('Roll Changed')}
                 onEditCharacter={action('Characters Edit click')}
