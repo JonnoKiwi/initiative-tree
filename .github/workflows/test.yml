@@ -36,6 +36,6 @@ jobs:
       - name: install
         run: yarn install --frozen-lockfile
       - name: test
-        run: yarn ci:test
+        run: yarn test
         env:
           CI: true
