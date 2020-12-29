@@ -140,7 +140,7 @@ exports[`Storyshots Avatar Uses a defined thumbnail 1`] = `
 </View>
 `;
 
-exports[`Storyshots Avatar With default avatar 1`] = `
+exports[`Storyshots Avatar With default Avatar 1`] = `
 <View
   onLayout={[Function]}
   style={
