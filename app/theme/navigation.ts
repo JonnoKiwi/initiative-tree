@@ -1,6 +1,4 @@
-import theme from '../theming/paper/theme'
-
-const colors = theme.colors
+import { colors } from './colors'
 
 export default {
   dark: true,
