@@ -18,7 +18,7 @@ import { initFonts } from './theme/fonts'
 import * as storage from './utils/storage'
 import {
   useBackButtonHandler,
-  Root,
+  RootNavigator,
   canExit,
   setRootNavigation,
   useNavigationPersistence,
@@ -58,7 +58,7 @@ function App() {
   // otherwise, we're ready to render the app
   return (
     <SafeAreaProvider initialSafeAreaInsets={initialWindowSafeAreaInsets}>
-      <Root
+      <RootNavigator
         ref={navigationRef}
         initialState={initialNavigationState}
         onStateChange={onNavigationStateChange}

@@ -7,8 +7,8 @@
 import React from 'react'
 import { NavigationContainer, NavigationContainerRef } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import DrawerStack from './Drawer'
-import MyTheme from '../theme/navigation'
+import DrawerNavigator from './DrawerNavigator'
+import navigationTheme from '../theme/navigation'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -34,20 +34,20 @@ const rootStackScreenOptions = {
 const RootStack = () => {
   return (
     <Stack.Navigator screenOptions={rootStackScreenOptions}>
-      <Stack.Screen name="DrawerStack" component={DrawerStack} />
+      <Stack.Screen name="DrawerStack" component={DrawerNavigator} />
     </Stack.Navigator>
   )
 }
 
-export const Root = React.forwardRef<
+export const RootNavigator = React.forwardRef<
   NavigationContainerRef,
   Partial<React.ComponentProps<typeof NavigationContainer>>
 >((props, ref) => {
   return (
-    <NavigationContainer theme={MyTheme} {...props} ref={ref}>
+    <NavigationContainer theme={navigationTheme} {...props} ref={ref}>
       <RootStack />
     </NavigationContainer>
   )
 })
 
-Root.displayName = 'Root'
+RootNavigator.displayName = 'RootNavigator'
