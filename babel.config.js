@@ -17,6 +17,7 @@ module.exports = function (api) {
   ]
   const plugins = [
     moduleResolver,
+    ['module:react-native-dotenv'],
     [
       '@babel/plugin-proposal-decorators',
       {

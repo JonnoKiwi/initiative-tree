@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { getStorybookUI, configure } from '@storybook/react-native'
 import { initFonts } from '../app/theme/fonts'
+import './rn-addons'
 
-declare var module
+declare let module
 
 configure(() => {
   require('./stories')
@@ -12,7 +13,7 @@ const StorybookUI = getStorybookUI({
   port: 9001,
   host: 'localhost',
   onDeviceUI: true,
-  asyncStorage: require('react-native').AsyncStorage,
+  asyncStorage: require('@react-native-async-storage/async-storage').default
 })
 
 export function StorybookUIRoot() {

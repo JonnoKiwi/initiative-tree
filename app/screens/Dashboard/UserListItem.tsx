@@ -6,8 +6,8 @@ export default function UserListItem({ id, name, initiative, avatar, onPress }) 
   const { colors } = useTheme()
   return (
     <List.Item
-      title={`${name}`}
-      description={initiative}
+      title={initiative}
+      description={`${name}`}
       descriptionNumberOfLines={1}
       left={() => (
         <Avatar avatar={avatar} />

@@ -1,69 +1,22 @@
 # InitiativeTree
 
-## The latest and greatest boilerplate for Infinite Red opinions
+This mobile application allows Game Masters to quickly determine combat order with initiative automatically calculated.
 
-This is the boilerplate that [Infinite Red](https://infinite.red) uses as a way to test bleeding-edge changes to our React Native stack.
-
-Currently includes:
-
-- React Native
-- React Navigation
-- MobX State Tree
-- TypeScript
-- And more!
-
-## Quick Start
-
-The Ignite Bowser boilerplate project's structure will look similar to this:
-
+## Getting Started
 ```
-ignite-project
-├── app
-│   ├── components
-│   ├── i18n
-│   ├── utils
-│   ├── models
-│   ├── navigation
-│   ├── screens
-│   ├── services
-│   ├── theme
-│   ├── app.tsx
-├── storybook
-│   ├── views
-│   ├── index.ts
-│   ├── stories.ts
-│   ├── storybook.ts
-├── test
-│   ├── __snapshots__
-│   ├── storyshots.test.ts.snap
-│   ├── mock-i18n.ts
-│   ├── mock-reactotron.ts
-│   ├── setup.ts
-│   ├── storyshots.test.ts
-├── README.md
-├── android
-│   ├── app
-│   ├── build.gradle
-│   ├── gradle
-│   ├── gradle.properties
-│   ├── gradlew
-│   ├── gradlew.bat
-│   ├── keystores
-│   └── settings.gradle
-├── ignite
-│   ├── ignite.json
-│   └── plugins
-├── index.js
-├── ios
-│   ├── IgniteProject
-│   ├── IgniteProject-tvOS
-│   ├── IgniteProject-tvOSTests
-│   ├── IgniteProject.xcodeproj
-│   └── IgniteProjectTests
-├── .env
-└── package.json
-
+cp .env.template .env
 ```
+With the `.env` you can safely make modifications without concern of those changes being tracked in `git`. A common modification is switching `SHOW_STORYBOOK` to `true`
+
+## Storybook
+To show the Storybook
+
+1. Change the key `SHOW_STORYBOOK=true`
+2. Start the application using `yarn android` or `yarn ios`
+
+If it doesn't display, then run `yarn cache:clear` then do step `2` again
+
+## Design
 
 ### ./app directory
 
@@ -75,11 +28,13 @@ The inside of the src directory looks similar to the following:
 app
 │── components
 │── i18n
-├── models
 ├── navigation
 ├── screens
 ├── services
+├── state
+  ├── Models
 ├── theme
+├── theming
 ├── utils
 └── app.tsx
 ```
@@ -90,8 +45,8 @@ This is where your React components will live. Each component will have a direct
 **i18n**
 This is where your translations will live if you are using `react-native-i18n`.
 
-**models**
-This is where your app's models will live. Each model has a directory which will contain the `mobx-state-tree` model file, test file, and any other supporting files like actions, types, etc.
+**state**
+This is where your app's models will live and change state.
 
 **navigation**
 This is where your `react-navigation` navigators will live.
@@ -130,11 +85,6 @@ This starts up the storybook server.
 In `index.js`, change `SHOW_STORYBOOK` to `true` and reload the app.
 
 For Visual Studio Code users, there is a handy extension that makes it easy to load Storybook use cases into a running emulator via tapping on items in the editor sidebar. Install the `React Native Storybook` extension by `Orta`, hit `cmd + shift + P` and select "Reconnect Storybook to VSCode". Expand the STORYBOOK section in the sidebar to see all use cases for components that have `.story.tsx` files in their directories.
-
-## Previous Boilerplates
-
-- [2017 aka Andross](https://github.com/infinitered/ignite-andross)
-- [2016 aka Ignite 1.0](https://github.com/infinitered/ignite-ir-boilerplate-2016)
 
 ## Premium Support
 
