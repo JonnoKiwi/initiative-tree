@@ -70,7 +70,7 @@ storiesOf('CharactersRolls', module)
               <EditorList
                 data={state.characters}
                 onChange={action('Roll Changed')}
-                onEditCharacter={action('Characters Edit click')}
+                onEditCharacter={action('Character Edit click')}
               />
             </View>
           )}

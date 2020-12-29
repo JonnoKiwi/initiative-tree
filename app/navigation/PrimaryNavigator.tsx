@@ -6,7 +6,7 @@
  */
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { DashboardScreen } from '../screens'
+import { DashboardScreen, Character } from '../screens'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -21,8 +21,8 @@ import { DashboardScreen } from '../screens'
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type PrimaryParamList = {
-  Welcome: undefined
   Dashboard: undefined
+  Character: undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
@@ -37,6 +37,7 @@ export function PrimaryNavigator() {
       }}
     >
       <Stack.Screen name="Dashboard" component={DashboardScreen} />
+      <Stack.Screen name="Character" component={Character} />
     </Stack.Navigator>
   )
 }
@@ -50,5 +51,5 @@ export function PrimaryNavigator() {
  *
  * `canExit` is used in ./app/app.tsx in the `useBackButtonHandler` hook.
  */
-const exitRoutes = ['welcome']
+const exitRoutes = ['Dashboard']
 export const canExit = (routeName: string) => exitRoutes.includes(routeName)

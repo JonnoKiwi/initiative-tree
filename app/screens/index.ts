@@ -1,5 +1,5 @@
-import Characters from './Characters'
+import Character from './Character'
 import WelcomeScreen from './Welcome'
 import DashboardScreen from './Dashboard'
 
-export { Characters, DashboardScreen, WelcomeScreen }
+export { Character, DashboardScreen, WelcomeScreen }
