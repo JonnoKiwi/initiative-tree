@@ -18,13 +18,13 @@ import { initFonts } from './theme/fonts'
 import * as storage from './utils/storage'
 import {
   useBackButtonHandler,
-  RootNavigator,
+  Root,
   canExit,
   setRootNavigation,
   useNavigationPersistence,
 } from './navigation'
 import { withRootState } from './state'
-import { addThemeContext } from './theming'
+import { addThemeContext } from './theme'
 
 // This puts screens in a native ViewController or Activity. If you want fully native
 // stack navigation, use `createNativeStackNavigator` in place of `createStackNavigator`:
@@ -58,7 +58,7 @@ function App() {
   // otherwise, we're ready to render the app
   return (
     <SafeAreaProvider initialSafeAreaInsets={initialWindowSafeAreaInsets}>
-      <RootNavigator
+      <Root
         ref={navigationRef}
         initialState={initialNavigationState}
         onStateChange={onNavigationStateChange}

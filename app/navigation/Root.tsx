@@ -8,7 +8,7 @@ import React from 'react'
 import { NavigationContainer, NavigationContainerRef } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import DrawerStack from './Drawer'
-import MyTheme from './navigation-theme'
+import MyTheme from '../theme/navigation'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -39,7 +39,7 @@ const RootStack = () => {
   )
 }
 
-export const RootNavigator = React.forwardRef<
+export const Root = React.forwardRef<
   NavigationContainerRef,
   Partial<React.ComponentProps<typeof NavigationContainer>>
 >((props, ref) => {
@@ -50,4 +50,4 @@ export const RootNavigator = React.forwardRef<
   )
 })
 
-RootNavigator.displayName = 'RootNavigator'
+Root.displayName = 'Root'

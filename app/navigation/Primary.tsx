@@ -1,6 +1,6 @@
 /**
  * This is the navigator you will modify to display the logged-in screens of your app.
- * You can use RootNavigator to also display an auth flow or other user flows.
+ * You can use Root to also display an auth flow or other user flows.
  *
  * You'll likely spend most of your time in this file.
  */
@@ -21,8 +21,8 @@ import { DashboardScreen } from '../screens'
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type PrimaryParamList = {
-  welcome: undefined
-  dashboard: undefined
+  Welcome: undefined
+  Dashboard: undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
