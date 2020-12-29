@@ -1,413 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Avatar Thumbnail is empty string 1`] = `
-<View
-  onLayout={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "#f0f0f0",
-        "flex": 1,
-      },
-      Object {
-        "paddingBottom": 0,
-      },
-    ]
-  }
->
-  <View
-    style={
-      Object {
-        "flex": 1,
-      }
-    }
-  >
-    <RCTScrollView>
-      <View>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#eee",
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "borderBottomColor": "#e6e6e6",
-                "borderBottomWidth": 1,
-                "paddingBottom": 10,
-                "paddingHorizontal": 10,
-                "paddingTop": 20,
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "borderTopColor": "#e6e6e6",
-                  "borderTopWidth": 1,
-                  "flexDirection": "row",
-                  "left": 0,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 0,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "#666",
-                    "fontSize": 10,
-                    "paddingBottom": 2,
-                    "paddingHorizontal": 4,
-                  }
-                }
-              >
-                Use Case
-              </Text>
-            </View>
-            <View
-              style={Object {}}
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "#3d3d3d",
-                    "fontWeight": "600",
-                  }
-                }
-              >
-                Uses empty string for thumbnail
-              </Text>
-            </View>
-            <Text
-              style={
-                Object {
-                  "color": "#666",
-                  "fontSize": 10,
-                  "paddingTop": 0,
-                }
-              }
-            >
-              Thumbnail defined as undefined should return default avatar
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "backgroundColor": "#fff",
-                "padding": 10,
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "#27E100",
-                    "borderRadius": 24,
-                    "height": 48,
-                    "width": 48,
-                  },
-                  Object {
-                    "marginRight": 24,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={1}
-                style={
-                  Object {
-                    "borderRadius": 24,
-                    "height": 48,
-                    "width": 48,
-                  }
-                }
-              />
-            </View>
-          </View>
-        </View>
-      </View>
-    </RCTScrollView>
-  </View>
-</View>
-`;
-
-exports[`Storyshots Avatar Thumbnail is null 1`] = `
-<View
-  onLayout={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "#f0f0f0",
-        "flex": 1,
-      },
-      Object {
-        "paddingBottom": 0,
-      },
-    ]
-  }
->
-  <View
-    style={
-      Object {
-        "flex": 1,
-      }
-    }
-  >
-    <RCTScrollView>
-      <View>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#eee",
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "borderBottomColor": "#e6e6e6",
-                "borderBottomWidth": 1,
-                "paddingBottom": 10,
-                "paddingHorizontal": 10,
-                "paddingTop": 20,
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "borderTopColor": "#e6e6e6",
-                  "borderTopWidth": 1,
-                  "flexDirection": "row",
-                  "left": 0,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 0,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "#666",
-                    "fontSize": 10,
-                    "paddingBottom": 2,
-                    "paddingHorizontal": 4,
-                  }
-                }
-              >
-                Use Case
-              </Text>
-            </View>
-            <View
-              style={Object {}}
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "#3d3d3d",
-                    "fontWeight": "600",
-                  }
-                }
-              >
-                Uses null for thumbnail
-              </Text>
-            </View>
-            <Text
-              style={
-                Object {
-                  "color": "#666",
-                  "fontSize": 10,
-                  "paddingTop": 0,
-                }
-              }
-            >
-              Thumbnail defined as null should return default avatar
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "backgroundColor": "#fff",
-                "padding": 10,
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "#27E100",
-                    "borderRadius": 24,
-                    "height": 48,
-                    "width": 48,
-                  },
-                  Object {
-                    "marginRight": 24,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={1}
-                style={
-                  Object {
-                    "borderRadius": 24,
-                    "height": 48,
-                    "width": 48,
-                  }
-                }
-              />
-            </View>
-          </View>
-        </View>
-      </View>
-    </RCTScrollView>
-  </View>
-</View>
-`;
-
-exports[`Storyshots Avatar Thumbnail is undefined 1`] = `
-<View
-  onLayout={[Function]}
-  style={
-    Array [
-      Object {
-        "backgroundColor": "#f0f0f0",
-        "flex": 1,
-      },
-      Object {
-        "paddingBottom": 0,
-      },
-    ]
-  }
->
-  <View
-    style={
-      Object {
-        "flex": 1,
-      }
-    }
-  >
-    <RCTScrollView>
-      <View>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#eee",
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "borderBottomColor": "#e6e6e6",
-                "borderBottomWidth": 1,
-                "paddingBottom": 10,
-                "paddingHorizontal": 10,
-                "paddingTop": 20,
-              }
-            }
-          >
-            <View
-              style={
-                Object {
-                  "borderTopColor": "#e6e6e6",
-                  "borderTopWidth": 1,
-                  "flexDirection": "row",
-                  "left": 0,
-                  "position": "absolute",
-                  "right": 0,
-                  "top": 0,
-                }
-              }
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "#666",
-                    "fontSize": 10,
-                    "paddingBottom": 2,
-                    "paddingHorizontal": 4,
-                  }
-                }
-              >
-                Use Case
-              </Text>
-            </View>
-            <View
-              style={Object {}}
-            >
-              <Text
-                style={
-                  Object {
-                    "color": "#3d3d3d",
-                    "fontWeight": "600",
-                  }
-                }
-              >
-                Uses undefined for thumbnail
-              </Text>
-            </View>
-            <Text
-              style={
-                Object {
-                  "color": "#666",
-                  "fontSize": 10,
-                  "paddingTop": 0,
-                }
-              }
-            >
-              Thumbnail defined as undefined should return default avatar
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "backgroundColor": "#fff",
-                "padding": 10,
-              }
-            }
-          >
-            <View
-              style={
-                Array [
-                  Object {
-                    "backgroundColor": "#27E100",
-                    "borderRadius": 24,
-                    "height": 48,
-                    "width": 48,
-                  },
-                  Object {
-                    "marginRight": 24,
-                  },
-                ]
-              }
-            >
-              <Image
-                source={1}
-                style={
-                  Object {
-                    "borderRadius": 24,
-                    "height": 48,
-                    "width": 48,
-                  }
-                }
-              />
-            </View>
-          </View>
-        </View>
-      </View>
-    </RCTScrollView>
-  </View>
-</View>
-`;
-
 exports[`Storyshots Avatar Uses a defined thumbnail 1`] = `
 <View
   onLayout={[Function]}
@@ -514,7 +106,7 @@ exports[`Storyshots Avatar Uses a defined thumbnail 1`] = `
               style={
                 Array [
                   Object {
-                    "backgroundColor": "#27E100",
+                    "backgroundColor": "#6200ee",
                     "borderRadius": 24,
                     "height": 48,
                     "width": 48,
@@ -639,7 +231,7 @@ exports[`Storyshots Avatar With default avatar 1`] = `
                 }
               }
             >
-              While using no thumbnail, default avatar should display.
+              While not defining thumbnail, default avatar should display.
             </Text>
           </View>
           <View
@@ -654,7 +246,325 @@ exports[`Storyshots Avatar With default avatar 1`] = `
               style={
                 Array [
                   Object {
-                    "backgroundColor": "#27E100",
+                    "backgroundColor": "#6200ee",
+                    "borderRadius": 24,
+                    "height": 48,
+                    "width": 48,
+                  },
+                  Object {
+                    "marginRight": 24,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "borderRadius": 24,
+                    "height": 48,
+                    "width": 48,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Uses null for thumbnail
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              Thumbnail defined as null should return default avatar
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "padding": 10,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#6200ee",
+                    "borderRadius": 24,
+                    "height": 48,
+                    "width": 48,
+                  },
+                  Object {
+                    "marginRight": 24,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "borderRadius": 24,
+                    "height": 48,
+                    "width": 48,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Uses undefined for thumbnail
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              Thumbnail defined as undefined should return default avatar
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "padding": 10,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#6200ee",
+                    "borderRadius": 24,
+                    "height": 48,
+                    "width": 48,
+                  },
+                  Object {
+                    "marginRight": 24,
+                  },
+                ]
+              }
+            >
+              <Image
+                source={1}
+                style={
+                  Object {
+                    "borderRadius": 24,
+                    "height": 48,
+                    "width": 48,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Uses empty string for thumbnail
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              Thumbnail defined as undefined should return default avatar
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "padding": 10,
+              }
+            }
+          >
+            <View
+              style={
+                Array [
+                  Object {
+                    "backgroundColor": "#6200ee",
                     "borderRadius": 24,
                     "height": 48,
                     "width": 48,
@@ -6498,7 +6408,7 @@ exports[`Storyshots UserListItem Visual 1`] = `
                   style={
                     Array [
                       Object {
-                        "backgroundColor": "#27E100",
+                        "backgroundColor": "#6200ee",
                         "borderRadius": 24,
                         "height": 48,
                         "width": 48,
