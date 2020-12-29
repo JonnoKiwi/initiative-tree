@@ -1,6 +1,5 @@
-import { colors } from '../../theme'
+import { colors } from '../colors'
 import { DarkTheme } from 'react-native-paper'
-
 export default {
   ...DarkTheme,
   dark: true,

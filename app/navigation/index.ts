@@ -1,3 +1,3 @@
-export * from './Primary'
-export * from './root-navigator'
-export * from './navigation-utilities'
+export * from './PrimaryNavigator'
+export * from './RootNavigator'
+export * from './utilities'
