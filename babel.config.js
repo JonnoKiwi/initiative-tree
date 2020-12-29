@@ -17,6 +17,7 @@ module.exports = function (api) {
   ]
   const plugins = [
     moduleResolver,
+    ['module:react-native-dotenv'],
     [
       '@babel/plugin-proposal-decorators',
       {
@@ -26,9 +27,11 @@ module.exports = function (api) {
     ['@babel/plugin-proposal-optional-catch-binding'],
   ]
   return {
-    presets: ['module:metro-react-native-babel-preset'],
+    presets: ['babel-preset-expo'],
     env: {
-      production: {},
+      production: {
+        plugins: ['react-native-paper/babel']
+      },
     },
     plugins,
   }

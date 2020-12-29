@@ -1,34 +1,46 @@
 import React from 'react'
-import { Image, Platform, View } from 'react-native'
-import { useNavigation, DrawerActions } from '@react-navigation/native'
-import { BulletItem, Text, Header, Screen } from '../../components'
+import { View } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { Text, Header, Screen } from '../../components'
 import createScreen from '../createScreen'
-import { Button, List } from 'react-native-paper'
-import UserListItem from './UserListItem'
-// TODO Support MST (https://mobx-react.js.org/)
+import { Portal, FAB, Snackbar } from 'react-native-paper'
 import { useSelector } from 'react-redux'
 import styles from './styles'
-export const logoIgnite = require('./logo-ignite.png')
-export const heart = require('./heart.png')
+import CharactersRolls from './CharactersRolls'
+import { Character } from '../../state/Models'
 
-const renderUser = (item, index) => {
-  return <UserListItem item={item} key={index} />
-}
-
-export default createScreen('Dashboard', () => {
+export default createScreen('Dashboard', (props) => {
   const navigation = useNavigation()
+  const [isMessageVisible, setIsMessageVisible] = React.useState(false)
+  const [message, setMessage] = React.useState('')
+  const [isFABOpen, setIsFABOpen] = React.useState(false)
+  const showMessage = (message) => {
+    setMessage(message)
+    setIsMessageVisible(true)
+  }
   const goBack = () => navigation.goBack()
+  const openCharacter = (item: Character) => {
+    showMessage(`${item.name} will soon have a separate screen`)
+  }
+  const onRollChange = ({ newRoll, character }) => {
+    showMessage(`${character.name} roll changed to ${newRoll}`)
+    props.updateCharacters({
+      ...character,
+      roll: newRoll
+    })
+  }
 
-  const users = useSelector((state) => state.users.data)
-  const openDrawer = async () => {
-    navigation.dispatch(DrawerActions.openDrawer())
+  const characters = useSelector((state) => state.characters.data)
+  const createCombat = async () => {
+    await props.resetRolls()
+    showMessage(`New Combat started. Rolls and initiative reset.`)
   }
 
   return (
     <View style={styles.FULL}>
       <Screen style={styles.CONTAINER} preset="scroll" >
         <Header
-          headerTx="dashboardScreen.howTo"
+          headerTx="dashboardScreen.header"
           leftIcon="back"
           onLeftPress={goBack}
           style={styles.HEADER}
@@ -36,22 +48,40 @@ export default createScreen('Dashboard', () => {
         />
         <Text style={styles.TITLE} preset="header" tx="dashboardScreen.title" />
         <Text style={styles.TAGLINE} tx="dashboardScreen.tagLine" />
-        <BulletItem text="Load up Reactotron!  You can inspect your app, view the events, interact, and so much more!" />
-        <BulletItem text="Integrated here, Navigation with State, TypeScript, Storybook, Solidarity, and i18n." />
-        <View>
-          <Button mode="contained">
-            <Text tx="dashboardScreen.reactotron" />
-          </Button>
-          <Text style={styles.HINT} tx={`dashboardScreen.${Platform.OS}ReactotronHint`} />
-        </View>
-        <View>
-          <Button mode="contained" onPress={openDrawer}>
-            <Text tx="dashboardScreen.openDrawer" />
-          </Button>
-        </View>
-        <List.Section>{users.map(renderUser)}</List.Section>
-        <Image source={logoIgnite} style={styles.IGNITE} />
+        <CharactersRolls onEditCharacter={openCharacter} data={characters} onChange={onRollChange} />
       </Screen>
+      <FAB.Group
+        open={isFABOpen}
+        icon={isFABOpen ? 'minus' : 'plus'}
+        onStateChange={({ open }) => setIsFABOpen(open)}
+        actions={[
+          {
+            icon: 'fencing',
+            label: 'Combat',
+            onPress: createCombat
+          },
+          {
+            icon: 'account-plus',
+            label: 'Character',
+            onPress: () => {
+              setMessage('Ability to create Characters is coming soon')
+              setIsMessageVisible(true)
+            }
+          }
+        ]}
+      />
+      <Portal>
+        <Snackbar
+          visible={isMessageVisible}
+          onDismiss={() => setIsMessageVisible(false)}
+          action={{
+            label: 'OK',
+            onPress: () => setIsMessageVisible(false)
+          }}
+        >
+          {message}
+        </Snackbar>
+      </Portal>
     </View>
   )
 })

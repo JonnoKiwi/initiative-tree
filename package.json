@@ -2,9 +2,9 @@
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web",
+    "android": "expo start --android -c",
+    "ios": "expo start --ios -c",
+    "web": "expo start --web -c",
     "eject": "expo eject",
     "compile": "tsc --noEmit -p . --pretty",
     "format": "npm-run-all format:*",
@@ -21,36 +21,41 @@
     "prepare": "npm-run-all patch hack:*",
     "storybook": "start-storybook -p 9001 -c ./storybook",
     "test": "jest",
-    "adb": "adb reverse tcp:9090 tcp:9090 && adb reverse tcp:3000 tcp:3000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:8081 tcp:8081"
+    "adb": "adb reverse tcp:9090 tcp:9090 && adb reverse tcp:3000 tcp:3000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:8081 tcp:8081",
+    "cache:clear": "rm -rf node_modules/.cache/babel-loader/* && rm -rf node_modules/.cache/storybook/* && rm -rf .expo/web/cache"
   },
   "dependencies": {
     "@delvefore/sagasauce": "^1.1.0",
+    "@react-native-async-storage/async-storage": "^1.13.2",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/drawer": "^5.11.4",
     "@react-navigation/native": "^5.1.5",
     "@react-navigation/stack": "^5.2.10",
     "@redux-saga/is": "^1.1.2",
     "apisauce": "1.1.2",
-    "expo": "~39.0.2",
-    "expo-localization": "~9.0.0",
-    "expo-status-bar": "~1.0.2",
+    "babel-preset-expo": "^8.3.0",
+    "expo": "^40.0.0",
+    "expo-localization": "~9.1.0",
+    "expo-status-bar": "~1.0.3",
     "hydrogen": "0.1.0",
     "i18n-js": "^3.0.11",
     "lodash.throttle": "4.1.1",
     "ramda": "0.27.1",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.3.tar.gz",
-    "react-native-gesture-handler": "~1.7.0",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.0.tar.gz",
+    "react-native-dotenv": "^2.4.3",
+    "react-native-gesture-handler": "~1.8.0",
+    "react-native-get-random-values": "^1.5.0",
     "react-native-keychain": "^6.2.0",
     "react-native-paper": "^4.4.1",
-    "react-native-reanimated": "^1.13.2",
-    "react-native-safe-area-context": "3.1.4",
+    "react-native-reanimated": "~1.13.0",
+    "react-native-safe-area-context": "3.1.9",
     "react-native-safe-area-view": "^1.1.1",
-    "react-native-screens": "~2.10.1",
+    "react-native-screens": "~2.15.0",
     "react-native-splash-screen": "3.2.0",
     "react-native-vector-icons": "^7.1.0",
-    "react-native-web": "~0.13.12",
+    "react-native-web": "^0.14.10",
     "react-navigation": "^4.4.2",
     "react-navigation-stack": "^2.8.4",
     "react-redux": "^7.2.1",
@@ -66,19 +71,24 @@
     "validate.js": "0.13.1"
   },
   "devDependencies": {
-    "@babel/core": "~7.9.0",
+    "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-decorators": "^7.0.0",
     "@babel/plugin-proposal-optional-catch-binding": "^7.0.0",
-    "@storybook/addon-storyshots": "5.3.19",
-    "@storybook/react-native": "5.3.19",
-    "@storybook/react-native-server": "5.3.19",
-    "@types/jest": "^25.2.3",
+    "@sambego/storybook-state": "^2.0.1",
+    "@storybook/addon-actions": "^6.1.11",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-storyshots": "^6.1.11",
+    "@storybook/react-native": "^5.3.23",
+    "@storybook/react-native-server": "^5.3.23",
+    "@testing-library/react-native": "^7.1.0",
+    "@types/jest": "^26.0.19",
     "@types/ramda": "0.26.44",
-    "@types/react": "16.9.23",
-    "@types/react-native": "^0.63.2",
+    "@types/react": "~16.9.35",
+    "@types/react-native": "~0.63.2",
     "@types/react-test-renderer": "^16.9.2",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
+    "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.0.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.0.0",
@@ -90,8 +100,8 @@
     "eslint-plugin-react-native": "^3.6.0",
     "eslint-plugin-standard": "^4.0.0",
     "ignite-hydrogen": "file:../ignite-hydrogen",
-    "jest": "25.5.4",
-    "jest-expo": "^38.0.2",
+    "jest": "26.6.3",
+    "jest-expo": "^40.0.1",
     "jetifier": "^1.6.2",
     "npm-run-all": "4.1.5",
     "patch-package": "6.2.2",
@@ -101,23 +111,27 @@
     "react-powerplug": "1.0.0",
     "rimraf": "3.0.2",
     "solidarity": "3.0.0",
-    "typescript": "3.9.7"
+    "typescript": "~4.0.0"
   },
   "private": true,
   "name": "initiative-tree",
   "version": "0.0.1",
   "jest": {
+    "preset": "jest-expo",
+    "setupFiles": [
+      "./test/jestSetup.js"
+    ],
     "projects": [
       {
         "preset": "jest-expo/ios",
         "transformIgnorePatterns": [
-          "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|native-base|@storybook)"
+          "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|@storybook)"
         ]
       },
       {
         "preset": "jest-expo/android",
         "transformIgnorePatterns": [
-          "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|native-base|@storybook)"
+          "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|@storybook)"
         ]
       }
     ]
