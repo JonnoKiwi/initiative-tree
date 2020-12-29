@@ -31,7 +31,7 @@ ignite-project
 ├── storybook
 │   ├── views
 │   ├── index.ts
-│   ├── storybook-registry.ts
+│   ├── stories.ts
 │   ├── storybook.ts
 ├── test
 │   ├── __snapshots__

@@ -5,7 +5,7 @@ import { initFonts } from '../app/theme/fonts'
 declare var module
 
 configure(() => {
-  require('./storybook-registry')
+  require('./stories')
 }, module)
 
 const StorybookUI = getStorybookUI({
