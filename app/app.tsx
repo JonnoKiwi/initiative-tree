@@ -24,7 +24,7 @@ import {
   useNavigationPersistence,
 } from './navigation'
 import { withRootState } from './state'
-import { addThemeContext } from './theming'
+import { addThemeContext } from './theme'
 
 // This puts screens in a native ViewController or Activity. If you want fully native
 // stack navigation, use `createNativeStackNavigator` in place of `createStackNavigator`:
