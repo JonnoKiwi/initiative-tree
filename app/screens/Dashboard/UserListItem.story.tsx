@@ -13,7 +13,8 @@ storiesOf('UserListItem', module)
         <UserListItem
           name="Dirgy"
           initiative={20}
-          avatar={{ thumbnail: "https://randomuser.me/api/portraits/thumb/men/7.jpg" }} />
+          avatar={{ thumbnail: "https://randomuser.me/api/portraits/thumb/men/7.jpg" }}
+        />
       </UseCase>
     </Story>
   ))
