@@ -1,16 +1,18 @@
 import React from 'react'
 import { Avatar as AvatarPaper } from 'react-native-paper'
 import { ViewStyle } from 'react-native'
-import theme from '../../theme/paper/theme'
 import R from 'ramda'
-const defaultImage = require('./default-avatar.png')
-const avatarStyle: ViewStyle = {
+
+const DEFAULT_IMAGE = require('./default-avatar.png')
+const AVATAR_STYLE: ViewStyle = {
   marginRight: 24,
 }
+const EMPTY_REGX = /^\s*$/
+
 export default function Avatar({ thumbnail }) {
-  const image = R.is(String, thumbnail) && thumbnail !== '' ? { uri: thumbnail } : defaultImage
+  const image = R.is(String, thumbnail) && !EMPTY_REGX.test(thumbnail) ? { uri: thumbnail } : DEFAULT_IMAGE
 
   return (
-    <AvatarPaper.Image theme={ theme } source={ image } size={48} style={avatarStyle} />
+    <AvatarPaper.Image source={ image } size={48} style={AVATAR_STYLE} />
   )
 }
