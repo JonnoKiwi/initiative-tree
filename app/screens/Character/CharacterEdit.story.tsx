@@ -1,9 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 import { StoryScreen, Story, UseCase } from '../../../storybook/views'
-import EditorList from './'
 import { State, Store } from "@sambego/storybook-state"
+import { action } from '@storybook/addon-actions'
 import { Character } from '../../state/Models'
+import CharacterEdit from './CharacterEdit'
 
 declare let module
 type InitialState = {
@@ -23,14 +24,14 @@ const initialState: InitialState = {
 }
 const store = new Store(initialState)
 
-storiesOf('EditorList', module)
+storiesOf('CharacterEdit', module)
   .addDecorator((fn) => <StoryScreen>{fn()}</StoryScreen>)
   .add('Main', () => (
     <Story>
       <UseCase text="All Properties" usage="Edit elements.">
         <State store={store}>
           {(state) => (
-            <EditorList character={state.character}/>
+            <CharacterEdit character={state.character} onChange={action('Character Saved')}/>
           )}
         </State>
       </UseCase>

@@ -22,8 +22,7 @@ const initialState: InitialState = {
       dexterity: 14,
       modifiers: 2,
       initiative: 0,
-      avatar: { thumbnail: "https://randomuser.me/api/portraits/thumb/men/7.jpg" },
-      user: null
+      avatar: { thumbnail: "https://randomuser.me/api/portraits/thumb/men/7.jpg" }
     },
     {
       id: '2',
@@ -32,8 +31,7 @@ const initialState: InitialState = {
       dexterity: 14,
       modifiers: 2,
       initiative: 0,
-      avatar: { thumbnail: "https://randomuser.me/api/portraits/thumb/men/8.jpg" },
-      user: null
+      avatar: { thumbnail: "https://randomuser.me/api/portraits/thumb/men/8.jpg" }
     }
   ]
 }
