@@ -1,8 +1,8 @@
 import React from 'react'
 import { View } from 'react-native'
 import { Screen, Header } from '../../components'
-import { TextInput } from 'react-native-paper'
 import styles from './styles'
+import EditorList from './'
 // import { useNavigation } from '@react-navigation/native'
 import createScreen from '../createScreen'
 
@@ -14,6 +14,7 @@ export default createScreen('Character', (props) => {
     <View style={styles.FULL}>
       <Screen style={styles.CONTAINER} preset="scroll">
         <Header headerText="Character Editor" />
+        <EditorList />
       </Screen>
     </View>
   )

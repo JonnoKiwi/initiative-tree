@@ -1,13 +1,9 @@
-import React, { useState, useCallback, useEffect } from 'react'
-import { TextInput, List, Avatar, Text } from 'react-native-paper'
-import { View, ViewStyle } from 'react-native'
+import React, { useState } from 'react'
+import { TextInput, List, Button, } from 'react-native-paper'
+import { View } from 'react-native'
 import { Character } from '../../state/Models'
 
-const avatarStyle: ViewStyle = {
-  marginRight: 24,
-}
-
-export default function Editor(props) {
+export default function EditorList (props) {
   const character: Character = props.character
   const [name, setName] = useState(String(character.name))
   const [dexterity, setDexterity] = useState(String(character.dexterity))
@@ -22,34 +18,42 @@ export default function Editor(props) {
   }
 
   return (
-    <List.Section>
-      <List.Item
-        title='Name'
-        right={() => (
-          <TextInput
-            clearTextOnFocus
-            value={character.name}
-          />
-        )}
-      />
-      <List.Item
-        title='Dexterity'
-        right={() => (
-          <TextInput
-            clearTextOnFocus
-            value={character.dexterity}
-          />
-        )}
-      />
-      <List.Item
-        title={character.modifiers}
-        right={() => (
-          <TextInput
-            clearTextOnFocus
-            value={character.modifiers}
-          />
-        )}
-      />
-    </List.Section>
+    <View>
+      <List.Section>
+        <List.Item
+          title='Name'
+          right={() => (
+            <TextInput
+              value={name}
+              onChangeText={setName}
+            />
+          )}
+        />
+        <List.Item
+          title='Dexterity'
+          right={() => (
+            <TextInput
+              keyboardType='numeric'
+              value={dexterity}
+              onChangeText={setDexterity}
+            />
+          )}
+        />
+        <List.Item
+          title={character.modifiers}
+          right={() => (
+            <TextInput
+              keyboardType='numeric'
+              value={modifiers}
+              onChangeText={setModifiers}
+            />
+          )}
+        />
+      </List.Section>
+      <Button mode="contained" onPress={() => onSave()} >
+        Save Changes
+      </Button>
+    </View>
+
   )
 }
