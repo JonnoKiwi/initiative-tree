@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { TextInput, List, Button } from 'react-native-paper'
-import { View } from 'react-native'
+import { TextInput, Button } from 'react-native-paper'
+import {View, ViewStyle} from 'react-native'
 import { Character } from '../../state/Models'
 import { Avatar } from '../../components'
+import { spacing } from '../../theme'
 
 export default function CharacterEdit (props) {
   const character: Character = props.character
@@ -17,38 +18,41 @@ export default function CharacterEdit (props) {
       modifiers
     })
   }
+  const BUTTON_STYLE: ViewStyle = {
+    paddingVertical: spacing[4],
+    paddingHorizontal: spacing[4]
+  }
+  const AVATAR_STYLE: ViewStyle = {
+    alignSelf: 'center'
+  }
 
   return (
     <View>
-      <Avatar thumbnail={character.avatar.thumbnail} size={124} />
+      <View>
+        <Avatar style={AVATAR_STYLE} thumbnail={character.avatar.thumbnail} size={124} />
+      </View>
       <TextInput
         label="Name"
         value={name}
         onChangeText={setName}
       />
-      <List.Item
-        title='Dexterity'
-        right={() => (
-          <TextInput
-            keyboardType='numeric'
-            value={dexterity}
-            onChangeText={setDexterity}
-          />
-        )}
+      <TextInput
+        label="Dexterity"
+        keyboardType='numeric'
+        value={dexterity}
+        onChangeText={setDexterity}
       />
-      <List.Item
-        title='Modifiers'
-        right={() => (
-          <TextInput
-            keyboardType='numeric'
-            value={modifiers}
-            onChangeText={setModifiers}
-          />
-        )}
+      <TextInput
+        label="Modifiers"
+        keyboardType='numeric'
+        value={modifiers}
+        onChangeText={setModifiers}
       />
-      <Button mode="contained" onPress={onSave} >
-        Save Changes
-      </Button>
+      <View style={BUTTON_STYLE} >
+        <Button mode="contained" onPress={onSave} >
+          Save Changes
+        </Button>
+      </View>
     </View>
 
   )

@@ -36,7 +36,7 @@ storiesOf('Avatar', module)
         <Avatar size={64} thumbnail="https://randomuser.me/api/portraits/thumb/men/7.jpg" />
       </UseCase>
       <UseCase text="Set size of the avatar" usage="size={number} (128)">
-        <Avatar size={128} thumbnail="https://randomuser.me/api/portraits/thumb/men/7.jpg" />
+        <Avatar size={128} thumbnail="https://randomuser.me/api/portraits/men/7.jpg" />
       </UseCase>
     </Story>
   ))
