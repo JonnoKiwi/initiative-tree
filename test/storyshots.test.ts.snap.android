@@ -1469,7 +1469,7 @@ exports[`Storyshots CharactersRolls Main 1`] = `
                       <Image
                         source={
                           Object {
-                            "uri": "https://randomuser.me/api/portraits/thumb/men/7.jpg",
+                            "uri": "https://randomuser.me/api/portraits/thumb/men/8.jpg",
                           }
                         }
                         style={
@@ -1543,7 +1543,7 @@ exports[`Storyshots CharactersRolls Main 1`] = `
                           ]
                         }
                       >
-                        Dirgy
+                        Intel
                       </Text>
                     </View>
                     <View
@@ -1681,7 +1681,7 @@ exports[`Storyshots CharactersRolls Main 1`] = `
                       <Image
                         source={
                           Object {
-                            "uri": "https://randomuser.me/api/portraits/thumb/men/8.jpg",
+                            "uri": "https://randomuser.me/api/portraits/thumb/men/7.jpg",
                           }
                         }
                         style={
@@ -1755,7 +1755,7 @@ exports[`Storyshots CharactersRolls Main 1`] = `
                           ]
                         }
                       >
-                        Intel
+                        Dirgy
                       </Text>
                     </View>
                     <View
