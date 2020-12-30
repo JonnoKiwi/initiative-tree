@@ -47,6 +47,8 @@ export default function CharactersRolls (props) {
     onEditCharacter
   } = props
   const list = data || []
+  list.sort((a, b) => (a.initiative < b.initiative) ? 1 : -1)
+
   return (
     list.length ? <List.Section>
       { list.map(
