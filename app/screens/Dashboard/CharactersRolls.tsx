@@ -1,11 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react'
-import { TextInput, List, Avatar, Text } from 'react-native-paper'
-import { ViewStyle } from 'react-native'
+import { TextInput, List, Text } from 'react-native-paper'
 import { Character } from '../../state/Models'
-
-const avatarStyle: ViewStyle = {
-  marginRight: 24,
-}
+import { Avatar } from '../../components'
 
 export const CharacterRoll = (props) => {
   const onRollChange = props.onRollChange
@@ -30,7 +26,7 @@ export const CharacterRoll = (props) => {
       descriptionNumberOfLines={1}
       onPress={() => props.onPress(character)}
       left={() => (
-        <Avatar.Image source={{ uri: character.avatar.thumbnail }} size={48} style={avatarStyle} />
+        <Avatar thumbnail={ character.avatar.thumbnail } />
       )}
       right={() => (
         <TextInput
