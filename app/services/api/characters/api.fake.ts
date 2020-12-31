@@ -5,7 +5,10 @@ import { ApiConfig, HydrogenAPI, SagaSauceAPI } from '../IHydrogenAPI'
 import R from 'ramda'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-const sortBy = R.sortBy(R.prop('initiative'))
+const sortWith = R.sortWith([
+  R.descend(R.prop('initiative')),
+  R.descend(R.prop('dexterity'))
+])
 
 export const ensureNumber = (value: any): number => {
   if (R.is(String, value)) {
@@ -68,7 +71,7 @@ class Server {
   async getItems () {
     const list = await this._getItemsFromStorage()
     return {
-      data: sortBy(list)
+      data: sortWith(list)
     }
   }
 
@@ -106,7 +109,7 @@ class Server {
     }
     const list = await this._getItemsFromStorage()
     return {
-      data: sortBy(list)
+      data: sortWith(list)
     }
   }
 
