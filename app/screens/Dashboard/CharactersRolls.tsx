@@ -47,6 +47,7 @@ export default function CharactersRolls (props) {
     onEditCharacter
   } = props
   const list = data || []
+
   return (
     list.length ? <List.Section>
       { list.map(
