@@ -42,6 +42,10 @@ export interface UseCaseProps {
   noPad?: boolean
   /** Don't use background color because it's important to see the color. */
   noBackground?: boolean
+  /** */
+  width?: number
+  /** */
+  height?: number
 }
 
 export function UseCase(props: UseCaseProps) {
@@ -49,6 +53,8 @@ export function UseCase(props: UseCaseProps) {
     ...COMPONENT,
     ...{ padding: props.noPad ? 0 : 10 },
     ...{ backgroundColor: props.noBackground ? 'rgba(0,0,0,0)' : COMPONENT.backgroundColor },
+    width: props.width,
+    height: props.height,
     ...props.style,
   }
 
