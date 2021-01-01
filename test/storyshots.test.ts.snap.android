@@ -93,7 +93,9 @@ exports[`Storyshots Avatar Change size 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -204,7 +206,9 @@ exports[`Storyshots Avatar Change size 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -340,7 +344,9 @@ exports[`Storyshots Avatar Uses a defined thumbnail 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -476,7 +482,9 @@ exports[`Storyshots Avatar With default Avatar 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -582,7 +590,9 @@ exports[`Storyshots Avatar With default Avatar 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -689,7 +699,9 @@ exports[`Storyshots Avatar With default Avatar 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -795,7 +807,9 @@ exports[`Storyshots Avatar With default Avatar 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -927,7 +941,9 @@ exports[`Storyshots Button Style Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -1042,7 +1058,9 @@ exports[`Storyshots Button Style Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -1157,7 +1175,9 @@ exports[`Storyshots Button Style Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -1297,7 +1317,9 @@ exports[`Storyshots CharacterEdit Main 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -2055,7 +2077,9 @@ exports[`Storyshots CharacterRoll Main 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -2375,7 +2399,9 @@ exports[`Storyshots CharactersRolls Main 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -2867,6 +2893,1624 @@ exports[`Storyshots CharactersRolls Main 1`] = `
 </View>
 `;
 
+exports[`Storyshots Container Column 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#f0f0f0",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView>
+      <View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Column
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property column
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": undefined,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "flexWrap": "wrap",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Column Reverse
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property column, reverse
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": undefined,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "column-reverse",
+                  "flexWrap": "wrap",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Container Defaults 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#f0f0f0",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView>
+      <View>
+        <View
+          style={
+            Object {
+              "alignContent": "center",
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "flexWrap": "wrap",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "backgroundColor": "powderblue",
+                "minHeight": 50,
+                "minWidth": 50,
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "backgroundColor": "skyblue",
+                "minHeight": 50,
+                "minWidth": 50,
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "backgroundColor": "steelblue",
+                "minHeight": 100,
+                "minWidth": 100,
+              }
+            }
+          />
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Container Row 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#f0f0f0",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView>
+      <View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Row
+              </Text>
+            </View>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": undefined,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Row Reverse
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property reverse
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": undefined,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row-reverse",
+                  "flexWrap": "wrap",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Container Spacing 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#f0f0f0",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView>
+      <View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Row Space Between
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property space='between'
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": undefined,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Row Space Around
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property space='around'
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": undefined,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "justifyContent": "space-around",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Row Space Evenly
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property space='evenly'
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": undefined,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "justifyContent": "space-evenly",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Column Space Between
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property column,space='between'.
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": 350,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "flexWrap": "wrap",
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Column Space Around
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property column,space='around'
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": 350,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "flexWrap": "wrap",
+                  "justifyContent": "space-around",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Column Space Evenly
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property column,space='evenly'
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": 350,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "center",
+                  "alignItems": "center",
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "flexWrap": "wrap",
+                  "justifyContent": "space-evenly",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`Storyshots Container Stretch Items 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#f0f0f0",
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView>
+      <View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Stretch Items Column
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property stretch-items
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": 350,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "stretch",
+                  "alignItems": "stretch",
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "flexWrap": "wrap",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Stretch Items Rows
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property stretch-items. Children require flex:1 for row stretching.
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": undefined,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "stretch",
+                  "alignItems": "stretch",
+                  "flex": 1,
+                  "flexDirection": "row",
+                  "flexWrap": "wrap",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "powderblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "skyblue",
+                    "minHeight": 50,
+                    "minWidth": 50,
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "steelblue",
+                    "minHeight": 100,
+                    "minWidth": 100,
+                  }
+                }
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
 exports[`Storyshots FormRow Assembled 1`] = `
 <View
   onLayout={[Function]}
@@ -2960,7 +4604,9 @@ exports[`Storyshots FormRow Assembled 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -3131,7 +4777,9 @@ exports[`Storyshots FormRow Assembled 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -3302,7 +4950,9 @@ exports[`Storyshots FormRow Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -3417,7 +5067,9 @@ exports[`Storyshots FormRow Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -3519,7 +5171,9 @@ exports[`Storyshots FormRow Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -3633,7 +5287,9 @@ exports[`Storyshots FormRow Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -3735,7 +5391,9 @@ exports[`Storyshots FormRow Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -3836,7 +5494,9 @@ exports[`Storyshots FormRow Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -3962,7 +5622,9 @@ exports[`Storyshots FormRow Styling 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -4088,7 +5750,9 @@ exports[`Storyshots Header Behavior 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 0,
+                "width": undefined,
               }
             }
           >
@@ -4226,7 +5890,9 @@ exports[`Storyshots Header Behavior 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 0,
+                "width": undefined,
               }
             }
           >
@@ -4389,7 +6055,9 @@ exports[`Storyshots Header Behavior 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 0,
+                "width": undefined,
               }
             }
           >
@@ -4577,7 +6245,9 @@ exports[`Storyshots Icon Names 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -4667,7 +6337,9 @@ exports[`Storyshots Icon Names 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -4782,7 +6454,9 @@ exports[`Storyshots Switch Behaviour 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -4910,7 +6584,9 @@ exports[`Storyshots Switch Behaviour 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -5038,7 +6714,9 @@ exports[`Storyshots Switch Behaviour 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -5191,7 +6869,9 @@ exports[`Storyshots Switch Styling 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -5321,7 +7001,9 @@ exports[`Storyshots Switch Styling 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -5476,7 +7158,9 @@ exports[`Storyshots Text Passing Content 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -5576,7 +7260,9 @@ exports[`Storyshots Text Passing Content 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -5687,7 +7373,9 @@ exports[`Storyshots Text Passing Content 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -5787,7 +7475,9 @@ exports[`Storyshots Text Passing Content 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -5926,7 +7616,9 @@ exports[`Storyshots Text Style Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -6067,7 +7759,9 @@ exports[`Storyshots Text Style Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -6168,7 +7862,9 @@ exports[`Storyshots Text Style Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -6294,7 +7990,9 @@ exports[`Storyshots Text Styling 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -6438,7 +8136,9 @@ exports[`Storyshots TextField Labelling 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -6555,7 +8255,9 @@ exports[`Storyshots TextField Labelling 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -6686,7 +8388,9 @@ exports[`Storyshots TextField Ref Forwarding 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -6843,7 +8547,9 @@ exports[`Storyshots TextField Style Overrides 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 0,
+                "width": undefined,
               }
             }
           >
@@ -6998,7 +8704,9 @@ exports[`Storyshots TextField Style Overrides 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -7129,7 +8837,9 @@ exports[`Storyshots TextField Style Overrides 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
@@ -7287,7 +8997,9 @@ exports[`Storyshots Wallpaper Style Presets 1`] = `
             style={
               Object {
                 "backgroundColor": "#fff",
+                "height": undefined,
                 "padding": 10,
+                "width": undefined,
               }
             }
           >
