@@ -1348,8 +1348,32 @@ exports[`Storyshots CharacterEdit Main 1`] = `
               }
             }
           >
-            <View>
-              <View>
+            <View
+              style={
+                Object {
+                  "alignContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "flexWrap": "wrap",
+                  "justifyContent": "center",
+                }
+              }
+            >
+              <View
+                style={
+                  Object {
+                    "alignContent": "center",
+                    "alignItems": "center",
+                    "flex": 1,
+                    "flexDirection": "row",
+                    "flexWrap": "wrap",
+                    "justifyContent": "center",
+                    "marginVertical": 8,
+                    "width": "100%",
+                  }
+                }
+              >
                 <View
                   style={
                     Array [
@@ -1359,9 +1383,7 @@ exports[`Storyshots CharacterEdit Main 1`] = `
                         "height": 124,
                         "width": 124,
                       },
-                      Object {
-                        "alignSelf": "center",
-                      },
+                      Object {},
                     ]
                   }
                   thumbnail="https://randomuser.me/api/portraits/thumb/men/7.jpg"
@@ -1390,7 +1412,10 @@ exports[`Storyshots CharacterEdit Main 1`] = `
                       "borderTopLeftRadius": 4,
                       "borderTopRightRadius": 4,
                     },
-                    Object {},
+                    Object {
+                      "marginVertical": 8,
+                      "width": "100%",
+                    },
                   ]
                 }
               >
@@ -1559,7 +1584,10 @@ exports[`Storyshots CharacterEdit Main 1`] = `
                       "borderTopLeftRadius": 4,
                       "borderTopRightRadius": 4,
                     },
-                    Object {},
+                    Object {
+                      "marginVertical": 8,
+                      "width": "100%",
+                    },
                   ]
                 }
               >
@@ -1729,7 +1757,10 @@ exports[`Storyshots CharacterEdit Main 1`] = `
                       "borderTopLeftRadius": 4,
                       "borderTopRightRadius": 4,
                     },
-                    Object {},
+                    Object {
+                      "marginVertical": 8,
+                      "width": "100%",
+                    },
                   ]
                 }
               >
@@ -1894,109 +1925,102 @@ exports[`Storyshots CharacterEdit Main 1`] = `
               <View
                 style={
                   Object {
-                    "paddingHorizontal": 16,
-                    "paddingVertical": 16,
+                    "backgroundColor": "#6200ee",
+                    "borderColor": "transparent",
+                    "borderRadius": 4,
+                    "borderStyle": "solid",
+                    "borderWidth": 0,
+                    "elevation": 2,
+                    "marginVertical": 8,
+                    "minWidth": 64,
+                    "shadowColor": "#000000",
+                    "shadowOffset": Object {
+                      "height": 0.75,
+                      "width": 0,
+                    },
+                    "shadowOpacity": 0.24,
+                    "shadowRadius": 1.5,
+                    "width": "100%",
                   }
                 }
               >
                 <View
-                  style={
+                  accessibilityRole="button"
+                  accessibilityState={
                     Object {
-                      "backgroundColor": "#6200ee",
-                      "borderColor": "transparent",
-                      "borderRadius": 4,
-                      "borderStyle": "solid",
-                      "borderWidth": 0,
-                      "elevation": 2,
-                      "minWidth": 64,
-                      "shadowColor": "#000000",
-                      "shadowOffset": Object {
-                        "height": 0.75,
-                        "width": 0,
-                      },
-                      "shadowOpacity": 0.24,
-                      "shadowRadius": 1.5,
+                      "disabled": undefined,
                     }
+                  }
+                  accessible={true}
+                  focusable={true}
+                  onClick={[Function]}
+                  onResponderGrant={[Function]}
+                  onResponderMove={[Function]}
+                  onResponderRelease={[Function]}
+                  onResponderTerminate={[Function]}
+                  onResponderTerminationRequest={[Function]}
+                  onStartShouldSetResponder={[Function]}
+                  style={
+                    Array [
+                      Object {
+                        "overflow": "hidden",
+                      },
+                      Object {
+                        "borderRadius": 4,
+                      },
+                    ]
                   }
                 >
                   <View
-                    accessibilityRole="button"
-                    accessibilityState={
-                      Object {
-                        "disabled": undefined,
-                      }
-                    }
-                    accessible={true}
-                    focusable={true}
-                    onClick={[Function]}
-                    onResponderGrant={[Function]}
-                    onResponderMove={[Function]}
-                    onResponderRelease={[Function]}
-                    onResponderTerminate={[Function]}
-                    onResponderTerminationRequest={[Function]}
-                    onStartShouldSetResponder={[Function]}
                     style={
                       Array [
                         Object {
-                          "overflow": "hidden",
+                          "alignItems": "center",
+                          "flexDirection": "row",
+                          "justifyContent": "center",
                         },
-                        Object {
-                          "borderRadius": 4,
-                        },
+                        undefined,
                       ]
                     }
                   >
-                    <View
+                    <Text
+                      numberOfLines={1}
+                      selectable={false}
                       style={
                         Array [
                           Object {
-                            "alignItems": "center",
-                            "flexDirection": "row",
-                            "justifyContent": "center",
+                            "color": "#000000",
+                            "fontFamily": "System",
+                            "fontWeight": "400",
+                            "textAlign": "left",
                           },
-                          undefined,
+                          Array [
+                            Object {
+                              "letterSpacing": 1,
+                              "marginHorizontal": 16,
+                              "marginVertical": 9,
+                              "textAlign": "center",
+                            },
+                            undefined,
+                            Object {
+                              "textTransform": "uppercase",
+                            },
+                            Object {
+                              "color": "#ffffff",
+                              "fontFamily": "System",
+                              "fontWeight": "500",
+                            },
+                            Object {
+                              "fontFamily": "System",
+                              "fontWeight": "500",
+                            },
+                            undefined,
+                          ],
                         ]
                       }
                     >
-                      <Text
-                        numberOfLines={1}
-                        selectable={false}
-                        style={
-                          Array [
-                            Object {
-                              "color": "#000000",
-                              "fontFamily": "System",
-                              "fontWeight": "400",
-                              "textAlign": "left",
-                            },
-                            Array [
-                              Object {
-                                "letterSpacing": 1,
-                                "marginHorizontal": 16,
-                                "marginVertical": 9,
-                                "textAlign": "center",
-                              },
-                              undefined,
-                              Object {
-                                "textTransform": "uppercase",
-                              },
-                              Object {
-                                "color": "#ffffff",
-                                "fontFamily": "System",
-                                "fontWeight": "500",
-                              },
-                              Object {
-                                "fontFamily": "System",
-                                "fontWeight": "500",
-                              },
-                              undefined,
-                            ],
-                          ]
-                        }
-                      >
-                        Save Changes
-                      </Text>
-                    </View>
+                      Save Changes
+                    </Text>
                   </View>
                 </View>
               </View>
@@ -3272,6 +3296,162 @@ exports[`Storyshots Container Defaults 1`] = `
 </View>
 `;
 
+exports[`Storyshots Container Form 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#f0f0f0",
+        "flex": 1,
+      },
+      Object {
+        "paddingBottom": 0,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <RCTScrollView>
+      <View>
+        <View
+          style={
+            Object {
+              "backgroundColor": "#eee",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "borderBottomColor": "#e6e6e6",
+                "borderBottomWidth": 1,
+                "paddingBottom": 10,
+                "paddingHorizontal": 10,
+                "paddingTop": 20,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "borderTopColor": "#e6e6e6",
+                  "borderTopWidth": 1,
+                  "flexDirection": "row",
+                  "left": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#666",
+                    "fontSize": 10,
+                    "paddingBottom": 2,
+                    "paddingHorizontal": 4,
+                  }
+                }
+              >
+                Use Case
+              </Text>
+            </View>
+            <View
+              style={Object {}}
+            >
+              <Text
+                style={
+                  Object {
+                    "color": "#3d3d3d",
+                    "fontWeight": "600",
+                  }
+                }
+              >
+                Form Items
+              </Text>
+            </View>
+            <Text
+              style={
+                Object {
+                  "color": "#666",
+                  "fontSize": 10,
+                  "paddingTop": 0,
+                }
+              }
+            >
+              add property preset='form'
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "height": 350,
+                "padding": 10,
+                "width": undefined,
+              }
+            }
+          >
+            <View
+              style={
+                Object {
+                  "alignContent": "flex-start",
+                  "alignItems": "flex-start",
+                  "flex": 1,
+                  "flexDirection": "column",
+                  "flexWrap": "wrap",
+                  "justifyContent": "flex-start",
+                }
+              }
+            >
+              <TextInput
+                allowFontScaling={true}
+                placeholder="Name"
+                rejectResponderTermination={true}
+                style={
+                  Object {
+                    "marginVertical": 8,
+                    "width": "100%",
+                  }
+                }
+                underlineColorAndroid="transparent"
+              />
+              <RCTSwitch
+                accessibilityRole="switch"
+                onChange={[Function]}
+                onResponderTerminationRequest={[Function]}
+                onStartShouldSetResponder={[Function]}
+                style={
+                  Array [
+                    Object {
+                      "height": 31,
+                      "width": 51,
+                    },
+                    Object {
+                      "marginVertical": 8,
+                      "width": "100%",
+                    },
+                  ]
+                }
+                value={false}
+              />
+            </View>
+          </View>
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
 exports[`Storyshots Container Row 1`] = `
 <View
   onLayout={[Function]}
@@ -4417,6 +4597,7 @@ exports[`Storyshots Container Stretch Items 1`] = `
                 style={
                   Object {
                     "backgroundColor": "powderblue",
+                    "flex": 1,
                     "minHeight": 50,
                     "minWidth": 50,
                   }
@@ -4426,6 +4607,7 @@ exports[`Storyshots Container Stretch Items 1`] = `
                 style={
                   Object {
                     "backgroundColor": "skyblue",
+                    "flex": 1,
                     "minHeight": 50,
                     "minWidth": 50,
                   }
@@ -4435,6 +4617,7 @@ exports[`Storyshots Container Stretch Items 1`] = `
                 style={
                   Object {
                     "backgroundColor": "steelblue",
+                    "flex": 1,
                     "minHeight": 100,
                     "minWidth": 100,
                   }
@@ -4510,7 +4693,7 @@ exports[`Storyshots Container Stretch Items 1`] = `
                 }
               }
             >
-              add property stretch-items. Children require flex:1 for row stretching.
+              add property stretch-items. flex=1 is automatically placed for stretch-items
             </Text>
           </View>
           <View
@@ -4539,6 +4722,7 @@ exports[`Storyshots Container Stretch Items 1`] = `
                 style={
                   Object {
                     "backgroundColor": "powderblue",
+                    "flex": 1,
                     "minHeight": 50,
                     "minWidth": 50,
                   }
@@ -4548,6 +4732,7 @@ exports[`Storyshots Container Stretch Items 1`] = `
                 style={
                   Object {
                     "backgroundColor": "skyblue",
+                    "flex": 1,
                     "minHeight": 50,
                     "minWidth": 50,
                   }
@@ -4557,6 +4742,7 @@ exports[`Storyshots Container Stretch Items 1`] = `
                 style={
                   Object {
                     "backgroundColor": "steelblue",
+                    "flex": 1,
                     "minHeight": 100,
                     "minWidth": 100,
                   }
