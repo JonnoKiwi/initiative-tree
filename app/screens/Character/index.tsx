@@ -1,11 +1,11 @@
-import React, {useState} from 'react'
-import { useNavigation } from '@react-navigation/native'
+import React, { useState } from 'react'
+import { useNavigation, useRoute } from '@react-navigation/native'
 import { View } from 'react-native'
 import { Screen, Header } from '../../components'
 import { Portal, Snackbar } from 'react-native-paper'
 import CharacterEdit from './CharacterEdit'
 import createScreen from '../createScreen'
-import { useRoute } from '@react-navigation/native'
+
 import { Character } from '../../state/Models'
 import styles from './styles'
 
