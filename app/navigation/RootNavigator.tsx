@@ -9,6 +9,7 @@ import { NavigationContainer, NavigationContainerRef } from '@react-navigation/n
 import { createStackNavigator } from '@react-navigation/stack'
 import DrawerNavigator from './DrawerNavigator'
 import navigationTheme from '../theme/navigation'
+import { PrimaryNavigator } from './PrimaryNavigator'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -22,6 +23,7 @@ import navigationTheme from '../theme/navigation'
  */
 export type RootParamList = {
   DrawerStack: undefined
+  PrimaryStack: undefined
 }
 
 const Stack = createStackNavigator<RootParamList>()
@@ -35,6 +37,7 @@ const RootStack = () => {
   return (
     <Stack.Navigator screenOptions={rootStackScreenOptions}>
       <Stack.Screen name="DrawerStack" component={DrawerNavigator} />
+      <Stack.Screen name="PrimaryStack" component={PrimaryNavigator} />
     </Stack.Navigator>
   )
 }

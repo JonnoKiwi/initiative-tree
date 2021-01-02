@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native'
 import { StoryScreen, Story, UseCase } from '../../../storybook/views'
 import Avatar from './'
 
-declare var module
+declare let module
 
 storiesOf('Avatar', module)
   .addDecorator((fn) => <StoryScreen>{fn()}</StoryScreen>)
@@ -30,4 +30,13 @@ storiesOf('Avatar', module)
       </UseCase>
     </Story>
   ))
-
+  .add('Change size', () => (
+    <Story>
+      <UseCase text="Set size of the avatar" usage="size={number} (64)">
+        <Avatar size={64} thumbnail="https://randomuser.me/api/portraits/thumb/men/7.jpg" />
+      </UseCase>
+      <UseCase text="Set size of the avatar" usage="size={number} (128)">
+        <Avatar size={128} thumbnail="https://randomuser.me/api/portraits/men/7.jpg" />
+      </UseCase>
+    </Story>
+  ))

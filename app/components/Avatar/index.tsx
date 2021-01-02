@@ -9,10 +9,11 @@ const AVATAR_STYLE: ViewStyle = {
 }
 const EMPTY_REGX = /^\s*$/
 
-export default function Avatar({ thumbnail }) {
+export default function Avatar(props) {
+  const { thumbnail, size = 48 } = props
   const image = R.is(String, thumbnail) && !EMPTY_REGX.test(thumbnail) ? { uri: thumbnail } : DEFAULT_IMAGE
 
   return (
-    <AvatarPaper.Image source={ image } size={48} style={AVATAR_STYLE} />
+    <AvatarPaper.Image source={ image } size={size} style={AVATAR_STYLE} {...props} />
   )
 }

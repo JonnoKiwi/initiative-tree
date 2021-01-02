@@ -29,7 +29,7 @@ const DEFAULT_DATA: Types.Character[] = [
     modifiers: 18,
     name: 'Dirby',
     avatar: {
-      thumbnail: 'https://randomuser.me/api/portraits/thumb/men/1.jpg'
+      thumbnail: 'https://randomuser.me/api/portraits/men/1.jpg'
     }
   },
   {
@@ -40,7 +40,7 @@ const DEFAULT_DATA: Types.Character[] = [
     modifiers: 2,
     name: 'Yamanu',
     avatar: {
-      thumbnail: 'https://randomuser.me/api/portraits/thumb/women/80.jpg'
+      thumbnail: 'https://randomuser.me/api/portraits/women/80.jpg'
     }
   }
 ].map((entity) => ({ ...entity, initiative: calculateInitiative(entity) }))

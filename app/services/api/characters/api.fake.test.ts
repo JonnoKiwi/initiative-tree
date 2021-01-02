@@ -1,7 +1,7 @@
 import { calculateInitiative, ensureNumber } from './api.fake'
 import { Character } from './api.types'
 
-describe('Characters API > Fake', () => {
+describe('Character API > Fake', () => {
   describe('Methods', () => {
     describe('ensureNumber()', () => {
       it('returns a number for a string', () => {
