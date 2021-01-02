@@ -39,3 +39,14 @@
  * 8 = massive - an uncomfortable amount of whitespace
  */
 export const spacing = [0, 4, 8, 12, 16, 24, 32, 48, 64]
+export enum SPACING {
+  NONE = 0,
+  TINY = 4,
+  SMALLER = 8,
+  SMALL = 12,
+  MEDIUM = 16,
+  LARGE = 24,
+  X_LARGE = 32,
+  HUGE = 48,
+  MASSIVE = 64
+}

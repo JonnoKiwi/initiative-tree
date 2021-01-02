@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { TextInput, Button } from 'react-native-paper'
-import {View, ViewStyle} from 'react-native'
+import { Button, TextInput } from 'react-native-paper'
 import { Character } from '../../state/Models'
 import { Avatar } from '../../components'
-import { spacing } from '../../theme'
+import Container from '../../components/Container'
 
 export default function CharacterEdit (props) {
   const character: Character = props.character
@@ -14,23 +13,16 @@ export default function CharacterEdit (props) {
     props.onChange({
       ...character,
       name,
-      dexterity,
-      modifiers
+      dexterity: parseInt(dexterity),
+      modifiers: parseInt(modifiers)
     })
-  }
-  const BUTTON_STYLE: ViewStyle = {
-    paddingVertical: spacing[4],
-    paddingHorizontal: spacing[4]
-  }
-  const AVATAR_STYLE: ViewStyle = {
-    alignSelf: 'center'
   }
 
   return (
-    <View>
-      <View>
-        <Avatar style={AVATAR_STYLE} thumbnail={character.avatar.thumbnail} size={124} />
-      </View>
+    <Container preset='form'>
+      <Container>
+        <Avatar thumbnail={character.avatar.thumbnail} size={124} />
+      </Container>
       <TextInput
         label="Name"
         value={name}
@@ -48,12 +40,10 @@ export default function CharacterEdit (props) {
         value={modifiers}
         onChangeText={setModifiers}
       />
-      <View style={BUTTON_STYLE} >
-        <Button mode="contained" onPress={onSave} >
-          Save Changes
-        </Button>
-      </View>
-    </View>
+      <Button mode="contained" onPress={onSave} >
+        Save Changes
+      </Button>
+    </Container>
 
   )
 }
