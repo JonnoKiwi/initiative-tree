@@ -168,7 +168,7 @@ export class ApiFake implements SagaSauceAPI, HydrogenAPI {
   }
 
   createData = async (data) => {
-    throw new Error('Not implemented')
+    return { ok: true, kind: 'ok', data: {} }
   }
 
   deleteData = async (data) => {
