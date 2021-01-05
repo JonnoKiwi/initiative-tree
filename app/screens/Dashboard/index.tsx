@@ -19,8 +19,11 @@ export default createScreen('Dashboard', (props) => {
     setIsMessageVisible(true)
   }
   const goBack = () => navigation.goBack()
+  const createCharacter = () => {
+    navigation.navigate('PrimaryStack', { screen: 'CharacterNew'})
+  }
   const openCharacter = (character: Character) => {
-    navigation.navigate('PrimaryStack', { screen: 'Character', params: { character } })
+    navigation.navigate('PrimaryStack', { screen: 'CharacterEdit', params: { character } })
   }
   const onRollChange = ({ newRoll, character }) => {
     showMessage(`${character.name} roll changed to ${newRoll}`)
@@ -63,9 +66,7 @@ export default createScreen('Dashboard', (props) => {
           {
             icon: 'account-plus',
             label: 'Character',
-            onPress: () => {
-              showMessage('Ability to create CharacterEdit is coming soon')
-            }
+            onPress: createCharacter
           }
         ]}
       />

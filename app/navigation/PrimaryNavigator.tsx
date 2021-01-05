@@ -6,7 +6,7 @@
  */
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { DashboardScreen, CharacterEdit } from '../screens'
+import { DashboardScreen, CharacterEdit, CharacterNew } from '../screens'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -23,6 +23,7 @@ import { DashboardScreen, CharacterEdit } from '../screens'
 export type PrimaryParamList = {
   Dashboard: undefined
   CharacterEdit: undefined
+  CharacterNew: undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
@@ -38,6 +39,7 @@ export function PrimaryNavigator() {
     >
       <Stack.Screen name="Dashboard" component={DashboardScreen} />
       <Stack.Screen name="CharacterEdit" component={CharacterEdit} />
+      <Stack.Screen name="CharacterNew" component={CharacterNew} />
     </Stack.Navigator>
   )
 }
