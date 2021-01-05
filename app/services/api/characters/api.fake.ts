@@ -75,6 +75,16 @@ class Server {
     }
   }
 
+  async createItem(data) {
+    // BUSINESS RULES
+    // Validation
+    data.dexterity = ensureNumber(data.dexterity)
+    data.modifiers = ensureNumber(data.modifiers)
+    // initiative is calculated on server and the clients cannot set it manually
+    data = R.omit(['initiative'], data)
+
+  }
+
   async updateItem(data) {
     // BUSINESS RULES
     // Validation
