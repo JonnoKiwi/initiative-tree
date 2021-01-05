@@ -3,13 +3,13 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import { View } from 'react-native'
 import { Screen, Header } from '../../components'
 import { Portal, Snackbar } from 'react-native-paper'
-import CharacterEdit from './CharacterEdit'
+import CharacterEdit from '../../components/CharacterEdit'
 import createScreen from '../createScreen'
 
 import { Character } from '../../state/Models'
 import styles from './styles'
 
-export default createScreen('Character', (props) => {
+export default createScreen('CharacterEdit', (props) => {
   // Pull in navigation via hook
   const { params: { character } } = useRoute()
   const navigation = useNavigation()

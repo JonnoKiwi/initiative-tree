@@ -2,7 +2,7 @@ import { calculateInitiative, ensureNumber, ApiFake } from './api.fake'
 import { Character } from './api.types'
 import R from 'ramda'
 
-describe('Character API > Fake', () => {
+describe('CharacterEdit API > Fake', () => {
   describe('Interface', () => {
     describe('Create', () => {
       it('returns standard structure', async () => {

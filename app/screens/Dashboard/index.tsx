@@ -64,7 +64,7 @@ export default createScreen('Dashboard', (props) => {
             icon: 'account-plus',
             label: 'Character',
             onPress: () => {
-              showMessage('Ability to create Character is coming soon')
+              showMessage('Ability to create CharacterEdit is coming soon')
             }
           }
         ]}

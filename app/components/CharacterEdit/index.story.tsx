@@ -4,7 +4,7 @@ import { StoryScreen, Story, UseCase } from '../../../storybook/views'
 import { State, Store } from "@sambego/storybook-state"
 import { action } from '@storybook/addon-actions'
 import { Character } from '../../state/Models'
-import CharacterEdit from './CharacterEdit'
+import CharacterEdit from './index'
 
 declare let module
 type InitialState = {
@@ -31,7 +31,7 @@ storiesOf('CharacterEdit', module)
       <UseCase text="All Properties" usage="Edit elements.">
         <State store={store}>
           {(state) => (
-            <CharacterEdit character={state.character} onChange={action('Character Saved')}/>
+            <CharacterEdit character={state.character} onChange={action('CharacterEdit Saved')}/>
           )}
         </State>
       </UseCase>

@@ -11,7 +11,7 @@ export type Avatar = {
 }
 
 /**
- * A Character is a many to one with the User
+ * A CharacterEdit is a many to one with the User
  */
 export type Character = {
   id: string
