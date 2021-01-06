@@ -15,14 +15,7 @@ export default createScreen('Welcome', (props) => {
     },
     [],
   )
-  const loadUsers = React.useMemo(
-    () => async () => {
-      await props.getUsers({ query: { results: 5 } })
-    },
-    [],
-  )
   const nextScreen = async () => {
-    await loadUsers()
     await loadCharacters()
     navigation.navigate('Dashboard')
   }

@@ -20,7 +20,7 @@ export default createScreen('Dashboard', (props) => {
   }
   const goBack = () => navigation.goBack()
   const createCharacter = () => {
-    navigation.navigate('PrimaryStack', { screen: 'CharacterNew'})
+    navigation.navigate('PrimaryStack', { screen: 'CharacterNew' })
   }
   const openCharacter = (character: Character) => {
     navigation.navigate('PrimaryStack', { screen: 'CharacterEdit', params: { character } })

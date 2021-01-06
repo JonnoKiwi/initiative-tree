@@ -5,7 +5,7 @@ import { View } from 'react-native'
 import { Portal, Snackbar } from 'react-native-paper'
 import styles from './styles'
 import { Screen, Header, CharacterEdit } from '../../components'
-import { Character } from '../../state/Models'
+import { Character, createCharacter as characterFactory } from '../../state/Models'
 
 export default createScreen('CharacterNew', (props) => {
   const navigation = useNavigation()
@@ -23,6 +23,7 @@ export default createScreen('CharacterNew', (props) => {
     props.createCharacters(character)
   }
 
+  const character: Character = characterFactory()
   return (
     <View style={styles.FULL}>
       <Screen style={styles.CONTAINER} preset="scroll">
@@ -31,7 +32,7 @@ export default createScreen('CharacterNew', (props) => {
           leftIcon="back"
           onLeftPress={goBack}
         />
-        <CharacterEdit onSave={createCharacter}/>
+        <CharacterEdit character={character} onSave={createCharacter}/>
       </Screen>
       <Portal>
         <Snackbar
