@@ -68,6 +68,10 @@ class Server {
     return jsonValue != null ? JSON.parse(jsonValue) : []
   }
 
+  async _setItemsToStorage(list: Types.Character[]) {
+    await AsyncStorage.setItem(this.getStorageKey(), JSON.stringify(list))
+  }
+
   async getItems () {
     const list = await this._getItemsFromStorage()
     return {
@@ -78,11 +82,22 @@ class Server {
   async createItem(data) {
     // BUSINESS RULES
     // Validation
-    data.dexterity = ensureNumber(data.dexterity)
-    data.modifiers = ensureNumber(data.modifiers)
-    // initiative is calculated on server and the clients cannot set it manually
-    data = R.omit(['initiative'], data)
-
+    const item: Types.Character = {
+      id: String(Math.random()*10*1000000000000000),
+      name: data.name,
+      dexterity: data.dexterity,
+      modifiers: data.modifiers,
+      avatar: data.avatar,
+      roll: 0,
+      initiative: 0
+    }
+    item.initiative = calculateInitiative(item)
+    const list = await this._getItemsFromStorage()
+    list.push(item)
+    await this._setItemsToStorage(list)
+    return {
+      data: list
+    }
   }
 
   async updateItem(data) {
@@ -107,7 +122,7 @@ class Server {
         initiative: calculateInitiative(mergedItem) // business rule
       }]
     ]
-    await AsyncStorage.setItem(this.getStorageKey(), JSON.stringify(newList))
+    await this._setItemsToStorage(newList)
     return {
       data: newList.find(entity => data.id === entity.id)
     }
@@ -126,7 +141,7 @@ class Server {
   async warm() {
     const list = await this._getItemsFromStorage()
     if (!list.length) {
-      await AsyncStorage.setItem(this.getStorageKey(), JSON.stringify(DEFAULT_DATA))
+      await this._setItemsToStorage(DEFAULT_DATA)
     }
   }
 }
