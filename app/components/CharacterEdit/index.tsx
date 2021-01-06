@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { Button, TextInput } from 'react-native-paper'
 import { Character } from '../../state/Models'
-import { Avatar } from '../../components'
-import Container from '../../components/Container'
+import { Avatar, Container } from '../../components'
+import { Props } from './props'
 
-export default function CharacterEdit (props) {
+export default function CharacterEdit (props: Props) {
   const character: Character = props.character
   const [name, setName] = useState(String(character.name))
   const [dexterity, setDexterity] = useState(String(character.dexterity))

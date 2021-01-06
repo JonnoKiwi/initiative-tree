@@ -31,7 +31,7 @@ storiesOf('CharacterEdit', module)
       <UseCase text="All Properties" usage="Edit elements.">
         <State store={store}>
           {(state) => (
-            <CharacterEdit character={state.character} onChange={action('CharacterEdit Saved')}/>
+            <CharacterEdit character={state.character} onSave={action('CharacterEdit Saved')}/>
           )}
         </State>
       </UseCase>
