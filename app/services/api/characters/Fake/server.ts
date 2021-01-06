@@ -1,10 +1,9 @@
-import { ApisauceInstance } from 'apisauce'
-import { DEFAULT_API_CONFIG } from './api-config'
-import * as Types from './api.types'
-import { ApiConfig, HydrogenAPI, SagaSauceAPI } from '../IHydrogenAPI'
+import * as Types from '../api.types'
+import { DEFAULT_DATA } from './data'
+import AsyncStorage from "@react-native-async-storage/async-storage"
 import R from 'ramda'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 
+/** BUSINESS LOGIC */
 const sortWith = R.sortWith([
   R.descend(R.prop('initiative')),
   R.descend(R.prop('dexterity'))
@@ -16,37 +15,13 @@ export const ensureNumber = (value: any): number => {
   }
   return R.is(Number, value) && !Number.isNaN(value) ? value : 0
 }
+
 export const calculateInitiative = (entity: Types.Character): number => {
   return ensureNumber(entity.roll) + ensureNumber(entity.modifiers) + ensureNumber(entity.dexterity)
 }
 
-const DEFAULT_DATA: Types.Character[] = [
-  {
-    id: '11111-111111-11111-11111',
-    initiative: 0,
-    roll: 0,
-    dexterity: 12,
-    modifiers: 18,
-    name: 'Dirby',
-    avatar: {
-      thumbnail: 'https://randomuser.me/api/portraits/men/1.jpg'
-    }
-  },
-  {
-    id: '11111-111111-11111-11112',
-    initiative: 0,
-    roll: 0,
-    dexterity: 6,
-    modifiers: 2,
-    name: 'Yamanu',
-    avatar: {
-      thumbnail: 'https://randomuser.me/api/portraits/women/80.jpg'
-    }
-  }
-].map((entity) => ({ ...entity, initiative: calculateInitiative(entity) }))
-
 /**
- * Warning this is not performant. We should use an alternative in-memory database.
+ * Warning this is for beta or low-performance needs, otherwise please use an alternative or non-Fake / Live Server.
  */
 class Server {
   storage: Types.Character[]
@@ -83,7 +58,7 @@ class Server {
     // BUSINESS RULES
     // Validation
     const item: Types.Character = {
-      id: String(Math.random()*10*1000000000000000),
+      id: String(Math.random() * 10 * 1000000000000000),
       name: data.name,
       dexterity: data.dexterity,
       modifiers: data.modifiers,
@@ -141,70 +116,9 @@ class Server {
   async warm() {
     const list = await this._getItemsFromStorage()
     if (!list.length) {
-      await this._setItemsToStorage(DEFAULT_DATA)
+      await this._setItemsToStorage(DEFAULT_DATA.map((entity) => ({ ...entity, initiative: calculateInitiative(entity) })))
     }
   }
 }
 
-/**
- * Manages all requests to the API.
- * TODO Generator for APIs. We may need to connect to different APIs
- */
-export class ApiFake implements SagaSauceAPI, HydrogenAPI {
-  server: Server
-  /**
-   * The underlying apisauce instance which performs the requests.
-   */
-  apisauce: ApisauceInstance
-
-  /**
-   * Configurable options.
-   */
-  config: ApiConfig
-
-  /**
-   * Creates the api.
-   *
-   * @param config The configuration to use.
-   */
-  constructor(config: ApiConfig = DEFAULT_API_CONFIG) {
-    this.config = config
-  }
-
-  /**
-   * Sets up the API.  This will be called during the bootup
-   * sequence and will happen before the first React component
-   * is mounted.
-   *
-   * Be as quick as possible in here.
-   */
-  setup() {
-    this.server = new Server()
-  }
-
-  /* ----- Existing SagaSauce API Structure. There is much to improve though so make it your own. Very much a work in-progress ---- */
-  getData = async (data) => {
-    const items = await this.server.getItems()
-    try {
-      return { ok: true, kind: 'ok', data: items }
-    } catch {
-      return { ok: false, kind: 'bad-data' }
-    }
-  }
-
-  createData = async (data) => {
-    return { ok: true, kind: 'ok', data: {} }
-  }
-
-  deleteData = async (data) => {
-    throw new Error('Not implemented')
-  }
-
-  updateData = async (data) => {
-    if (!R.is(Array, data)) {
-      data = [data]
-    }
-    const list = await this.server.updateItems(data)
-    return { ok: true, kind: 'ok', data: list }
-  }
-}
+export default Server

@@ -1,42 +1,8 @@
-import { calculateInitiative, ensureNumber, ApiFake } from './api.fake'
-import { Character } from './api.types'
-import R from 'ramda'
+import { Character } from '../api.types'
+import Server, { ensureNumber, calculateInitiative } from './server'
 
-describe('CharacterEdit API > Fake', () => {
-  describe('Interface', () => {
-    describe('Create', () => {
-      it('returns standard structure', async () => {
-        const api:ApiFake = new ApiFake()
-        await api.setup()
-        const result = await api.createData({})
-        expect(result).toHaveProperty('ok', true)
-        expect(result).toHaveProperty('kind', 'ok')
-        expect(result).toHaveProperty('data')
-      })
-      it('persists created object', async () => {
-        const api:ApiFake = new ApiFake()
-        await api.setup()
-        const newData:Character = {
-          id: '0',
-          name: 'Intel',
-          initiative: 0,
-          roll: 0,
-          dexterity: 3,
-          modifiers: 4,
-          avatar: {
-            thumbnail: ''
-          }
-        }
-        await api.createData(newData)
-        const result = await api.getData()
-        expect(result).toHaveProperty('data.data')
-        const list = result.data.data
-        expect(list).toBeInstanceOf(Array)
-        expect(list.find(item => item.name === newData.name)).toBeTruthy()
-      })
-    })
-  })
-  describe('Methods', () => {
+describe('Character Fake Server', () => {
+  describe('Standalone Methods', () => {
     describe('ensureNumber()', () => {
       it('returns a number for a string', () => {
         expect(ensureNumber('2')).toEqual(2)
@@ -71,6 +37,25 @@ describe('CharacterEdit API > Fake', () => {
         }
         expect(calculateInitiative(character)).toEqual(35)
         expect(character.initiative).toEqual(15)
+      })
+    })
+  })
+  describe('Interface', () => {
+    describe('create', () => {
+      it('persists item', async () => {
+        const server = new Server()
+        await server.warm()
+        const newItem: Character = {
+          id: '0',
+          name: 'Intel',
+          initiative: 32,
+          roll: 1,
+          dexterity: 3,
+          modifiers: 4,
+          avatar: {
+            thumbnail: 'http://example.com/avatar/2'
+          }
+        }
       })
     })
   })

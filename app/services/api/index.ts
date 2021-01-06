@@ -1,5 +1,5 @@
 import { Api as Users } from './users'
-import { ApiFake as Characters } from './characters'
+import { Api as Characters } from './characters'
 import { HydrogenAPI } from './IHydrogenAPI'
 
 export class Api {

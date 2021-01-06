@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import createScreen from '../createScreen'
 import { useNavigation } from '@react-navigation/native'
 import { View } from 'react-native'
@@ -7,8 +7,7 @@ import styles from './styles'
 import { Screen, Header, CharacterEdit } from '../../components'
 import { Character } from '../../state/Models'
 
-
-export default createScreen('CharacterNew', () => {
+export default createScreen('CharacterNew', (props) => {
   const navigation = useNavigation()
   const goBack = () => navigation.goBack()
 
@@ -21,7 +20,7 @@ export default createScreen('CharacterNew', () => {
 
   const createCharacter = (character: Character) => {
     showMessage(`${character.name} created`)
-    //props.createCharacter(character)
+    props.createCharacters(character)
   }
 
   return (
@@ -32,7 +31,7 @@ export default createScreen('CharacterNew', () => {
           leftIcon="back"
           onLeftPress={goBack}
         />
-        <CharacterEdit  />
+        <CharacterEdit onSave={createCharacter}/>
       </Screen>
       <Portal>
         <Snackbar
