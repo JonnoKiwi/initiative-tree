@@ -6,7 +6,7 @@ import { Character } from '../../state/Models'
  */
 export interface Props {
   character: Character
-  onSave: any
+  onChange: any
   /**
    * Override the container style... useful for margins and padding.
    */

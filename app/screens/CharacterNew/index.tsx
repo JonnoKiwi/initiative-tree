@@ -18,9 +18,10 @@ export default createScreen('CharacterNew', (props) => {
     setIsMessageVisible(true)
   }
 
-  const createCharacter = (character: Character) => {
+  const createCharacter = async (character: Character) => {
     showMessage(`${character.name} created`)
-    props.createCharacters(character)
+    await props.createCharacters(character)
+    goBack()
   }
 
   const character: Character = characterFactory()
@@ -32,7 +33,7 @@ export default createScreen('CharacterNew', (props) => {
           leftIcon="back"
           onLeftPress={goBack}
         />
-        <CharacterEdit character={character} onSave={createCharacter}/>
+        <CharacterEdit character={character} onChange={createCharacter}/>
       </Screen>
       <Portal>
         <Snackbar
