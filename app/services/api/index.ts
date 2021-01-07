@@ -1,13 +1,13 @@
 import { Api as Users } from './users'
-import { Api as Characters } from './characters'
+import * as Characters from './characters'
 import { HydrogenAPI } from './IHydrogenAPI'
 
 export class Api {
   users: HydrogenAPI
   characters: HydrogenAPI
-  constructor() {
+  constructor({ useLiveAPIForCharacters = false }) {
     this.users = new Users()
-    this.characters = new Characters()
+    this.characters = useLiveAPIForCharacters ? new Characters.Api() : new Characters.FakeApi()
   }
 
   async setup() {

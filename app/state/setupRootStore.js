@@ -11,17 +11,18 @@ export const rootReducer = combineReducers(reducers)
 export default async () => {
   // prepare the environment that will be associated with the RootStore.
   const env = await createEnvironment()
+  const api = env.api
   const reactotron = env.reactotron
   let { store, sagasManager, sagaMiddleware } = configureStore(
     rootReducer,
-    creatRootSagas({ api: env.api }),
+    creatRootSagas({ api }),
     { useReactotron },
   )
 
   if (module.hot) {
     module.hot.accept(() => {
       store.replaceReducer(require('./reducers').default)
-      const rootSaga = require('./sagas').default({ api: env.api })
+      const rootSaga = require('./sagas').default({ api })
       sagasManager.cancel()
       sagasManager.done.then(() => {
         sagasManager = sagaMiddleware(rootSaga)
