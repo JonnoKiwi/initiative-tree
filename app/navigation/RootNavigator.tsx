@@ -10,6 +10,9 @@ import { createStackNavigator } from '@react-navigation/stack'
 import DrawerNavigator from './DrawerNavigator'
 import navigationTheme from '../theme/navigation'
 import { PrimaryNavigator } from './PrimaryNavigator'
+import { Provider as PaperProvider } from 'react-native-paper'
+// TODO Use HOC or Custom Hook
+import PaperTheme from '../theme/paper/theme'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -42,15 +45,18 @@ const RootStack = () => {
   )
 }
 
+export const RootNavigatorView = (props, ref) => {
+  return (
+    <PaperProvider theme={PaperTheme}>
+      <NavigationContainer theme={navigationTheme} {...props} ref={ref}>
+        <RootStack />
+      </NavigationContainer>
+    </PaperProvider>
+  )
+}
 export const RootNavigator = React.forwardRef<
   NavigationContainerRef,
   Partial<React.ComponentProps<typeof NavigationContainer>>
->((props, ref) => {
-  return (
-    <NavigationContainer theme={navigationTheme} {...props} ref={ref}>
-      <RootStack />
-    </NavigationContainer>
-  )
-})
+  >(RootNavigatorView)
 
 RootNavigator.displayName = 'RootNavigator'

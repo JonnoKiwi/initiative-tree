@@ -1,3 +1,3 @@
 export * from './api'
 export * from './api.types'
-export * from './api.fake'
+export { FakeApi } from './Fake/api'

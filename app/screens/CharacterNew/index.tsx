@@ -1,14 +1,13 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import createScreen from '../createScreen'
 import { useNavigation } from '@react-navigation/native'
 import { View } from 'react-native'
 import { Portal, Snackbar } from 'react-native-paper'
 import styles from './styles'
 import { Screen, Header, CharacterEdit } from '../../components'
-import { Character } from '../../state/Models'
+import { Character, createCharacter as characterFactory } from '../../state/Models'
 
-
-export default createScreen('CharacterNew', () => {
+export default createScreen('CharacterNew', (props) => {
   const navigation = useNavigation()
   const goBack = () => navigation.goBack()
 
@@ -19,11 +18,13 @@ export default createScreen('CharacterNew', () => {
     setIsMessageVisible(true)
   }
 
-  const createCharacter = (character: Character) => {
+  const createCharacter = async (character: Character) => {
     showMessage(`${character.name} created`)
-    //props.createCharacter(character)
+    await props.createCharacters(character)
+    goBack()
   }
 
+  const character: Character = characterFactory()
   return (
     <View style={styles.FULL}>
       <Screen style={styles.CONTAINER} preset="scroll">
@@ -32,7 +33,7 @@ export default createScreen('CharacterNew', () => {
           leftIcon="back"
           onLeftPress={goBack}
         />
-        <CharacterEdit  />
+        <CharacterEdit character={character} onChange={createCharacter}/>
       </Screen>
       <Portal>
         <Snackbar
