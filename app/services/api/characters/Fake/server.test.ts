@@ -1,5 +1,5 @@
 import { Character } from '../api.types'
-import Server, { ensureNumber, calculateInitiative } from './server'
+import Server, { ensureNumber, calculateInitiative, ResponseItems } from './server'
 
 describe('Character Fake Server', () => {
   describe('Standalone Methods', () => {
@@ -41,8 +41,8 @@ describe('Character Fake Server', () => {
     })
   })
   describe('Interface', () => {
-    describe('create', () => {
-      it('persists item', async () => {
+    describe('createItem', () => {
+      it('creates item (persists and returns in response)', async () => {
         const server = new Server()
         await server.warm()
         const newItem: Character = {
@@ -56,6 +56,42 @@ describe('Character Fake Server', () => {
             thumbnail: 'http://example.com/avatar/2'
           }
         }
+        let response:ResponseItems = await server.createItem(newItem)
+        expect(response).toHaveProperty('data')
+        const items = response.data
+        expect(items).toBeInstanceOf(Array)
+        let item = items.find(value => value.name === newItem.name)
+        expect(item).toHaveProperty('dexterity', newItem.dexterity)
+        expect(item).toHaveProperty('modifiers', newItem.modifiers)
+        // See if it persisted
+        response = await server.getItems()
+        item = response.data.find(value => value.name === newItem.name)
+        expect(item).toHaveProperty('dexterity', newItem.dexterity)
+        expect(item).toHaveProperty('modifiers', newItem.modifiers)
+        expect(item).toHaveProperty('roll', 0)
+        expect(item).toHaveProperty('avatar.thumbnail', newItem.avatar.thumbnail)
+        expect(item).not.toHaveProperty('id', '0')
+        expect(item.initiative).toBeTruthy()
+        expect(item.initiative).not.toEqual(newItem.initiative)
+      })
+    })
+    describe('deleteItems', () => {
+      it('deletes all items if no specific id is supplied', async () => {
+        const server = new Server()
+        await server.warm()
+        await server.deleteItems()
+        const response:ResponseItems = await server.getItems()
+        expect(response).toHaveProperty('data')
+        expect(response.data).toHaveLength(0)
+      })
+      it('deletes specific ones by id', async () => {
+        const server = new Server()
+        await server.warm()
+        await server.deleteItems([{ id: '11111-111111-11111-11111' }])
+        const response:ResponseItems = await server.getItems()
+        expect(response).toHaveProperty('data')
+        expect(response.data).toHaveLength(1)
+        expect(response.data[0]).toHaveProperty('id', '11111-111111-11111-11112')
       })
     })
   })

@@ -60,7 +60,12 @@ export class FakeApi implements SagaSauceAPI, HydrogenAPI {
   }
 
   deleteData = async (data) => {
-    throw new Error('Not implemented')
+    try {
+      const items = await this.server.deleteItems(data)
+      return { ok: true, kind: 'ok', data: items }
+    } catch {
+      return { ok: false, kind: 'bad-data' }
+    }
   }
 
   updateData = async (data) => {

@@ -2,9 +2,10 @@ import * as Types from '../api.types'
 import { DEFAULT_DATA } from './data'
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import R from 'ramda'
+import { Character } from '../api.types'
 
 /** BUSINESS LOGIC */
-const sortWith = R.sortWith([
+const sortWith:any = R.sortWith([
   R.descend(R.prop('initiative')),
   R.descend(R.prop('dexterity'))
 ])
@@ -18,6 +19,14 @@ export const ensureNumber = (value: any): number => {
 
 export const calculateInitiative = (entity: Types.Character): number => {
   return ensureNumber(entity.roll) + ensureNumber(entity.modifiers) + ensureNumber(entity.dexterity)
+}
+
+export interface ResponseItem {
+  data: Character | null
+}
+
+export interface ResponseItems {
+  data: Character[]
 }
 
 /**
@@ -47,14 +56,15 @@ class Server {
     await AsyncStorage.setItem(this.getStorageKey(), JSON.stringify(list))
   }
 
-  async getItems () {
+  // ------ INTERFACE METHODS ---- //
+  async getItems (): Promise<ResponseItems> {
     const list = await this._getItemsFromStorage()
     return {
       data: sortWith(list)
     }
   }
 
-  async createItem(data) {
+  async createItem(data): Promise<ResponseItems> {
     // BUSINESS RULES
     // Validation
     const item: Types.Character = {
@@ -75,7 +85,7 @@ class Server {
     }
   }
 
-  async updateItem(data) {
+  async updateItem(data): Promise<ResponseItem> {
     // BUSINESS RULES
     // Validation
     data.roll = ensureNumber(data.roll)
@@ -103,13 +113,28 @@ class Server {
     }
   }
 
-  async updateItems(data) {
+  async updateItems(data): Promise<ResponseItems> {
     for (const item of data) {
       await this.updateItem(item)
     }
     const list = await this._getItemsFromStorage()
     return {
       data: sortWith(list)
+    }
+  }
+
+  async deleteItems(data): Promise<ResponseItems> {
+    let list = []
+    if (data && data.length) {
+      const storedList = await this._getItemsFromStorage()
+      const ids = data.reduce((acc, value) => value.id, [])
+      list = storedList.filter(entity => {
+        return !R.contains(entity.id, ids)
+      }) || []
+    }
+    await this._setItemsToStorage(list)
+    return {
+      data: []
     }
   }
 
