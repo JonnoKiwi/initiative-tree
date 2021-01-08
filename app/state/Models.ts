@@ -11,7 +11,7 @@ export type Avatar = {
 }
 
 /**
- * A Character is a many to one with the User
+ * A CharacterEdit is a many to one with the User
  */
 export type Character = {
   id: string
@@ -24,3 +24,20 @@ export type Character = {
 }
 
 export type User = _User
+
+/**
+ * Character Factory
+ */
+export const createCharacter = ():Character => {
+  return {
+    id: '',
+    dexterity: 0,
+    modifiers: 0,
+    name: '',
+    initiative: 0,
+    roll: 0,
+    avatar: {
+      thumbnail: ''
+    }
+  }
+}
