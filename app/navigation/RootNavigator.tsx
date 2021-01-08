@@ -1,14 +1,14 @@
 /**
  * The root navigator is used to switch between major navigation flows of your app.
  * Generally speaking, it will contain an auth flow (registration, login, forgot password)
- * and a "main" flow (which is contained in your PrimaryNavigator) which the user
+ * and a "main" flow (which is contained in your ExternalNavigator) which the user
  * will use once logged in.
  */
 import React from 'react'
 import { NavigationContainer, NavigationContainerRef } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import DrawerNavigator from './DrawerNavigator'
-import { PrimaryNavigator } from './PrimaryNavigator'
+import LoggedInNavigator from './LoggedInNavigator'
+import { ExternalNavigator } from './ExternalNavigator'
 import { DarkTheme, LightTheme, mapToNavigationTheme } from '../theme'
 import { Provider as PaperProvider } from 'react-native-paper'
 import { useSelector } from 'react-redux'
@@ -24,8 +24,8 @@ import { useSelector } from 'react-redux'
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type RootParamList = {
-  DrawerStack: undefined
-  PrimaryStack: undefined
+  ExternalStack: undefined
+  LoggedInStack: undefined
 }
 
 const Stack = createStackNavigator<RootParamList>()
@@ -37,9 +37,11 @@ const rootStackScreenOptions = {
 
 const RootStack = () => {
   return (
-    <Stack.Navigator screenOptions={rootStackScreenOptions}>
-      <Stack.Screen name="DrawerStack" component={DrawerNavigator} />
-      <Stack.Screen name="PrimaryStack" component={PrimaryNavigator} />
+    <Stack.Navigator
+      screenOptions={rootStackScreenOptions}
+    >
+      <Stack.Screen name="ExternalStack" component={ExternalNavigator} />
+      <Stack.Screen name="LoggedInStack" component={LoggedInNavigator} />
     </Stack.Navigator>
   )
 }

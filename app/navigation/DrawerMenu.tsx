@@ -1,15 +1,11 @@
 import * as React from 'react'
-import { createDrawerNavigator, DrawerContentScrollView } from '@react-navigation/drawer'
 import { useNavigation } from '@react-navigation/native'
-import { View } from 'react-native'
+import { DrawerContentScrollView } from '@react-navigation/drawer'
 import { Drawer, Switch, Text, TouchableRipple } from 'react-native-paper'
+import { View } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
-import CharactersStateModule from '../state/modules/characters'
 import PreferencesStateModule from '../state/modules/preferences'
-import { DashboardScreen, WelcomeScreen } from '../screens'
-import { Container } from '../components'
-
-const { Navigator, Screen } = createDrawerNavigator()
+import CharactersStateModule from '../state/modules/characters'
 
 type Props = {
   progress: any
@@ -18,7 +14,7 @@ type Props = {
   descriptors: any
 }
 
-const DrawerContent = (props: Props) => {
+export default function DrawerMenu (props: Props) {
   const dispatch = useDispatch()
   const navigation = useNavigation()
   const useDarkTheme = useSelector(state => state.preferences.data.useDarkTheme)
@@ -67,13 +63,3 @@ const DrawerContent = (props: Props) => {
     </DrawerContentScrollView>
   )
 }
-const renderDrawerNavigator = () => {
-  return (
-    <Navigator initialRouteName="Welcome" drawerContent={props => <DrawerContent {...props} />}>
-      <Screen name="Welcome" component={WelcomeScreen} />
-      <Screen name="Dashboard" component={DashboardScreen} />
-    </Navigator>
-  )
-}
-
-export default renderDrawerNavigator

@@ -11,19 +11,6 @@ const TEXT: TextStyle = {
   fontFamily: typography.primary,
 }
 const BOLD: TextStyle = { fontWeight: 'bold' }
-const HEADER: TextStyle = {
-  paddingTop: spacing[3],
-  paddingBottom: spacing[4] + spacing[1],
-  paddingHorizontal: 0,
-}
-const HEADER_TITLE: TextStyle = {
-  ...TEXT,
-  ...BOLD,
-  fontSize: 12,
-  lineHeight: 15,
-  textAlign: 'center',
-  letterSpacing: 1.5,
-}
 const TITLE_WRAPPER: TextStyle = {
   ...TEXT,
   textAlign: 'center',
@@ -64,8 +51,6 @@ export default {
   CONTAINER,
   CONTENT,
   ALMOST,
-  HEADER,
-  HEADER_TITLE,
   BOLD,
   TREE,
   TEXT,

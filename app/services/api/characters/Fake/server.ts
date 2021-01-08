@@ -58,7 +58,11 @@ class Server {
 
   // ------ INTERFACE METHODS ---- //
   async getItems (): Promise<ResponseItems> {
-    const list = await this._getItemsFromStorage()
+    let list = await this._getItemsFromStorage()
+    if (!list.length) {
+      await this._setItemsToStorage(DEFAULT_DATA.map((entity) => ({ ...entity, initiative: calculateInitiative(entity) })))
+      list = await this._getItemsFromStorage()
+    }
     return {
       data: sortWith(list)
     }

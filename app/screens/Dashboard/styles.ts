@@ -7,18 +7,7 @@ const CONTAINER: ViewStyle = {
   paddingHorizontal: SPACING.MEDIUM,
 }
 const BOLD: TextStyle = { fontWeight: 'bold' }
-const HEADER: TextStyle = {
-  paddingTop: SPACING.SMALL,
-  paddingBottom: SPACING.LARGE - 1,
-  paddingHorizontal: 0,
-}
-const HEADER_TITLE: TextStyle = {
-  ...BOLD,
-  fontSize: 12,
-  lineHeight: 15,
-  textAlign: 'center',
-  letterSpacing: 1.5,
-}
+
 const TITLE: TextStyle = {
   ...BOLD,
   fontSize: 28,
@@ -61,8 +50,6 @@ export default {
   FULL,
   HINT,
   HEART,
-  HEADER_TITLE,
-  HEADER,
   LOVE,
   LOVE_WRAPPER,
   IGNITE,

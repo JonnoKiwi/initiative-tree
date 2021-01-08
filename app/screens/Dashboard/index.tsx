@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
-import { Text, Header, Screen, Container } from '../../components'
+import { Text, Screen, Container } from '../../components'
 import createScreen from '../createScreen'
 import { Portal, FAB, Snackbar } from 'react-native-paper'
 import { useSelector } from 'react-redux'
@@ -17,12 +17,11 @@ export default createScreen('Dashboard', (props) => {
     setMessage(message)
     setIsMessageVisible(true)
   }
-  const goBack = () => navigation.goBack()
   const createCharacter = () => {
-    navigation.navigate('PrimaryStack', { screen: 'CharacterNew' })
+    navigation.navigate('LoggedInStack', { screen: 'CharacterNew' })
   }
   const openCharacter = (character: Character) => {
-    navigation.navigate('PrimaryStack', { screen: 'CharacterEdit', params: { character } })
+    navigation.navigate('LoggedInStack', { screen: 'CharacterEdit', params: { character } })
   }
   const onRollChange = ({ newRoll, character }) => {
     showMessage(`${character.name} roll changed to ${newRoll}`)
@@ -41,13 +40,6 @@ export default createScreen('Dashboard', (props) => {
   return (
     <Container>
       <Screen style={styles.CONTAINER} preset="scroll" >
-        <Header
-          headerTx="dashboardScreen.header"
-          leftIcon="back"
-          onLeftPress={goBack}
-          style={styles.HEADER}
-          titleStyle={styles.HEADER_TITLE}
-        />
         <Text style={styles.TITLE} preset="header" tx="dashboardScreen.title" />
         <Text style={styles.TAGLINE} tx="dashboardScreen.tagLine" />
         <CharactersRolls onEditCharacter={openCharacter} data={characters} onChange={onRollChange} />
