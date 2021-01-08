@@ -8,11 +8,10 @@ import React from 'react'
 import { NavigationContainer, NavigationContainerRef } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import DrawerNavigator from './DrawerNavigator'
-import navigationTheme from '../theme/navigation'
 import { PrimaryNavigator } from './PrimaryNavigator'
+import { DarkTheme, LightTheme, mapToNavigationTheme } from '../theme'
 import { Provider as PaperProvider } from 'react-native-paper'
-// TODO Use HOC or Custom Hook
-import PaperTheme from '../theme/paper/theme'
+import { useSelector } from 'react-redux'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -46,9 +45,11 @@ const RootStack = () => {
 }
 
 export const RootNavigatorView = (props, ref) => {
+  const useDarkTheme = useSelector(state => state.preferences.data.useDarkTheme)
+  const theme = useDarkTheme ? DarkTheme : LightTheme
   return (
-    <PaperProvider theme={PaperTheme}>
-      <NavigationContainer theme={navigationTheme} {...props} ref={ref}>
+    <PaperProvider theme={theme}>
+      <NavigationContainer theme={mapToNavigationTheme(theme)} {...props} ref={ref}>
         <RootStack />
       </NavigationContainer>
     </PaperProvider>

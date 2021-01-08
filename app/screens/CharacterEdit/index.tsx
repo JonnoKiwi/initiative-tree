@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { View } from 'react-native'
-import { Screen, Header } from '../../components'
+import { Screen, Header, CharacterEdit } from '../../components'
 import { Portal, Snackbar } from 'react-native-paper'
-import { CharacterEdit } from '../../components'
 import createScreen from '../createScreen'
 
 import { Character } from '../../state/Models'

@@ -1,15 +1,15 @@
-import { colors, spacing } from '../../theme'
+import { DarkPalette, SPACING, spacing } from '../../theme'
 import { ImageStyle, TextStyle, ViewStyle } from 'react-native'
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
-  backgroundColor: colors.transparent,
-  paddingHorizontal: spacing[4],
+  backgroundColor: DarkPalette.transparent,
+  paddingHorizontal: SPACING.MEDIUM,
 }
 const BOLD: TextStyle = { fontWeight: 'bold' }
 const HEADER: TextStyle = {
-  paddingTop: spacing[3],
-  paddingBottom: spacing[5] - 1,
+  paddingTop: SPACING.SMALL,
+  paddingBottom: SPACING.LARGE - 1,
   paddingHorizontal: 0,
 }
 const HEADER_TITLE: TextStyle = {
@@ -24,7 +24,7 @@ const TITLE: TextStyle = {
   fontSize: 28,
   lineHeight: 38,
   textAlign: 'center',
-  marginBottom: spacing[5],
+  marginBottom: SPACING.LARGE,
 }
 const TAGLINE: TextStyle = {
   fontSize: 15,

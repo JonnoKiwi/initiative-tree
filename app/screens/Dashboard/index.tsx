@@ -1,7 +1,6 @@
 import React from 'react'
-import { View } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
-import { Text, Header, Screen } from '../../components'
+import { Text, Header, Screen, Container } from '../../components'
 import createScreen from '../createScreen'
 import { Portal, FAB, Snackbar } from 'react-native-paper'
 import { useSelector } from 'react-redux'
@@ -40,7 +39,7 @@ export default createScreen('Dashboard', (props) => {
   }
 
   return (
-    <View style={styles.FULL}>
+    <Container>
       <Screen style={styles.CONTAINER} preset="scroll" >
         <Header
           headerTx="dashboardScreen.header"
@@ -82,6 +81,6 @@ export default createScreen('Dashboard', (props) => {
           {message}
         </Snackbar>
       </Portal>
-    </View>
+    </Container>
   )
 })

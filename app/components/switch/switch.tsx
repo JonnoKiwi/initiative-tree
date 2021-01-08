@@ -1,6 +1,6 @@
 import React from 'react'
 import { ViewStyle, Animated, Easing, TouchableWithoutFeedback } from 'react-native'
-import { colors } from '../../theme'
+import { DarkPalette } from '../../theme'
 import { SwitchProps } from './switch.props'
 import { mergeAll, flatten } from 'ramda'
 
@@ -13,8 +13,8 @@ const ON_POSITION = WIDTH - THUMB_SIZE - MARGIN
 const BORDER_RADIUS = (THUMB_SIZE * 3) / 4
 
 // colors
-const ON_COLOR = colors.primary
-const OFF_COLOR = colors.palette.offWhite
+const ON_COLOR = DarkPalette.primary
+const OFF_COLOR = DarkPalette.background
 const BORDER_ON_COLOR = ON_COLOR
 const BORDER_OFF_COLOR = 'rgba(0, 0, 0, 0.1)'
 
@@ -27,7 +27,7 @@ const TRACK = {
   width: WIDTH,
   borderRadius: BORDER_RADIUS,
   borderWidth: MARGIN / 2,
-  backgroundColor: colors.background,
+  backgroundColor: DarkPalette.background,
 }
 
 // the thumb always has these props
@@ -38,7 +38,7 @@ const THUMB: ViewStyle = {
   borderColor: BORDER_OFF_COLOR,
   borderRadius: THUMB_SIZE / 2,
   borderWidth: MARGIN / 2,
-  backgroundColor: colors.background,
+  backgroundColor: DarkPalette.background,
   shadowColor: BORDER_OFF_COLOR,
   shadowOffset: { width: 1, height: 2 },
   shadowOpacity: 1,
