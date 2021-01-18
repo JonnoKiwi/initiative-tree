@@ -133,8 +133,9 @@ class Server {
       }) || []
     }
     await this._setItemsToStorage(list)
+    let newList = await this._getItemsFromStorage()
     return {
-      data: []
+      data: sortWith(newList)
     }
   }
 
