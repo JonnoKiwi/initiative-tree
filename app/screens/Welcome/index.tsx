@@ -11,7 +11,7 @@ export default createScreen('Welcome', (props) => {
   const navigation = useNavigation()
   const loadCharacters = React.useMemo(
     () => async () => {
-      await props.getCharacters({ query: { results: 5 } })
+      await props.getCharacters()
     },
     [],
   )

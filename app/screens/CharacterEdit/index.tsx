@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import { View } from 'react-native'
-import { Screen, Header } from '../../components'
-import { Portal, Snackbar } from 'react-native-paper'
+import {Screen, Header } from '../../components'
+import {Button, Portal, Snackbar} from 'react-native-paper'
 import { CharacterEdit } from '../../components'
 import createScreen from '../createScreen'
 
@@ -27,6 +27,12 @@ export default createScreen('CharacterEdit', (props) => {
     props.updateCharacters(character)
   }
 
+  const deleteCharacter = async (character: Character) => {
+    await props.deleteCharacters([character])
+    await props.getCharacters()
+    goBack()
+  }
+
   return (
     <View style={styles.FULL}>
       <Screen style={styles.CONTAINER} preset="scroll">
@@ -36,6 +42,9 @@ export default createScreen('CharacterEdit', (props) => {
           onLeftPress={goBack}
         />
         <CharacterEdit character={character} onChange={updateCharacter} />
+        <Button onPress={() => deleteCharacter(character)} >
+          Delete
+        </Button>
       </Screen>
       <Portal>
         <Snackbar
