@@ -36,10 +36,12 @@ This is where your app's models will live and change state.
 #### State Shape
 `./app/state/Models.ts`
 
-This is where your app's models will live and change state.
+This is where the shape of the models are kept.
 
-**navigation**
-This is where your `react-navigation` navigators will live.
+### Navigation
+'./app.navigation'
+
+This is where the app's screens, headers, and drawer are united. Navigations among screens are done here.
 
 **screens**
 This is where your screen components will live. A screen is a React component which will take up the entire screen and be part of the navigation hierarchy. Each screen will have a directory containing the `.tsx` file, along with any assets or other helper files.
