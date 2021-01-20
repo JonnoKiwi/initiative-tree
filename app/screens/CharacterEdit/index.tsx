@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigation, useRoute } from '@react-navigation/native'
+import { useRoute } from '@react-navigation/native'
 import { View } from 'react-native'
 import { Screen, CharacterEdit } from '../../components'
 import { Portal, Snackbar } from 'react-native-paper'
