@@ -79,9 +79,12 @@ describe('Character Fake Server', () => {
       it('deletes all items if no specific id is supplied', async () => {
         const server = new Server()
         await server.warm()
+        // Make sure we have items first from warm
         let items:Character[] = await server._getItemsFromStorage()
         expect(items.length).toBeGreaterThan(0)
+        // unit to test
         await server.deleteItems([])
+        // assert that the storage was updated
         items = await server._getItemsFromStorage()
         expect(items).toHaveLength(0)
       })
@@ -92,6 +95,25 @@ describe('Character Fake Server', () => {
         const items:Character[] = await server._getItemsFromStorage()
         expect(items).toHaveLength(1)
         expect(items[0]).toHaveProperty('id', '11111-111111-11111-11112')
+      })
+    })
+    describe('getItems', () => {
+      it('gets all items if no specific id is supplied', async () => {
+        const server = new Server()
+        await server.warm()
+        const response:ResponseItems = await server.getItems()
+        expect(response).toHaveProperty('data')
+        const items:Character[] = response.data
+        expect(items).toHaveLength(2)
+      })
+      it('get ones by filtering for ids', async () => {
+        const server = new Server()
+        await server.warm()
+        const response:ResponseItems = await server.getItems({ filters: { ids: '11111-111111-11111-11111' } })
+        expect(response).toHaveProperty('data')
+        const items:Character[] = response.data
+        expect(items).toHaveLength(1)
+        expect(items[0]).toHaveProperty('id', '11111-111111-11111-11111')
       })
     })
   })

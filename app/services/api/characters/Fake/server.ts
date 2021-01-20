@@ -29,6 +29,10 @@ export interface ResponseItems {
   data: Character[]
 }
 
+export interface JSONAPIParams {
+  filters?: any
+}
+
 /**
  * Warning this is for beta or low-performance needs, otherwise please use an alternative or non-Fake / Live Server.
  */
@@ -57,11 +61,21 @@ class Server {
   }
 
   // ------ INTERFACE METHODS ---- //
-  async getItems (): Promise<ResponseItems> {
+  async getItems (data:JSONAPIParams = {}): Promise<ResponseItems> {
     let list = await this._getItemsFromStorage()
     if (!list.length) {
       await this._setItemsToStorage(DEFAULT_DATA.map((entity) => ({ ...entity, initiative: calculateInitiative(entity) })))
       list = await this._getItemsFromStorage()
+    }
+    if (data.filters) {
+      const properties = Object.keys(data.filters)
+      list = list.filter(entity => {
+        let matches = false
+        properties.forEach(prop => {
+          matches = R.contains(entity[prop.slice(0, -1)], data.filters[prop])
+        })
+        return matches
+      }) || []
     }
     return {
       data: sortWith(list)
