@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native'
 import { View } from 'react-native'
 import { Portal, Snackbar } from 'react-native-paper'
 import styles from './styles'
-import { Screen, Header, CharacterEdit } from '../../components'
+import { Screen, CharacterEdit } from '../../components'
 import { Character, createCharacter as characterFactory } from '../../state/Models'
 
 export default createScreen('CharacterNew', (props) => {
@@ -28,11 +28,6 @@ export default createScreen('CharacterNew', (props) => {
   return (
     <View style={styles.FULL}>
       <Screen style={styles.CONTAINER} preset="scroll">
-        <Header
-          headerText="Character Creator"
-          leftIcon="back"
-          onLeftPress={goBack}
-        />
         <CharacterEdit character={character} onChange={createCharacter}/>
       </Screen>
       <Portal>

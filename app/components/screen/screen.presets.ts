@@ -1,6 +1,6 @@
 import { ViewStyle } from 'react-native'
 import { isNil } from 'ramda'
-import { colors } from '../../theme'
+import { DarkPalette } from '../../theme'
 
 /**
  * All screen keyboard offsets.
@@ -24,7 +24,7 @@ export const presets = {
    */
   fixed: {
     outer: {
-      backgroundColor: colors.background,
+      backgroundColor: DarkPalette.background,
       flex: 1,
       height: '100%',
     } as ViewStyle,
@@ -43,7 +43,7 @@ export const presets = {
    */
   scroll: {
     outer: {
-      backgroundColor: colors.background,
+      backgroundColor: DarkPalette.background,
       flex: 1,
       height: '100%',
     } as ViewStyle,

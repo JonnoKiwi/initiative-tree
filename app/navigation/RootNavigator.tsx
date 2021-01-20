@@ -1,18 +1,17 @@
 /**
  * The root navigator is used to switch between major navigation flows of your app.
  * Generally speaking, it will contain an auth flow (registration, login, forgot password)
- * and a "main" flow (which is contained in your PrimaryNavigator) which the user
+ * and a "main" flow (which is contained in your ExternalNavigator) which the user
  * will use once logged in.
  */
 import React from 'react'
 import { NavigationContainer, NavigationContainerRef } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import DrawerNavigator from './DrawerNavigator'
-import navigationTheme from '../theme/navigation'
-import { PrimaryNavigator } from './PrimaryNavigator'
+import LoggedInNavigator from './LoggedInNavigator'
+import { ExternalNavigator } from './ExternalNavigator'
+import { DarkTheme, LightTheme, mapToNavigationTheme } from '../theme'
 import { Provider as PaperProvider } from 'react-native-paper'
-// TODO Use HOC or Custom Hook
-import PaperTheme from '../theme/paper/theme'
+import { useSelector } from 'react-redux'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -25,11 +24,11 @@ import PaperTheme from '../theme/paper/theme'
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type RootParamList = {
-  DrawerStack: undefined
-  PrimaryStack: undefined
+  ExternalStack: undefined
+  LoggedInStack: undefined
 }
 
-const Stack = createStackNavigator<RootParamList>()
+const { Navigator, Screen } = createStackNavigator<RootParamList>()
 
 const rootStackScreenOptions = {
   headerShown: false,
@@ -38,17 +37,21 @@ const rootStackScreenOptions = {
 
 const RootStack = () => {
   return (
-    <Stack.Navigator screenOptions={rootStackScreenOptions}>
-      <Stack.Screen name="DrawerStack" component={DrawerNavigator} />
-      <Stack.Screen name="PrimaryStack" component={PrimaryNavigator} />
-    </Stack.Navigator>
+    <Navigator
+      screenOptions={rootStackScreenOptions}
+    >
+      <Screen name="ExternalStack" component={ExternalNavigator} />
+      <Screen name="LoggedInStack" component={LoggedInNavigator} />
+    </Navigator>
   )
 }
 
 export const RootNavigatorView = (props, ref) => {
+  const useDarkTheme = useSelector(state => state.preferences.data.useDarkTheme)
+  const theme = useDarkTheme ? DarkTheme : LightTheme
   return (
-    <PaperProvider theme={PaperTheme}>
-      <NavigationContainer theme={navigationTheme} {...props} ref={ref}>
+    <PaperProvider theme={theme}>
+      <NavigationContainer theme={mapToNavigationTheme(theme)} {...props} ref={ref}>
         <RootStack />
       </NavigationContainer>
     </PaperProvider>

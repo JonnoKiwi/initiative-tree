@@ -5,23 +5,23 @@ import * as React from 'react'
 import { View, ViewStyle } from 'react-native'
 import { storiesOf } from '@storybook/react-native'
 import { StoryScreen, Story, UseCase } from '../../../storybook/views'
-import { colors } from '../../theme'
+import StorybookTheme from '../../theme/storybook'
 import { Text } from './text'
 
 declare let module
 
-const VIEWSTYLE = {
+const VIEW_STYLE = {
   flex: 1,
-  backgroundColor: colors.storybookDarkBg,
+  backgroundColor: StorybookTheme.background,
 }
-const viewStyleArray: ViewStyle[] = [VIEWSTYLE, { backgroundColor: '#7fff00' }]
+const viewStyleArray: ViewStyle[] = [VIEW_STYLE, { backgroundColor: '#7fff00' }]
 
 storiesOf('Text', module)
   .addDecorator((fn) => <StoryScreen>{fn()}</StoryScreen>)
   .add('Style Presets', () => (
     <Story>
       <UseCase text="default" usage="Used for normal body text.">
-        <View style={VIEWSTYLE}>
+        <View style={VIEW_STYLE}>
           <Text>Hello!</Text>
           <Text style={{ paddingTop: 10 }}>
             Check out{'\n'}
@@ -33,12 +33,12 @@ storiesOf('Text', module)
         </View>
       </UseCase>
       <UseCase text="bold" usage="Used for bolded body text.">
-        <View style={VIEWSTYLE}>
+        <View style={VIEW_STYLE}>
           <Text preset="bold">Osnap! I'm puffy.</Text>
         </View>
       </UseCase>
       <UseCase text="header" usage="Used for major section headers.">
-        <View style={VIEWSTYLE}>
+        <View style={VIEW_STYLE}>
           <Text preset="header">Behold!</Text>
         </View>
       </UseCase>
@@ -50,12 +50,12 @@ storiesOf('Text', module)
         text="text"
         usage="Used when you want to pass a value but don't want to open a child."
       >
-        <View style={VIEWSTYLE}>
+        <View style={VIEW_STYLE}>
           <Text text="Heyo!" />
         </View>
       </UseCase>
       <UseCase text="tx" usage="Used for looking up i18n keys.">
-        <View style={VIEWSTYLE}>
+        <View style={VIEW_STYLE}>
           <Text tx="common.ok" />
           <Text tx="common.cancel" />
         </View>
@@ -64,12 +64,12 @@ storiesOf('Text', module)
         text="children"
         usage="Used like you would normally use a React Native <Text> component."
       >
-        <View style={VIEWSTYLE}>
+        <View style={VIEW_STYLE}>
           <Text>Passing strings as children.</Text>
         </View>
       </UseCase>
       <UseCase text="nested children" usage="You can embed them and change styles too.">
-        <View style={VIEWSTYLE}>
+        <View style={VIEW_STYLE}>
           <Text>
             {' '}
             Hello <Text preset="bold">bolded</Text> World.

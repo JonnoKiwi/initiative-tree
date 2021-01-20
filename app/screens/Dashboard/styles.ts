@@ -1,30 +1,19 @@
-import { colors, spacing } from '../../theme'
+import { DarkPalette, SPACING, spacing } from '../../theme'
 import { ImageStyle, TextStyle, ViewStyle } from 'react-native'
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
-  backgroundColor: colors.transparent,
-  paddingHorizontal: spacing[4],
+  backgroundColor: DarkPalette.transparent,
+  paddingHorizontal: SPACING.MEDIUM,
 }
 const BOLD: TextStyle = { fontWeight: 'bold' }
-const HEADER: TextStyle = {
-  paddingTop: spacing[3],
-  paddingBottom: spacing[5] - 1,
-  paddingHorizontal: 0,
-}
-const HEADER_TITLE: TextStyle = {
-  ...BOLD,
-  fontSize: 12,
-  lineHeight: 15,
-  textAlign: 'center',
-  letterSpacing: 1.5,
-}
+
 const TITLE: TextStyle = {
   ...BOLD,
   fontSize: 28,
   lineHeight: 38,
   textAlign: 'center',
-  marginBottom: spacing[5],
+  marginBottom: SPACING.LARGE,
 }
 const TAGLINE: TextStyle = {
   fontSize: 15,
@@ -61,8 +50,6 @@ export default {
   FULL,
   HINT,
   HEART,
-  HEADER_TITLE,
-  HEADER,
   LOVE,
   LOVE_WRAPPER,
   IGNITE,

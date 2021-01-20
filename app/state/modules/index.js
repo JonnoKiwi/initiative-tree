@@ -9,9 +9,10 @@ import reduce from 'lodash/reduce'
 // 1. Import Modules
 import Users from './users'
 import Characters from './characters'
+import Preferences from './preferences'
 
 // 2. Register Modules
-const RegisteredModules = { Users, Characters }
+const RegisteredModules = { Users, Characters, Preferences }
 // add imported module HERE ^
 
 // ------------------------------------------------------------- //

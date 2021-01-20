@@ -6,7 +6,7 @@
  */
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { DashboardScreen, CharacterEdit, CharacterNew } from '../screens'
+import { WelcomeScreen } from '../screens'
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -21,26 +21,22 @@ import { DashboardScreen, CharacterEdit, CharacterNew } from '../screens'
  *   https://reactnavigation.org/docs/typescript#type-checking-the-navigator
  */
 export type PrimaryParamList = {
-  Dashboard: undefined
-  CharacterEdit: undefined
-  CharacterNew: undefined
+  Welcome: undefined
 }
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
-const Stack = createStackNavigator<PrimaryParamList>()
+const { Navigator, Screen } = createStackNavigator<PrimaryParamList>()
 
-export function PrimaryNavigator() {
+export function ExternalNavigator() {
   return (
-    <Stack.Navigator
+    <Navigator
       screenOptions={{
         headerShown: false,
         gestureEnabled: true,
       }}
     >
-      <Stack.Screen name="Dashboard" component={DashboardScreen} />
-      <Stack.Screen name="CharacterEdit" component={CharacterEdit} />
-      <Stack.Screen name="CharacterNew" component={CharacterNew} />
-    </Stack.Navigator>
+      <Screen name="Welcome" component={WelcomeScreen} />
+    </Navigator>
   )
 }
 
@@ -53,5 +49,5 @@ export function PrimaryNavigator() {
  *
  * `canExit` is used in ./app/app.tsx in the `useBackButtonHandler` hook.
  */
-const exitRoutes = ['Dashboard']
+const exitRoutes = ['Welcome']
 export const canExit = (routeName: string) => exitRoutes.includes(routeName)

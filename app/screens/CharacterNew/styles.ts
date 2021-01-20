@@ -1,9 +1,9 @@
-import { colors, spacing } from '../../theme'
+import { DarkPalette, spacing } from '../../theme'
 import { ViewStyle } from 'react-native'
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
-  backgroundColor: colors.transparent,
+  backgroundColor: DarkPalette.transparent,
   paddingHorizontal: spacing[4],
 }
 

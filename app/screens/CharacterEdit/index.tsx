@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import { useNavigation, useRoute } from '@react-navigation/native'
+import { useRoute } from '@react-navigation/native'
 import { View } from 'react-native'
-import { Screen, Header } from '../../components'
+import { Screen, CharacterEdit } from '../../components'
 import { Portal, Snackbar } from 'react-native-paper'
-import { CharacterEdit } from '../../components'
 import createScreen from '../createScreen'
 
 import { Character } from '../../state/Models'
@@ -12,8 +11,6 @@ import styles from './styles'
 export default createScreen('CharacterEdit', (props) => {
   // Pull in navigation via hook
   const { params: { character } } = useRoute()
-  const navigation = useNavigation()
-  const goBack = () => navigation.goBack()
 
   const [isMessageVisible, setIsMessageVisible] = useState(false)
   const [message, setMessage] = useState('')
@@ -30,11 +27,6 @@ export default createScreen('CharacterEdit', (props) => {
   return (
     <View style={styles.FULL}>
       <Screen style={styles.CONTAINER} preset="scroll">
-        <Header
-          headerText="Character Editor"
-          leftIcon="back"
-          onLeftPress={goBack}
-        />
         <CharacterEdit character={character} onChange={updateCharacter} />
       </Screen>
       <Portal>
