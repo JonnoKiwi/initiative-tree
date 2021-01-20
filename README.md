@@ -39,23 +39,34 @@ This is where your app's models will live and change state.
 This is where the shape of the models are kept.
 
 ### Navigation
-'./app.navigation'
+`./app.navigation`
 
-This is where the app's screens, headers, and drawer are united. Navigations among screens are done here.
+This is where the app's screens, headers, and drawer are brought together. Navigations among screens are done here.
 
-**screens**
-This is where your screen components will live. A screen is a React component which will take up the entire screen and be part of the navigation hierarchy. Each screen will have a directory containing the `.tsx` file, along with any assets or other helper files.
+### Screens
+`./app/screens`
 
-**services**
+This is where your screen components will live. A screen is a React component which will take up the entire screen _(the header is separate from a screen)_ and be part of the navigation hierarchy. Each screen will have a directory containing the `.tsx` file, along with any assets or other helper files.
+
+### Services
+`./app/services`
+
 Any services that interface with the outside world will live here (think REST APIs, Push Notifications, etc.).
 
-**theme**
-Here lives the theme for your application, including spacing, colors, and typography.
+### Theme
+`./app/theme`
 
-**utils**
-This is a great place to put miscellaneous helpers and utilities. Things like date helpers, formatters, etc. are often found here. However, it should only be used for things that are truely shared across your application. If a helper or utility is only used by a specific component or model, consider co-locating your helper with that component or model.
+Here lives the theme for your application, including spacing, colors, typography and dark/light themes.
 
-**app.tsx** This is the entry point to your app. This is where you will find the main App component which renders the rest of the application. This is also where you will specify whether you want to run the app in storybook mode.
+### Utilities
+`./app/utils`
+
+This is a place to put miscellaneous helpers and utilities. Things like date helpers, formatters, etc. are often found here. However, it should only be used for things that are truely shared across your application. If a helper or utility is only used by a specific component or model, consider co-locating your helper with that component or model.
+
+### App's Starting Point
+`./app.tsx`
+
+This is the entry point to your app. This is where you will find the main App component which renders the rest of the application. This is also where you will specify whether you want to run the app in storybook mode.
 
 ### ./ignite directory
 
