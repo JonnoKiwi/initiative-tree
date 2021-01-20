@@ -1,6 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-native-paper'
-import theme from './theme'
+import { LightTheme, DarkTheme } from './theme'
+import { useSelector } from 'react-redux'
 
 /**
  *
@@ -8,9 +9,13 @@ import theme from './theme'
  */
 export default (App) => {
   // eslint-disable-next-line react/display-name
-  return (props) => (
-    <Provider theme={theme}>
-      <App {...props} />
-    </Provider>
-  )
+  return (props) => {
+    const useDarkTheme = useSelector(state => state.preferences.data.useDarkTheme)
+    const theme = useDarkTheme ? DarkTheme : LightTheme
+    return (
+      <Provider theme={theme}>
+        <App {...props} />
+      </Provider>
+    )
+  }
 }

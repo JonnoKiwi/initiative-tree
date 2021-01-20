@@ -1,5 +1,5 @@
 import { ViewStyle, TextStyle } from 'react-native'
-import { colors, spacing } from '../../theme'
+import { DarkPalette, spacing } from '../../theme'
 
 /**
  * All text will start off looking like this.
@@ -25,7 +25,7 @@ export const viewPresets = {
   /**
    * A smaller piece of secondard information.
    */
-  primary: { ...BASE_VIEW, backgroundColor: colors.palette.orange } as ViewStyle,
+  primary: { ...BASE_VIEW, backgroundColor: DarkPalette.primary } as ViewStyle,
 
   /**
    * A button without extras.
@@ -39,10 +39,10 @@ export const viewPresets = {
 }
 
 export const textPresets = {
-  primary: { ...BASE_TEXT, fontSize: 9, color: colors.palette.white } as TextStyle,
+  primary: { ...BASE_TEXT, fontSize: 9, color: DarkPalette.text.primary } as TextStyle,
   link: {
     ...BASE_TEXT,
-    color: colors.text,
+    color: DarkPalette.text.primary,
     paddingHorizontal: 0,
     paddingVertical: 0,
   } as TextStyle,

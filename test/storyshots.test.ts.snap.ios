@@ -980,7 +980,7 @@ exports[`Storyshots Button Style Presets 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#27E100",
                   "borderRadius": 4,
                   "justifyContent": "center",
                   "opacity": 1,
@@ -1097,7 +1097,7 @@ exports[`Storyshots Button Style Presets 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#27E100",
                   "borderRadius": 4,
                   "justifyContent": "center",
                   "opacity": 1,
@@ -1214,7 +1214,7 @@ exports[`Storyshots Button Style Presets 1`] = `
               style={
                 Object {
                   "alignItems": "center",
-                  "backgroundColor": undefined,
+                  "backgroundColor": "#27E100",
                   "borderRadius": 0,
                   "justifyContent": "center",
                   "opacity": 1,
@@ -4876,7 +4876,7 @@ exports[`Storyshots FormRow Assembled 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 13,
                   }
@@ -4898,7 +4898,7 @@ exports[`Storyshots FormRow Assembled 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -4920,7 +4920,7 @@ exports[`Storyshots FormRow Assembled 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 9,
                   }
@@ -4943,7 +4943,7 @@ exports[`Storyshots FormRow Assembled 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5046,7 +5046,7 @@ exports[`Storyshots FormRow Assembled 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5068,7 +5068,7 @@ exports[`Storyshots FormRow Assembled 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5091,7 +5091,7 @@ exports[`Storyshots FormRow Assembled 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5227,7 +5227,7 @@ exports[`Storyshots FormRow Presets 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5238,7 +5238,7 @@ exports[`Storyshots FormRow Presets 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5342,7 +5342,7 @@ exports[`Storyshots FormRow Presets 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5447,7 +5447,7 @@ exports[`Storyshots FormRow Presets 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5458,7 +5458,7 @@ exports[`Storyshots FormRow Presets 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5562,7 +5562,7 @@ exports[`Storyshots FormRow Presets 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5665,7 +5665,7 @@ exports[`Storyshots FormRow Presets 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5768,7 +5768,7 @@ exports[`Storyshots FormRow Presets 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -5901,7 +5901,7 @@ exports[`Storyshots FormRow Styling 1`] = `
               <Text
                 style={
                   Object {
-                    "color": "#1d1d1d",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 15,
                   }
@@ -6025,7 +6025,7 @@ exports[`Storyshots Header Behavior 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#1d1d1d",
+                  "backgroundColor": "#27E100",
                   "flex": 1,
                 }
               }
@@ -6036,9 +6036,8 @@ exports[`Storyshots Header Behavior 1`] = `
                     "alignItems": "center",
                     "flexDirection": "row",
                     "justifyContent": "flex-start",
-                    "paddingBottom": 24,
-                    "paddingHorizontal": 16,
-                    "paddingTop": 24,
+                    "paddingBottom": 23,
+                    "paddingTop": 12,
                   }
                 }
               >
@@ -6062,8 +6061,10 @@ exports[`Storyshots Header Behavior 1`] = `
                       Object {
                         "color": "#ffffff",
                         "fontFamily": "Helvetica",
-                        "fontSize": 24,
+                        "fontSize": 12,
                         "fontWeight": "bold",
+                        "letterSpacing": 1.5,
+                        "lineHeight": 15,
                         "textAlign": "center",
                       }
                     }
@@ -6165,7 +6166,7 @@ exports[`Storyshots Header Behavior 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#1d1d1d",
+                  "backgroundColor": "#27E100",
                   "flex": 1,
                 }
               }
@@ -6176,9 +6177,8 @@ exports[`Storyshots Header Behavior 1`] = `
                     "alignItems": "center",
                     "flexDirection": "row",
                     "justifyContent": "flex-start",
-                    "paddingBottom": 24,
-                    "paddingHorizontal": 16,
-                    "paddingTop": 24,
+                    "paddingBottom": 23,
+                    "paddingTop": 12,
                   }
                 }
               >
@@ -6227,8 +6227,10 @@ exports[`Storyshots Header Behavior 1`] = `
                       Object {
                         "color": "#ffffff",
                         "fontFamily": "Helvetica",
-                        "fontSize": 24,
+                        "fontSize": 12,
                         "fontWeight": "bold",
+                        "letterSpacing": 1.5,
+                        "lineHeight": 15,
                         "textAlign": "center",
                       }
                     }
@@ -6330,7 +6332,7 @@ exports[`Storyshots Header Behavior 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#1d1d1d",
+                  "backgroundColor": "#27E100",
                   "flex": 1,
                 }
               }
@@ -6341,9 +6343,8 @@ exports[`Storyshots Header Behavior 1`] = `
                     "alignItems": "center",
                     "flexDirection": "row",
                     "justifyContent": "flex-start",
-                    "paddingBottom": 24,
-                    "paddingHorizontal": 16,
-                    "paddingTop": 24,
+                    "paddingBottom": 23,
+                    "paddingTop": 12,
                   }
                 }
               >
@@ -6367,8 +6368,10 @@ exports[`Storyshots Header Behavior 1`] = `
                       Object {
                         "color": "#ffffff",
                         "fontFamily": "Helvetica",
-                        "fontSize": 24,
+                        "fontSize": 12,
                         "fontWeight": "bold",
+                        "letterSpacing": 1.5,
+                        "lineHeight": 15,
                         "textAlign": "center",
                       }
                     }
@@ -6748,7 +6751,7 @@ exports[`Storyshots Switch Behaviour 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "#e6e6e6",
+                  "backgroundColor": "#121212",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 22.5,
                   "borderWidth": 1,
@@ -7008,7 +7011,7 @@ exports[`Storyshots Switch Behaviour 1`] = `
               onStartShouldSetResponder={[Function]}
               style={
                 Object {
-                  "backgroundColor": "#e6e6e6",
+                  "backgroundColor": "#121212",
                   "borderColor": "rgba(0, 0, 0, 0.1)",
                   "borderRadius": 22.5,
                   "borderWidth": 1,
@@ -7453,7 +7456,7 @@ exports[`Storyshots Text Passing Content 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#1d1d1d",
+                  "backgroundColor": "#27E100",
                   "flex": 1,
                 }
               }
@@ -7555,7 +7558,7 @@ exports[`Storyshots Text Passing Content 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#1d1d1d",
+                  "backgroundColor": "#27E100",
                   "flex": 1,
                 }
               }
@@ -7668,7 +7671,7 @@ exports[`Storyshots Text Passing Content 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#1d1d1d",
+                  "backgroundColor": "#27E100",
                   "flex": 1,
                 }
               }
@@ -7770,7 +7773,7 @@ exports[`Storyshots Text Passing Content 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#1d1d1d",
+                  "backgroundColor": "#27E100",
                   "flex": 1,
                 }
               }
@@ -7916,7 +7919,7 @@ exports[`Storyshots Text Style Presets 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#1d1d1d",
+                  "backgroundColor": "#27E100",
                   "flex": 1,
                 }
               }
@@ -8059,7 +8062,7 @@ exports[`Storyshots Text Style Presets 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#1d1d1d",
+                  "backgroundColor": "#27E100",
                   "flex": 1,
                 }
               }
@@ -8162,7 +8165,7 @@ exports[`Storyshots Text Style Presets 1`] = `
             <View
               style={
                 Object {
-                  "backgroundColor": "#1d1d1d",
+                  "backgroundColor": "#27E100",
                   "flex": 1,
                 }
               }
@@ -8296,7 +8299,7 @@ exports[`Storyshots Text Styling 1`] = `
               style={
                 Array [
                   Object {
-                    "backgroundColor": "#1d1d1d",
+                    "backgroundColor": "#27E100",
                     "flex": 1,
                   },
                   Object {
@@ -8465,12 +8468,12 @@ exports[`Storyshots TextField Labelling 1`] = `
                 allowFontScaling={true}
                 onChangeText={[Function]}
                 placeholder="omg your name"
-                placeholderTextColor="#CDD4DA"
+                placeholderTextColor="#45454c"
                 rejectResponderTermination={true}
                 style={
                   Object {
-                    "backgroundColor": "#ffffff",
-                    "color": "#ffffff",
+                    "backgroundColor": "#27E100",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 18,
                     "minHeight": 44,
@@ -8584,12 +8587,12 @@ exports[`Storyshots TextField Labelling 1`] = `
                 allowFontScaling={true}
                 onChangeText={[Function]}
                 placeholder="Placeholder"
-                placeholderTextColor="#CDD4DA"
+                placeholderTextColor="#45454c"
                 rejectResponderTermination={true}
                 style={
                   Object {
-                    "backgroundColor": "#ffffff",
-                    "color": "#ffffff",
+                    "backgroundColor": "#27E100",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 18,
                     "minHeight": 44,
@@ -8722,7 +8725,7 @@ exports[`Storyshots TextField Ref Forwarding 1`] = `
                 allowFontScaling={true}
                 onChangeText={[Function]}
                 onFocus={[Function]}
-                placeholderTextColor="#CDD4DA"
+                placeholderTextColor="#45454c"
                 rejectResponderTermination={true}
                 style={
                   Object {
@@ -8887,12 +8890,12 @@ exports[`Storyshots TextField Style Overrides 1`] = `
               <TextInput
                 allowFontScaling={true}
                 onChangeText={[Function]}
-                placeholderTextColor="#CDD4DA"
+                placeholderTextColor="#45454c"
                 rejectResponderTermination={true}
                 style={
                   Object {
-                    "backgroundColor": "#ffffff",
-                    "color": "#ffffff",
+                    "backgroundColor": "#27E100",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 18,
                     "minHeight": 44,
@@ -8924,12 +8927,12 @@ exports[`Storyshots TextField Style Overrides 1`] = `
               <TextInput
                 allowFontScaling={true}
                 onChangeText={[Function]}
-                placeholderTextColor="#CDD4DA"
+                placeholderTextColor="#45454c"
                 rejectResponderTermination={true}
                 style={
                   Object {
-                    "backgroundColor": "#ffffff",
-                    "color": "#ffffff",
+                    "backgroundColor": "#27E100",
+                    "color": "#000000",
                     "fontFamily": "Helvetica",
                     "fontSize": 18,
                     "minHeight": 44,
@@ -9042,7 +9045,7 @@ exports[`Storyshots TextField Style Overrides 1`] = `
               <TextInput
                 allowFontScaling={true}
                 onChangeText={[Function]}
-                placeholderTextColor="#CDD4DA"
+                placeholderTextColor="#45454c"
                 rejectResponderTermination={true}
                 style={
                   Object {
@@ -9177,7 +9180,7 @@ exports[`Storyshots TextField Style Overrides 1`] = `
               <TextInput
                 allowFontScaling={true}
                 onChangeText={[Function]}
-                placeholderTextColor="#CDD4DA"
+                placeholderTextColor="#45454c"
                 rejectResponderTermination={true}
                 style={
                   Object {

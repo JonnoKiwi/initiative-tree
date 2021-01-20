@@ -3,6 +3,7 @@ import { AsyncStorage } from 'react-native'
 import Immutable from 'seamless-immutable'
 import { reactotronRedux as reduxPlugin } from 'reactotron-redux'
 import sagaPlugin from 'reactotron-redux-saga'
+import { useReactotron } from '@env'
 
 import { ReactotronConfig, DEFAULT_REACTOTRON_CONFIG } from './reactotron-config'
 import { clear } from '../../utils/storage'
@@ -22,7 +23,7 @@ declare global {
 const noop = () => undefined
 
 // in dev, we attach Reactotron, in prod we attach a interface-compatible mock.
-if (__DEV__) {
+if (__DEV__ || useReactotron === 'true') {
   console.tron = Tron // attach reactotron to `console.tron`
 } else {
   // attach a mock so if things sneaky by our __DEV__ guards, we won't crash.

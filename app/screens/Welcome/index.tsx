@@ -17,15 +17,13 @@ export default createScreen('Welcome', (props) => {
   )
   const nextScreen = async () => {
     await loadCharacters()
-    navigation.navigate('Dashboard')
+    navigation.navigate('LoggedInStack', { screen: 'Dashboard' })
   }
   return (
     <View style={styles.FULL}>
       <Screen style={styles.CONTAINER} preset="scroll" >
         <Header
           headerTx="welcomeScreen.poweredBy"
-          style={styles.HEADER}
-          titleStyle={styles.HEADER_TITLE}
         />
         <Text style={styles.TITLE_WRAPPER}>
           <Text style={styles.TITLE} text="Prepare for combat and roll for initiative!" />
