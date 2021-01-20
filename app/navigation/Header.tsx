@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { DrawerActions } from '@react-navigation/native'
+import { DrawerActions, useNavigation } from '@react-navigation/native'
 import { Appbar, useTheme } from 'react-native-paper'
 
 export type Props = {
@@ -14,7 +14,8 @@ export type Props = {
  * @constructor
  */
 export default function Header (props: Props) {
-  const { navigation, scene, hideGoBack = false } = props
+  const { scene, hideGoBack = false } = props
+  const navigation = useNavigation()
   const openDrawer = () => {
     navigation.dispatch(DrawerActions.openDrawer())
   }
