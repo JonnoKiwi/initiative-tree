@@ -28,7 +28,7 @@ export type RootParamList = {
   LoggedInStack: undefined
 }
 
-const Stack = createStackNavigator<RootParamList>()
+const { Navigator, Screen } = createStackNavigator<RootParamList>()
 
 const rootStackScreenOptions = {
   headerShown: false,
@@ -37,12 +37,12 @@ const rootStackScreenOptions = {
 
 const RootStack = () => {
   return (
-    <Stack.Navigator
+    <Navigator
       screenOptions={rootStackScreenOptions}
     >
-      <Stack.Screen name="ExternalStack" component={ExternalNavigator} />
-      <Stack.Screen name="LoggedInStack" component={LoggedInNavigator} />
-    </Stack.Navigator>
+      <Screen name="ExternalStack" component={ExternalNavigator} />
+      <Screen name="LoggedInStack" component={LoggedInNavigator} />
+    </Navigator>
   )
 }
 
