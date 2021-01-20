@@ -18,34 +18,24 @@ If it doesn't display, then run `yarn cache:clear` then do step `2` again
 
 ## Design
 
-### ./app directory
+### Components
+`./app/components`
 
-Included in an Ignite boilerplate project is the `app` directory. This is a directory you would normally have to create when using vanilla React Native.
-
-The inside of the src directory looks similar to the following:
-
-```
-app
-│── components
-│── i18n
-├── navigation
-├── screens
-├── services
-├── state
-  ├── Models
-├── theme
-├── theming
-├── utils
-└── app.tsx
-```
-
-**components**
 This is where your React components will live. Each component will have a directory containing the `.tsx` file, along with a story file, and optionally `.presets`, and `.props` files for larger components. The app will come with some commonly used components like Button.
 
-**i18n**
+### Localization
+`.app/i18n`
+
 This is where your translations will live if you are using `react-native-i18n`.
 
-**state**
+### State
+`./app/state`
+
+This is where your app's models will live and change state.
+
+#### State Shape
+`./app/state/Models.ts`
+
 This is where your app's models will live and change state.
 
 **navigation**
