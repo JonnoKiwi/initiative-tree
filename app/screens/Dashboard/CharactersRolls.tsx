@@ -49,7 +49,8 @@ export default function CharactersRolls (props) {
   const list = data || []
 
   return (
-    list.length ? <List.Section>
+    list.length
+      ? <List.Section>
       { list.map(
         (item) => (
           <CharacterRoll

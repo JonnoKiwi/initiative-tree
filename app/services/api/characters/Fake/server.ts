@@ -41,10 +41,9 @@ class Server {
   storageNamespace: string
   storageKey: string
 
-  constructor() {
+  constructor(suffix = null) {
     this.storageNamespace = '@initiative-tree'
-    this.storageKey = 'characters'
-    this.warm()
+    this.storageKey = `characters${(suffix && '-' + suffix) || ''}`
   }
 
   getStorageKey (): string {
@@ -159,8 +158,12 @@ class Server {
   async warm() {
     const list = await this._getItemsFromStorage()
     if (!list.length) {
-      await this._setItemsToStorage(DEFAULT_DATA.map((entity) => ({ ...entity, initiative: calculateInitiative(entity) })))
+      await this.reset()
     }
+  }
+
+  async reset() {
+    await this._setItemsToStorage(DEFAULT_DATA.map((entity) => ({ ...entity, initiative: calculateInitiative(entity) })))
   }
 }
 

@@ -14,7 +14,7 @@ type HeaderPropsOverrides = {
   noAppTitle?: boolean
 }
 const createHeaderFactory = (overrides: HeaderPropsOverrides) => {
-  return (props: DrawerHeaderProps) => {
+  return function renderHeader (props: DrawerHeaderProps) {
     const combinedProps = { ...props, ...overrides }
     return <Header {...combinedProps} />
   }

@@ -35,6 +35,8 @@ jobs:
             ${{ runner.os }}-yarn-
       - name: install
         run: yarn install --frozen-lockfile
+      - name: style check
+        run: yarn lint
       - name: test
         run: yarn test
         env:
