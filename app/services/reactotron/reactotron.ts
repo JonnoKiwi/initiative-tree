@@ -1,5 +1,5 @@
 import Tron from 'reactotron-react-native'
-import { AsyncStorage } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import Immutable from 'seamless-immutable'
 import { reactotronRedux as reduxPlugin } from 'reactotron-redux'
 import sagaPlugin from 'reactotron-redux-saga'
