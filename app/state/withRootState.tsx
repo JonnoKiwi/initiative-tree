@@ -7,7 +7,7 @@ export const withRootState = (App, LoadingComponent = null) => {
 
     // Kick off initial async loading actions, like loading fonts and RootStore
     useEffect(() => {
-      ;(async () => {
+      (async () => {
         const store = await setupRootStore()
         setRootStore(store)
       })()

@@ -2,7 +2,7 @@ import { put } from 'redux-saga/effects'
 import Users from '../modules/users'
 
 // process STARTUP actions
-export function* startup() {
+export function * startup() {
   if (__DEV__ && console.tron) {
     // straight-up string logging
     console.tron.log("Hello, I'm an example of how to log via Reactotron.")

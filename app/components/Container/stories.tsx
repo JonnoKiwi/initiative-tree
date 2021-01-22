@@ -108,6 +108,7 @@ storiesOf('Container', module)
   .add('Form', () => (
     <Story>
       <UseCase text="Form Items" usage="add property preset='form'" height={350}>
+        {/* eslint-disable-next-line react-native/no-inline-styles */}
         <Container preset='form' style={{ justifyContent: 'flex-start' }}>
           <TextInput placeholder='Name' />
           <Switch />

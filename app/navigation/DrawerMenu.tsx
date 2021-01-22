@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { DrawerContentScrollView } from '@react-navigation/drawer'
 import { Drawer, Switch, Text, TouchableRipple } from 'react-native-paper'
-import { View } from 'react-native'
+import { View, ViewStyle } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 import PreferencesStateModule from '../state/modules/preferences'
 import CharactersStateModule from '../state/modules/characters'
@@ -12,6 +12,18 @@ type Props = {
   state: any
   navigation: any
   descriptors: any
+}
+
+/**
+ * TODO Drawer Switch Theme - Fix styling and move to another component
+ */
+const switchStyle:ViewStyle = {
+  flexDirection: 'row',
+  justifyContent: 'space-around',
+  alignItems: 'flex-start',
+  alignContent: 'flex-start',
+  paddingVertical: 12,
+  paddingHorizontal: 16,
 }
 
 export default function DrawerMenu (props: Props) {
@@ -45,14 +57,7 @@ export default function DrawerMenu (props: Props) {
           onPress={onRefresh}
         />
         <TouchableRipple onPress={toggle}>
-          <View style={{
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-            alignItems: 'flex-start',
-            alignContent: 'flex-start',
-            paddingVertical: 12,
-            paddingHorizontal: 16,
-          }}>
+          <View style={switchStyle}>
             <View pointerEvents="none">
               <Switch value={useDarkTheme} />
             </View>

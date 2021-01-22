@@ -1,13 +1,12 @@
 import Tron from 'reactotron-react-native'
-import { AsyncStorage } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import Immutable from 'seamless-immutable'
 import { reactotronRedux as reduxPlugin } from 'reactotron-redux'
 import sagaPlugin from 'reactotron-redux-saga'
-import { useReactotron } from '@env'
-
 import { ReactotronConfig, DEFAULT_REACTOTRON_CONFIG } from './reactotron-config'
 import { clear } from '../../utils/storage'
 import { RootNavigation } from '../../navigation'
+import { useReactotron } from '@env'
 
 // Teach TypeScript about the bad things we want to do.
 declare global {
@@ -86,24 +85,17 @@ export class Reactotron {
    */
   setRootStore(rootStore: any, initialData: any) {
     if (__DEV__) {
-      rootStore = rootStore as RootStore // typescript hack
+      rootStore = rootStore as any // typescript hack
       this.rootStore = rootStore
 
-      const { initial, snapshots } = this.config.state
+      const { initial } = this.config.state
       const name = 'ROOT STORE'
 
       // logging features
       if (initial) {
         console.tron.display({ name, value: initialData, preview: 'Initial State' })
       }
-      // log state changes?
-      if (snapshots) {
-        onSnapshot(rootStore, (snapshot) => {
-          console.tron.display({ name, value: snapshot, preview: 'New State' })
-        })
-      }
-
-      // @ts-ignore
+      // TODO Connect State changes to Reactotron (https://github.com/infinitered/reactotron/blob/master/docs/plugin-redux.md)
     }
   }
 
@@ -126,9 +118,6 @@ export class Reactotron {
       Tron.useReactNative({
         asyncStorage: this.config.useAsyncStorage ? undefined : false,
       })
-
-      // ignore some chatty `mobx-state-tree` actions
-      const RX = /postProcessSnapshot|@APPLY_SNAPSHOT/
 
       // hookup State middleware
       Tron.use(reduxPlugin({ onRestore: Immutable })).use(sagaPlugin())

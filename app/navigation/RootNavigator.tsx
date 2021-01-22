@@ -35,7 +35,7 @@ const rootStackScreenOptions = {
   gestureEnabled: true,
 }
 
-const RootStack = () => {
+export const RootNavigatorCore = () => {
   return (
     <Navigator
       screenOptions={rootStackScreenOptions}
@@ -46,13 +46,13 @@ const RootStack = () => {
   )
 }
 
-export const RootNavigatorView = (props, ref) => {
+export const RootNavigatorConnected = (props, ref) => {
   const useDarkTheme = useSelector(state => state.preferences.data.useDarkTheme)
   const theme = useDarkTheme ? DarkTheme : LightTheme
   return (
     <PaperProvider theme={theme}>
       <NavigationContainer theme={mapToNavigationTheme(theme)} {...props} ref={ref}>
-        <RootStack />
+        <RootNavigatorCore />
       </NavigationContainer>
     </PaperProvider>
   )
@@ -60,6 +60,6 @@ export const RootNavigatorView = (props, ref) => {
 export const RootNavigator = React.forwardRef<
   NavigationContainerRef,
   Partial<React.ComponentProps<typeof NavigationContainer>>
-  >(RootNavigatorView)
+  >(RootNavigatorConnected)
 
 RootNavigator.displayName = 'RootNavigator'

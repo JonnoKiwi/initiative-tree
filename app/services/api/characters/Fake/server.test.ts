@@ -2,7 +2,7 @@ import { Character } from '../api.types'
 import Server, { ensureNumber, calculateInitiative, ResponseItems } from './server'
 
 describe('Character Fake Server', () => {
-  describe('Standalone Methods', () => {
+  describe('Helper Functions - Stateless Functions', () => {
     describe('ensureNumber()', () => {
       it('returns a number for a string', () => {
         expect(ensureNumber('2')).toEqual(2)
@@ -40,11 +40,25 @@ describe('Character Fake Server', () => {
       })
     })
   })
+  describe('Internal Methods', () => {
+    describe('getStorageKey', () => {
+      it('defaults', () => {
+        const server = new Server()
+        expect(server.getStorageKey()).toEqual('@initiative-tree:characters')
+      })
+      it('suffix', () => {
+        const server = new Server('something')
+        expect(server.getStorageKey()).toEqual('@initiative-tree:characters-something')
+      })
+    })
+  })
   describe('Interface', () => {
+    const server:Server = new Server()
+    beforeEach(async () => {
+      await server.reset()
+    })
     describe('createItem', () => {
       it('creates item (persists and returns in response)', async () => {
-        const server = new Server()
-        await server.warm()
         const newItem: Character = {
           id: '0',
           name: 'Intel',
@@ -77,8 +91,6 @@ describe('Character Fake Server', () => {
     })
     describe('deleteItems', () => {
       it('deletes all items if no specific id is supplied', async () => {
-        const server = new Server()
-        await server.warm()
         // Make sure we have items first from warm
         let items:Character[] = await server._getItemsFromStorage()
         expect(items.length).toBeGreaterThan(0)
@@ -89,8 +101,6 @@ describe('Character Fake Server', () => {
         expect(items).toHaveLength(0)
       })
       it('deletes specific ones by id', async () => {
-        const server = new Server()
-        await server.warm()
         await server.deleteItems([{ id: '11111-111111-11111-11111' }])
         const items:Character[] = await server._getItemsFromStorage()
         expect(items).toHaveLength(1)
@@ -99,16 +109,12 @@ describe('Character Fake Server', () => {
     })
     describe('getItems', () => {
       it('gets all items if no specific id is supplied', async () => {
-        const server = new Server()
-        await server.warm()
         const response:ResponseItems = await server.getItems()
         expect(response).toHaveProperty('data')
         const items:Character[] = response.data
         expect(items).toHaveLength(2)
       })
       it('get ones by filtering for ids', async () => {
-        const server = new Server()
-        await server.warm()
         const response:ResponseItems = await server.getItems({ filters: { ids: '11111-111111-11111-11111' } })
         expect(response).toHaveProperty('data')
         const items:Character[] = response.data

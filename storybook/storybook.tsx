@@ -18,7 +18,7 @@ const StorybookUI = getStorybookUI({
 
 export function StorybookUIRoot() {
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       await initFonts()
       if (typeof __TEST__ === 'undefined' || !__TEST__) {
         const Reactotron = require('../app/services/reactotron')

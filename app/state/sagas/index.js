@@ -16,7 +16,7 @@ import { startup } from './Startup'
 
 /* ------------- Connect Types To Sagas ------------- */
 export const createRoot = ({ api }) => {
-  return function* root() {
+  return function * root() {
     yield all(
       [
         fork(startup),

@@ -36,8 +36,9 @@ export class FakeApi implements SagaSauceAPI, HydrogenAPI {
    *
    * Be as quick as possible in here.
    */
-  setup() {
+  async setup() {
     this.server = new Server()
+    await this.server.warm()
   }
 
   /* ----- Existing SagaSauce API Structure. There is much to improve though so make it your own. Very much a work in-progress ---- */

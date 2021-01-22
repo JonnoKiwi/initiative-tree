@@ -17,10 +17,7 @@ jest.mock('react-native', () => ({
 const VALUE_OBJECT = { x: 1 }
 const VALUE_STRING = JSON.stringify(VALUE_OBJECT)
 
-beforeEach(() => {
-  // @ts-ignore
-  AsyncStorage.getItem.mockReturnValue(Promise.resolve(VALUE_STRING))
-})
+beforeEach(() => (AsyncStorage.getItem as jest.Mock).mockReturnValue(Promise.resolve(VALUE_STRING)))
 
 afterEach(() => jest.clearAllMocks())
 
